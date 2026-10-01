@@ -1,0 +1,3265 @@
+{
+  "schemaVersion": 4,
+  "migrationId": "xlsx-production-v1",
+  "sourceFile": "Android_Media_Box_Business_Tracker_Accountant_Ready.xlsx",
+  "orders": [
+    {
+      "id": "PO-IMP-a7d66c2a71b4",
+      "maker": "vSeeBox",
+      "eta": "2025-04-05",
+      "paidDate": "2025-04-05",
+      "shipping": 0,
+      "fees": 0,
+      "credit": 0,
+      "lines": [
+        {
+          "productId": "p1",
+          "qty": 20,
+          "unitCost": 158.0,
+          "received": 20
+        }
+      ],
+      "status": "Received",
+      "imported": true,
+      "sourceRow": 2,
+      "notes": "Imported from original investment section"
+    },
+    {
+      "id": "PO-IMP-2e4a151bbfcd",
+      "maker": "vSeeBox",
+      "eta": "2025-05-05",
+      "paidDate": "2025-05-05",
+      "shipping": 0,
+      "fees": 0,
+      "credit": 0,
+      "lines": [
+        {
+          "productId": "p1",
+          "qty": 20,
+          "unitCost": 158.0,
+          "received": 20
+        }
+      ],
+      "status": "Received",
+      "imported": true,
+      "sourceRow": 3,
+      "notes": "Imported from original investment section"
+    },
+    {
+      "id": "PO-IMP-7324c4db3cae",
+      "maker": "vSeeBox",
+      "eta": "2025-06-05",
+      "paidDate": "2025-06-05",
+      "shipping": 0,
+      "fees": 0,
+      "credit": 0,
+      "lines": [
+        {
+          "productId": "p1",
+          "qty": 20,
+          "unitCost": 166.0,
+          "received": 20
+        }
+      ],
+      "status": "Received",
+      "imported": true,
+      "sourceRow": 4,
+      "notes": "Imported from original investment section"
+    },
+    {
+      "id": "PO-IMP-a12d35cb31c4",
+      "maker": "vSeeBox",
+      "eta": "2025-07-05",
+      "paidDate": "2025-07-05",
+      "shipping": 0,
+      "fees": 0,
+      "credit": 0,
+      "lines": [
+        {
+          "productId": "p1",
+          "qty": 40,
+          "unitCost": 191.0,
+          "received": 40
+        }
+      ],
+      "status": "Received",
+      "imported": true,
+      "sourceRow": 5,
+      "notes": "Imported from original investment section"
+    },
+    {
+      "id": "PO-IMP-f67fb994fd86",
+      "maker": "vSeeBox",
+      "eta": "2025-08-05",
+      "paidDate": "2025-08-05",
+      "shipping": 0,
+      "fees": 0,
+      "credit": 0,
+      "lines": [
+        {
+          "productId": "p1",
+          "qty": 60,
+          "unitCost": 190.0,
+          "received": 60
+        }
+      ],
+      "status": "Received",
+      "imported": true,
+      "sourceRow": 6,
+      "notes": "Imported from original investment section"
+    },
+    {
+      "id": "PO-IMP-d7badcf040d6",
+      "maker": "vSeeBox",
+      "eta": "2025-09-05",
+      "paidDate": "2025-09-05",
+      "shipping": 0,
+      "fees": 0,
+      "credit": 0,
+      "lines": [
+        {
+          "productId": "p1",
+          "qty": 40,
+          "unitCost": 197.5,
+          "received": 40
+        }
+      ],
+      "status": "Received",
+      "imported": true,
+      "sourceRow": 7,
+      "notes": "Imported from original investment section"
+    },
+    {
+      "id": "PO-IMP-a032145544f5",
+      "maker": "vSeeBox",
+      "eta": "2025-10-05",
+      "paidDate": "2025-10-05",
+      "shipping": 0,
+      "fees": 0,
+      "credit": 0,
+      "lines": [
+        {
+          "productId": "p1",
+          "qty": 20,
+          "unitCost": 0.0,
+          "received": 20
+        }
+      ],
+      "status": "Received",
+      "imported": true,
+      "sourceRow": 8,
+      "notes": "Imported from original investment section"
+    },
+    {
+      "id": "PO-IMP-a7e3d32e55f4",
+      "maker": "vSeeBox",
+      "eta": "2025-11-05",
+      "paidDate": "2025-11-05",
+      "shipping": 0,
+      "fees": 0,
+      "credit": 0,
+      "lines": [
+        {
+          "productId": "p1",
+          "qty": 20,
+          "unitCost": 200.0,
+          "received": 20
+        }
+      ],
+      "status": "Received",
+      "imported": true,
+      "sourceRow": 9,
+      "notes": "Imported from original investment section"
+    },
+    {
+      "id": "PO-IMP-a50f96e7b987",
+      "maker": "vSeeBox",
+      "eta": "2025-12-21",
+      "paidDate": "2025-12-21",
+      "shipping": 0,
+      "fees": 0,
+      "credit": 0,
+      "lines": [
+        {
+          "productId": "p1",
+          "qty": 40,
+          "unitCost": 200.0,
+          "received": 40
+        }
+      ],
+      "status": "Received",
+      "imported": true,
+      "sourceRow": 10,
+      "notes": "Imported from original investment section"
+    },
+    {
+      "id": "PO-IMP-803d15352bb6",
+      "maker": "We2uSat",
+      "eta": "2026-06-01",
+      "paidDate": "2026-06-01",
+      "shipping": 0,
+      "fees": 0,
+      "credit": 0,
+      "lines": [
+        {
+          "productId": "p3",
+          "qty": 20,
+          "unitCost": 148.0,
+          "received": 20
+        }
+      ],
+      "status": "Received",
+      "imported": true,
+      "sourceRow": 11,
+      "notes": "Imported from original investment section"
+    },
+    {
+      "id": "PO-IMP-e66db327d03a",
+      "maker": "vSeeBox",
+      "eta": "2026-07-13",
+      "paidDate": "2026-07-13",
+      "shipping": 0,
+      "fees": 0,
+      "credit": 0,
+      "lines": [
+        {
+          "productId": "p1",
+          "qty": 20,
+          "unitCost": 200.0,
+          "received": 20
+        }
+      ],
+      "status": "Received",
+      "imported": true,
+      "sourceRow": 12,
+      "notes": ""
+    },
+    {
+      "id": "PO-IMP-b0ec822cc101",
+      "maker": "vSeeBox",
+      "eta": "2026-08-08",
+      "paidDate": "2026-08-08",
+      "shipping": 0,
+      "fees": 0,
+      "credit": 0,
+      "lines": [
+        {
+          "productId": "p1",
+          "qty": 3,
+          "unitCost": 200.0,
+          "received": 3
+        }
+      ],
+      "status": "Received",
+      "imported": true,
+      "sourceRow": 13,
+      "notes": ""
+    },
+    {
+      "id": "PO-IMP-deaa7cf6e127",
+      "maker": "vSeeBox",
+      "eta": "",
+      "paidDate": "",
+      "shipping": 0,
+      "fees": 0,
+      "credit": 0,
+      "lines": [
+        {
+          "productId": "p1",
+          "qty": 20,
+          "unitCost": 200.0,
+          "received": 20
+        }
+      ],
+      "status": "Received",
+      "imported": true,
+      "sourceRow": 14,
+      "notes": ""
+    },
+    {
+      "id": "PO-IMP-f0f39654c27c",
+      "maker": "vSeeBox",
+      "eta": "2026-08-14",
+      "paidDate": "2026-08-14",
+      "shipping": 0,
+      "fees": 0,
+      "credit": 0,
+      "lines": [
+        {
+          "productId": "p1",
+          "qty": 40,
+          "unitCost": 200.0,
+          "received": 40
+        }
+      ],
+      "status": "Received",
+      "imported": true,
+      "sourceRow": 15,
+      "notes": ""
+    },
+    {
+      "id": "PO-IMP-92c9489e783f",
+      "maker": "vSeeBox",
+      "eta": "2026-09-04",
+      "paidDate": "2026-09-04",
+      "shipping": 0,
+      "fees": 0,
+      "credit": 0,
+      "lines": [
+        {
+          "productId": "p1",
+          "qty": 20,
+          "unitCost": 200.0,
+          "received": 20
+        }
+      ],
+      "status": "Received",
+      "imported": true,
+      "sourceRow": 16,
+      "notes": ""
+    }
+  ],
+  "sales": [
+    {
+      "id": "INV-IMP-27a48fa912f1",
+      "customer": "Jason Lohr",
+      "productId": "p1",
+      "qty": 5,
+      "unitPrice": 240.0,
+      "date": "",
+      "imported": true,
+      "sourceRow": 2,
+      "notes": "Converted from former Sales Partner section"
+    },
+    {
+      "id": "INV-IMP-c0b0e8230407",
+      "customer": "Bob Algeo",
+      "productId": "p1",
+      "qty": 10,
+      "unitPrice": 158.0,
+      "date": "",
+      "imported": true,
+      "sourceRow": 3,
+      "notes": "Converted from former Sales Partner section"
+    },
+    {
+      "id": "INV-IMP-f98d48c377ff",
+      "customer": "Bob Algeo",
+      "productId": "p1",
+      "qty": 10,
+      "unitPrice": 160.0,
+      "date": "",
+      "imported": true,
+      "sourceRow": 4,
+      "notes": "Converted from former Sales Partner section"
+    },
+    {
+      "id": "INV-IMP-4d7a11cb8a27",
+      "customer": "Jason Lohr",
+      "productId": "p1",
+      "qty": 4,
+      "unitPrice": 240.0,
+      "date": "",
+      "imported": true,
+      "sourceRow": 5,
+      "notes": "Converted from former Sales Partner section"
+    },
+    {
+      "id": "INV-IMP-d8993bdc4b2f",
+      "customer": "Bob Algeo",
+      "productId": "p1",
+      "qty": 10,
+      "unitPrice": 180.0,
+      "date": "",
+      "imported": true,
+      "sourceRow": 6,
+      "notes": "Converted from former Sales Partner section"
+    },
+    {
+      "id": "INV-IMP-e638f91f27ec",
+      "customer": "Jason Lohr",
+      "productId": "p1",
+      "qty": 3,
+      "unitPrice": 231.71,
+      "date": "",
+      "imported": true,
+      "sourceRow": 7,
+      "notes": "Converted from former Sales Partner section"
+    },
+    {
+      "id": "INV-IMP-16d0c893387f",
+      "customer": "Bob Algeo",
+      "productId": "p1",
+      "qty": 20,
+      "unitPrice": 191.0,
+      "date": "",
+      "imported": true,
+      "sourceRow": 8,
+      "notes": "Converted from former Sales Partner section"
+    },
+    {
+      "id": "INV-IMP-57dbfb2f476f",
+      "customer": "Jason Lohr",
+      "productId": "p1",
+      "qty": 2,
+      "unitPrice": 237.0,
+      "date": "",
+      "imported": true,
+      "sourceRow": 9,
+      "notes": "Converted from former Sales Partner section"
+    },
+    {
+      "id": "INV-IMP-6a2d4d9e7a08",
+      "customer": "Bob Algeo",
+      "productId": "p1",
+      "qty": 40,
+      "unitPrice": 200.0,
+      "date": "",
+      "imported": true,
+      "sourceRow": 10,
+      "notes": "Converted from former Sales Partner section"
+    },
+    {
+      "id": "INV-IMP-0950f9bc7f8f",
+      "customer": "Jason Lohr",
+      "productId": "p1",
+      "qty": 5,
+      "unitPrice": 240.0,
+      "date": "",
+      "imported": true,
+      "sourceRow": 11,
+      "notes": "Converted from former Sales Partner section"
+    },
+    {
+      "id": "INV-IMP-40d66cce2a42",
+      "customer": "Bob Algeo",
+      "productId": "p1",
+      "qty": 20,
+      "unitPrice": 197.5,
+      "date": "",
+      "imported": true,
+      "sourceRow": 12,
+      "notes": "Converted from former Sales Partner section"
+    },
+    {
+      "id": "INV-IMP-384915161c31",
+      "customer": "Jason Lohr",
+      "productId": "p1",
+      "qty": 5,
+      "unitPrice": 237.0,
+      "date": "",
+      "imported": true,
+      "sourceRow": 13,
+      "notes": "Converted from former Sales Partner section"
+    },
+    {
+      "id": "INV-IMP-f6ee381456ce",
+      "customer": "Bob Algeo",
+      "productId": "p1",
+      "qty": 10,
+      "unitPrice": 198.0,
+      "date": "",
+      "imported": true,
+      "sourceRow": 14,
+      "notes": "Converted from former Sales Partner section"
+    },
+    {
+      "id": "INV-IMP-def950e12c35",
+      "customer": "Jason Lohr",
+      "productId": "p1",
+      "qty": 4,
+      "unitPrice": 240.0,
+      "date": "",
+      "imported": true,
+      "sourceRow": 15,
+      "notes": "Converted from former Sales Partner section"
+    },
+    {
+      "id": "INV-IMP-a2791ad61208",
+      "customer": "Bob Algeo",
+      "productId": "p1",
+      "qty": 10,
+      "unitPrice": 200.0,
+      "date": "",
+      "imported": true,
+      "sourceRow": 16,
+      "notes": "Converted from former Sales Partner section"
+    },
+    {
+      "id": "INV-IMP-fecec4e775ec",
+      "customer": "Jason Lohr",
+      "productId": "p1",
+      "qty": 4,
+      "unitPrice": 240.0,
+      "date": "",
+      "imported": true,
+      "sourceRow": 17,
+      "notes": "Converted from former Sales Partner section"
+    },
+    {
+      "id": "INV-IMP-622cd73197d4",
+      "customer": "Bob Algeo",
+      "productId": "p1",
+      "qty": 30,
+      "unitPrice": 200.0,
+      "date": "",
+      "imported": true,
+      "sourceRow": 18,
+      "notes": "Converted from former Sales Partner section"
+    },
+    {
+      "id": "INV-IMP-e4a04d1d0d8c",
+      "customer": "Dave Lewis",
+      "productId": "p1",
+      "qty": 6,
+      "unitPrice": 246.67,
+      "date": "",
+      "imported": true,
+      "sourceRow": 19,
+      "notes": "Imported from original customer section"
+    },
+    {
+      "id": "INV-IMP-c0a5e6585867",
+      "customer": "Abel Bennett",
+      "productId": "p1",
+      "qty": 1,
+      "unitPrice": 160.0,
+      "date": "",
+      "imported": true,
+      "sourceRow": 20,
+      "notes": "Imported from original customer section"
+    },
+    {
+      "id": "INV-IMP-b5dfb49f2edf",
+      "customer": "Fred Sanchez",
+      "productId": "p1",
+      "qty": 1,
+      "unitPrice": 225.0,
+      "date": "",
+      "imported": true,
+      "sourceRow": 21,
+      "notes": "Imported from original customer section"
+    },
+    {
+      "id": "INV-IMP-092a29ab4d8a",
+      "customer": "Angela Schulz",
+      "productId": "p1",
+      "qty": 1,
+      "unitPrice": 220.0,
+      "date": "",
+      "imported": true,
+      "sourceRow": 22,
+      "notes": "Imported from original customer section"
+    },
+    {
+      "id": "INV-IMP-156c2a08a237",
+      "customer": "Michelle Smith",
+      "productId": "p1",
+      "qty": 1,
+      "unitPrice": 240.0,
+      "date": "",
+      "imported": true,
+      "sourceRow": 26,
+      "notes": "Imported from original customer section"
+    },
+    {
+      "id": "INV-IMP-a99d8128fb73",
+      "customer": "Mateo Salinas",
+      "productId": "p1",
+      "qty": 1,
+      "unitPrice": 50.0,
+      "date": "",
+      "imported": true,
+      "sourceRow": 27,
+      "notes": "Remaining $130 waived; sale price adjusted to amount actually collected."
+    },
+    {
+      "id": "INV-IMP-1662a4c34320",
+      "customer": "Mathew Sanchez",
+      "productId": "p1",
+      "qty": 1,
+      "unitPrice": 225.0,
+      "date": "",
+      "imported": true,
+      "sourceRow": 28,
+      "notes": "Imported from original customer section"
+    },
+    {
+      "id": "INV-IMP-3546b970a95c",
+      "customer": "Michael Sanchez",
+      "productId": "p1",
+      "qty": 1,
+      "unitPrice": 225.0,
+      "date": "",
+      "imported": true,
+      "sourceRow": 29,
+      "notes": "Imported from original customer section"
+    },
+    {
+      "id": "INV-IMP-557bd585b9a7",
+      "customer": "Bob Algeo",
+      "productId": "p1",
+      "qty": 1,
+      "unitPrice": 225.0,
+      "date": "",
+      "imported": true,
+      "sourceRow": 30,
+      "notes": "Imported from original customer section"
+    },
+    {
+      "id": "INV-IMP-62fd830e9065",
+      "customer": "Sandra Stevens",
+      "productId": "p1",
+      "qty": 3,
+      "unitPrice": 271.4,
+      "date": "",
+      "imported": true,
+      "sourceRow": 31,
+      "notes": "Imported from original customer section"
+    },
+    {
+      "id": "INV-IMP-9c07462e63c4",
+      "customer": "Sandra Stevens",
+      "productId": "p1",
+      "qty": 1,
+      "unitPrice": 281.4,
+      "date": "",
+      "imported": true,
+      "sourceRow": 32,
+      "notes": "Imported from original customer section"
+    },
+    {
+      "id": "INV-IMP-af1787aec238",
+      "customer": "WIlliam Murphy",
+      "productId": "p1",
+      "qty": 2,
+      "unitPrice": 269.99,
+      "date": "",
+      "imported": true,
+      "sourceRow": 37,
+      "notes": "Imported from original customer section"
+    },
+    {
+      "id": "INV-IMP-96f4439f81dc",
+      "customer": "Bob Algeo",
+      "productId": "p1",
+      "qty": 8,
+      "unitPrice": 230.0,
+      "date": "",
+      "imported": true,
+      "sourceRow": 38,
+      "notes": "Imported from original customer section"
+    },
+    {
+      "id": "INV-IMP-972c31b73f14",
+      "customer": "Esmeralda Ayala",
+      "productId": "p1",
+      "qty": 1,
+      "unitPrice": 289.0,
+      "date": "",
+      "imported": true,
+      "sourceRow": 39,
+      "notes": "Imported from original customer section"
+    },
+    {
+      "id": "INV-IMP-8acbac4c77de",
+      "customer": "Patricia Galvan",
+      "productId": "p1",
+      "qty": 1,
+      "unitPrice": 279.99,
+      "date": "",
+      "imported": true,
+      "sourceRow": 41,
+      "notes": "Imported from original customer section"
+    },
+    {
+      "id": "INV-IMP-bf99a5da3ece",
+      "customer": "Michelle Smith 2 Friends",
+      "productId": "p1",
+      "qty": 2,
+      "unitPrice": 250.0,
+      "date": "",
+      "imported": true,
+      "sourceRow": 42,
+      "notes": "Imported from original customer section"
+    },
+    {
+      "id": "INV-IMP-356349d9e69c",
+      "customer": "Nancy Paulick",
+      "productId": "p1",
+      "qty": 1,
+      "unitPrice": 279.99,
+      "date": "",
+      "imported": true,
+      "sourceRow": 43,
+      "notes": "Imported from original customer section"
+    },
+    {
+      "id": "INV-IMP-d00c297a5586",
+      "customer": "Wade Witaker",
+      "productId": "p1",
+      "qty": 1,
+      "unitPrice": 299.0,
+      "date": "",
+      "imported": true,
+      "sourceRow": 44,
+      "notes": "Imported from original customer section"
+    },
+    {
+      "id": "INV-IMP-a4ff3a0de6bb",
+      "customer": "Lloyd Schott",
+      "productId": "p1",
+      "qty": 1,
+      "unitPrice": 251.99,
+      "date": "",
+      "imported": true,
+      "sourceRow": 45,
+      "notes": "Imported from original customer section"
+    },
+    {
+      "id": "INV-IMP-4265991ec1e9",
+      "customer": "Chris Grahm",
+      "productId": "p1",
+      "qty": 1,
+      "unitPrice": 249.0,
+      "date": "",
+      "imported": true,
+      "sourceRow": 46,
+      "notes": "Imported from original customer section"
+    },
+    {
+      "id": "INV-IMP-db57da9fcf1c",
+      "customer": "Kirk Moga",
+      "productId": "p1",
+      "qty": 1,
+      "unitPrice": 250.0,
+      "date": "",
+      "imported": true,
+      "sourceRow": 47,
+      "notes": "Imported from original customer section"
+    },
+    {
+      "id": "INV-IMP-6382c93bb938",
+      "customer": "Kendra Fuller",
+      "productId": "p1",
+      "qty": 1,
+      "unitPrice": 240.0,
+      "date": "",
+      "imported": true,
+      "sourceRow": 48,
+      "notes": "Imported from original customer section"
+    },
+    {
+      "id": "INV-IMP-9815757b1d1a",
+      "customer": "Gary Anderson",
+      "productId": "p1",
+      "qty": 1,
+      "unitPrice": 250.0,
+      "date": "",
+      "imported": true,
+      "sourceRow": 49,
+      "notes": "Imported from original customer section"
+    },
+    {
+      "id": "INV-IMP-fe517939dcce",
+      "customer": "Barbara Harris",
+      "productId": "p1",
+      "qty": 1,
+      "unitPrice": 299.0,
+      "date": "",
+      "imported": true,
+      "sourceRow": 50,
+      "notes": "Imported from original customer section"
+    },
+    {
+      "id": "INV-IMP-d967707b5755",
+      "customer": "Sandra Stevens",
+      "productId": "p1",
+      "qty": 2,
+      "unitPrice": 299.99,
+      "date": "",
+      "imported": true,
+      "sourceRow": 51,
+      "notes": "Imported from original customer section"
+    },
+    {
+      "id": "INV-IMP-5caf292e473a",
+      "customer": "Sandra Stevens",
+      "productId": "p1",
+      "qty": 1,
+      "unitPrice": 299.99,
+      "date": "",
+      "imported": true,
+      "sourceRow": 52,
+      "notes": "Imported from original customer section"
+    },
+    {
+      "id": "INV-IMP-f961908ff9aa",
+      "customer": "Ryan Hordorovitch",
+      "productId": "p1",
+      "qty": 4,
+      "unitPrice": 237.0,
+      "date": "",
+      "imported": true,
+      "sourceRow": 53,
+      "notes": "Imported from original customer section"
+    },
+    {
+      "id": "INV-IMP-9a1e7bd7dac4",
+      "customer": "Wade Witaker",
+      "productId": "p1",
+      "qty": 3,
+      "unitPrice": 230.0,
+      "date": "",
+      "imported": true,
+      "sourceRow": 54,
+      "notes": "Imported from original customer section"
+    },
+    {
+      "id": "INV-IMP-08b238fdd865",
+      "customer": "Bobby Bennet",
+      "productId": "p1",
+      "qty": 1,
+      "unitPrice": 265.0,
+      "date": "",
+      "imported": true,
+      "sourceRow": 55,
+      "notes": "Imported from original customer section"
+    },
+    {
+      "id": "INV-IMP-9a177bb601a0",
+      "customer": "Patrick Reagan",
+      "productId": "p1",
+      "qty": 1,
+      "unitPrice": 288.0,
+      "date": "",
+      "imported": true,
+      "sourceRow": 57,
+      "notes": "Imported from original customer section"
+    },
+    {
+      "id": "INV-IMP-c814248a97ed",
+      "customer": "Jesse Turner",
+      "productId": "p1",
+      "qty": 1,
+      "unitPrice": 288.0,
+      "date": "",
+      "imported": true,
+      "sourceRow": 58,
+      "notes": "Imported from original customer section"
+    },
+    {
+      "id": "INV-IMP-e97bed4553f1",
+      "customer": "Michael Gallagher",
+      "productId": "p1",
+      "qty": 1,
+      "unitPrice": 288.0,
+      "date": "",
+      "imported": true,
+      "sourceRow": 59,
+      "notes": "Imported from original customer section"
+    },
+    {
+      "id": "INV-IMP-c6be3efcf836",
+      "customer": "Brent Collins",
+      "productId": "p1",
+      "qty": 1,
+      "unitPrice": 288.0,
+      "date": "",
+      "imported": true,
+      "sourceRow": 60,
+      "notes": "Imported from original customer section"
+    },
+    {
+      "id": "INV-IMP-18444baeadb8",
+      "customer": "Even Montgomery",
+      "productId": "p1",
+      "qty": 1,
+      "unitPrice": 389.0,
+      "date": "",
+      "imported": true,
+      "sourceRow": 61,
+      "notes": "Imported from original customer section"
+    },
+    {
+      "id": "INV-IMP-d750c20b5565",
+      "customer": "Ryan Hordorovitch",
+      "productId": "p1",
+      "qty": 2,
+      "unitPrice": 265.0,
+      "date": "",
+      "imported": true,
+      "sourceRow": 62,
+      "notes": "Imported from original customer section"
+    },
+    {
+      "id": "INV-IMP-290dcdefb5b8",
+      "customer": "Ryan Hordorovitch",
+      "productId": "p1",
+      "qty": 2,
+      "unitPrice": 265.0,
+      "date": "",
+      "imported": true,
+      "sourceRow": 63,
+      "notes": "Imported from original customer section"
+    },
+    {
+      "id": "INV-IMP-7522f2c9a001",
+      "customer": "Kwon",
+      "productId": "p1",
+      "qty": 1,
+      "unitPrice": 255.0,
+      "date": "",
+      "imported": true,
+      "sourceRow": 64,
+      "notes": "Imported from original customer section"
+    },
+    {
+      "id": "INV-IMP-1cf570052156",
+      "customer": "Avionics Kid",
+      "productId": "p1",
+      "qty": 1,
+      "unitPrice": 250.0,
+      "date": "",
+      "imported": true,
+      "sourceRow": 65,
+      "notes": "Imported from original customer section"
+    },
+    {
+      "id": "INV-IMP-38d2155e72cf",
+      "customer": "Bob Algeo",
+      "productId": "p1",
+      "qty": 12,
+      "unitPrice": 200.0,
+      "date": "",
+      "imported": true,
+      "sourceRow": 66,
+      "notes": "Imported from original customer section"
+    },
+    {
+      "id": "INV-IMP-b7ea8d79a0d1",
+      "customer": "Billy",
+      "productId": "p1",
+      "qty": 2,
+      "unitPrice": 250.0,
+      "date": "",
+      "imported": true,
+      "sourceRow": 67,
+      "notes": "Imported from original customer section"
+    },
+    {
+      "id": "INV-IMP-e1572c672c92",
+      "customer": "Ryan Hodorovitch",
+      "productId": "p1",
+      "qty": 5,
+      "unitPrice": 265.0,
+      "date": "",
+      "imported": true,
+      "sourceRow": 68,
+      "notes": "Ryan owes $1,325 for the last 5 vSeeBox purchases."
+    },
+    {
+      "id": "INV-IMP-cb53c589c038",
+      "customer": "Bob Algeo",
+      "productId": "p1",
+      "qty": 19,
+      "unitPrice": 200.0,
+      "date": "",
+      "imported": true,
+      "sourceRow": 70,
+      "notes": ""
+    },
+    {
+      "id": "INV-IMP-17e62c3d6e87",
+      "customer": "Jason Lohr",
+      "productId": "p3",
+      "qty": 1,
+      "unitPrice": 205.0,
+      "date": "",
+      "imported": true,
+      "sourceRow": 71,
+      "notes": ""
+    },
+    {
+      "id": "INV-IMP-6a7d585d3820",
+      "customer": "Jason Lohr",
+      "productId": "p3",
+      "qty": 2,
+      "unitPrice": 205.0,
+      "date": "",
+      "imported": true,
+      "sourceRow": 72,
+      "notes": ""
+    },
+    {
+      "id": "INV-IMP-2ea56da13f11",
+      "customer": "Jason Lohr",
+      "productId": "p1",
+      "qty": 2,
+      "unitPrice": 240.0,
+      "date": "",
+      "imported": true,
+      "sourceRow": 73,
+      "notes": ""
+    },
+    {
+      "id": "INV-IMP-65edaef427a0",
+      "customer": "Dave Lewis",
+      "productId": "p1",
+      "qty": 2,
+      "unitPrice": 260.0,
+      "date": "",
+      "imported": true,
+      "sourceRow": 74,
+      "notes": ""
+    },
+    {
+      "id": "INV-IMP-c84f3e0713b8",
+      "customer": "Bob Algeo",
+      "productId": "p1",
+      "qty": 50,
+      "unitPrice": 200.0,
+      "date": "",
+      "imported": true,
+      "sourceRow": 75,
+      "notes": ""
+    },
+    {
+      "id": "INV-IMP-deb3deb18faa",
+      "customer": "Abel Bennett",
+      "productId": "p1",
+      "qty": 2,
+      "unitPrice": 260.0,
+      "date": "2026-08-31",
+      "imported": true,
+      "sourceRow": 76,
+      "notes": ""
+    },
+    {
+      "id": "INV-IMP-16360af2019a",
+      "customer": "Lindsay - Bayou Vista",
+      "productId": "p1",
+      "qty": 1,
+      "unitPrice": 260.0,
+      "date": "2026-09-01",
+      "imported": true,
+      "sourceRow": 77,
+      "notes": ""
+    },
+    {
+      "id": "INV-IMP-6d6712bf3685",
+      "customer": "Bob Algeo",
+      "productId": "p1",
+      "qty": 20,
+      "unitPrice": 200.0,
+      "date": "2026-09-06",
+      "imported": true,
+      "sourceRow": 78,
+      "notes": ""
+    },
+    {
+      "id": "INV-IMP-2596932f6e96",
+      "customer": "Bob Algeo",
+      "productId": "p3",
+      "qty": 10,
+      "unitPrice": 148.0,
+      "date": "2026-09-06",
+      "imported": true,
+      "sourceRow": 79,
+      "notes": ""
+    },
+    {
+      "id": "INV-IMP-325f6b6e6893",
+      "customer": "Abel Bennett",
+      "productId": "p1",
+      "qty": 2,
+      "unitPrice": 265.0,
+      "date": "2026-09-06",
+      "imported": true,
+      "sourceRow": 80,
+      "notes": ""
+    },
+    {
+      "id": "INV-IMP-0d62e9987cb7",
+      "customer": "Abel Bennett",
+      "productId": "p3",
+      "qty": 2,
+      "unitPrice": 225.0,
+      "date": "2026-09-06",
+      "imported": true,
+      "sourceRow": 81,
+      "notes": ""
+    },
+    {
+      "id": "INV-IMP-58832735ca2d",
+      "customer": "Nate Renz",
+      "productId": "p1",
+      "qty": 1,
+      "unitPrice": 265.0,
+      "date": "2026-09-14",
+      "imported": true,
+      "sourceRow": 82,
+      "notes": ""
+    },
+    {
+      "id": "INV-IMP-b077bde6010a",
+      "customer": "Gary Anderson",
+      "productId": "p1",
+      "qty": 1,
+      "unitPrice": 275.0,
+      "date": "2026-09-13",
+      "imported": true,
+      "sourceRow": 83,
+      "notes": ""
+    },
+    {
+      "id": "INV-IMP-599d59e178e4",
+      "customer": "Robert Ramirez",
+      "productId": "p1",
+      "qty": 1,
+      "unitPrice": 265.0,
+      "date": "2026-09-22",
+      "imported": true,
+      "sourceRow": 84,
+      "notes": ""
+    },
+    {
+      "id": "INV-IMP-b4f1bb766972",
+      "customer": "Gary Sandoval",
+      "productId": "p1",
+      "qty": 1,
+      "unitPrice": 265.0,
+      "date": "",
+      "imported": true,
+      "sourceRow": 85,
+      "notes": ""
+    }
+  ],
+  "payments": [
+    {
+      "id": "PAY-IMP-1eef7f47ce60",
+      "saleId": "INV-IMP-27a48fa912f1",
+      "amount": 1550.0,
+      "method": "Imported / Unknown",
+      "date": "",
+      "imported": true
+    },
+    {
+      "id": "PAY-IMP-c0b0e8230407",
+      "saleId": "INV-IMP-c0b0e8230407",
+      "amount": 1580.0,
+      "method": "Imported / Unknown",
+      "date": "",
+      "imported": true
+    },
+    {
+      "id": "PAY-IMP-f98d48c377ff",
+      "saleId": "INV-IMP-f98d48c377ff",
+      "amount": 1600.0,
+      "method": "Imported / Unknown",
+      "date": "",
+      "imported": true
+    },
+    {
+      "id": "PAY-IMP-413baf185ff0",
+      "saleId": "INV-IMP-4d7a11cb8a27",
+      "amount": 900.0,
+      "method": "Imported / Unknown",
+      "date": "",
+      "imported": true
+    },
+    {
+      "id": "PAY-IMP-d8993bdc4b2f",
+      "saleId": "INV-IMP-d8993bdc4b2f",
+      "amount": 1800.0,
+      "method": "Imported / Unknown",
+      "date": "",
+      "imported": true
+    },
+    {
+      "id": "PAY-IMP-e638f91f27ec",
+      "saleId": "INV-IMP-e638f91f27ec",
+      "amount": 695.13,
+      "method": "Imported / Unknown",
+      "date": "",
+      "imported": true
+    },
+    {
+      "id": "PAY-IMP-16d0c893387f",
+      "saleId": "INV-IMP-16d0c893387f",
+      "amount": 3820.0,
+      "method": "Imported / Unknown",
+      "date": "",
+      "imported": true
+    },
+    {
+      "id": "PAY-IMP-57dbfb2f476f",
+      "saleId": "INV-IMP-57dbfb2f476f",
+      "amount": 474.0,
+      "method": "Imported / Unknown",
+      "date": "",
+      "imported": true
+    },
+    {
+      "id": "PAY-IMP-6a2d4d9e7a08",
+      "saleId": "INV-IMP-6a2d4d9e7a08",
+      "amount": 8000.0,
+      "method": "Imported / Unknown",
+      "date": "",
+      "imported": true
+    },
+    {
+      "id": "PAY-IMP-0950f9bc7f8f",
+      "saleId": "INV-IMP-0950f9bc7f8f",
+      "amount": 1200.0,
+      "method": "Imported / Unknown",
+      "date": "",
+      "imported": true
+    },
+    {
+      "id": "PAY-IMP-40d66cce2a42",
+      "saleId": "INV-IMP-40d66cce2a42",
+      "amount": 3950.0,
+      "method": "Imported / Unknown",
+      "date": "",
+      "imported": true
+    },
+    {
+      "id": "PAY-IMP-384915161c31",
+      "saleId": "INV-IMP-384915161c31",
+      "amount": 1185.0,
+      "method": "Imported / Unknown",
+      "date": "",
+      "imported": true
+    },
+    {
+      "id": "PAY-IMP-f6ee381456ce",
+      "saleId": "INV-IMP-f6ee381456ce",
+      "amount": 1980.0,
+      "method": "Imported / Unknown",
+      "date": "",
+      "imported": true
+    },
+    {
+      "id": "PAY-IMP-def950e12c35",
+      "saleId": "INV-IMP-def950e12c35",
+      "amount": 960.0,
+      "method": "Imported / Unknown",
+      "date": "",
+      "imported": true
+    },
+    {
+      "id": "PAY-IMP-a2791ad61208",
+      "saleId": "INV-IMP-a2791ad61208",
+      "amount": 2000.0,
+      "method": "Imported / Unknown",
+      "date": "",
+      "imported": true
+    },
+    {
+      "id": "PAY-IMP-fecec4e775ec",
+      "saleId": "INV-IMP-fecec4e775ec",
+      "amount": 960.0,
+      "method": "Imported / Unknown",
+      "date": "",
+      "imported": true
+    },
+    {
+      "id": "PAY-IMP-622cd73197d4",
+      "saleId": "INV-IMP-622cd73197d4",
+      "amount": 6000.0,
+      "method": "Imported / Unknown",
+      "date": "",
+      "imported": true
+    },
+    {
+      "id": "PAY-IMP-0c35cb78f5f0",
+      "saleId": "INV-IMP-e4a04d1d0d8c",
+      "amount": 1480.0,
+      "method": "Imported / Unknown",
+      "date": "",
+      "imported": true
+    },
+    {
+      "id": "PAY-IMP-c0a5e6585867",
+      "saleId": "INV-IMP-c0a5e6585867",
+      "amount": 160.0,
+      "method": "Imported / Unknown",
+      "date": "",
+      "imported": true
+    },
+    {
+      "id": "PAY-IMP-b5dfb49f2edf",
+      "saleId": "INV-IMP-b5dfb49f2edf",
+      "amount": 225.0,
+      "method": "Imported / Unknown",
+      "date": "",
+      "imported": true
+    },
+    {
+      "id": "PAY-IMP-092a29ab4d8a",
+      "saleId": "INV-IMP-092a29ab4d8a",
+      "amount": 220.0,
+      "method": "Imported / Unknown",
+      "date": "",
+      "imported": true
+    },
+    {
+      "id": "PAY-IMP-156c2a08a237",
+      "saleId": "INV-IMP-156c2a08a237",
+      "amount": 240.0,
+      "method": "Imported / Unknown",
+      "date": "",
+      "imported": true
+    },
+    {
+      "id": "PAY-IMP-a99d8128fb73",
+      "saleId": "INV-IMP-a99d8128fb73",
+      "amount": 50.0,
+      "method": "Imported / Unknown",
+      "date": "",
+      "imported": true
+    },
+    {
+      "id": "PAY-IMP-1662a4c34320",
+      "saleId": "INV-IMP-1662a4c34320",
+      "amount": 225.0,
+      "method": "Imported / Unknown",
+      "date": "",
+      "imported": true
+    },
+    {
+      "id": "PAY-IMP-3546b970a95c",
+      "saleId": "INV-IMP-3546b970a95c",
+      "amount": 225.0,
+      "method": "Imported / Unknown",
+      "date": "",
+      "imported": true
+    },
+    {
+      "id": "PAY-IMP-557bd585b9a7",
+      "saleId": "INV-IMP-557bd585b9a7",
+      "amount": 225.0,
+      "method": "Imported / Unknown",
+      "date": "",
+      "imported": true
+    },
+    {
+      "id": "PAY-IMP-2323f0e052bd",
+      "saleId": "INV-IMP-62fd830e9065",
+      "amount": 814.2,
+      "method": "Imported / Unknown",
+      "date": "",
+      "imported": true
+    },
+    {
+      "id": "PAY-IMP-9c07462e63c4",
+      "saleId": "INV-IMP-9c07462e63c4",
+      "amount": 281.4,
+      "method": "Imported / Unknown",
+      "date": "",
+      "imported": true
+    },
+    {
+      "id": "PAY-IMP-af1787aec238",
+      "saleId": "INV-IMP-af1787aec238",
+      "amount": 539.98,
+      "method": "Imported / Unknown",
+      "date": "",
+      "imported": true
+    },
+    {
+      "id": "PAY-IMP-96f4439f81dc",
+      "saleId": "INV-IMP-96f4439f81dc",
+      "amount": 1840.0,
+      "method": "Imported / Unknown",
+      "date": "",
+      "imported": true
+    },
+    {
+      "id": "PAY-IMP-972c31b73f14",
+      "saleId": "INV-IMP-972c31b73f14",
+      "amount": 289.0,
+      "method": "Imported / Unknown",
+      "date": "",
+      "imported": true
+    },
+    {
+      "id": "PAY-IMP-8acbac4c77de",
+      "saleId": "INV-IMP-8acbac4c77de",
+      "amount": 279.99,
+      "method": "Imported / Unknown",
+      "date": "",
+      "imported": true
+    },
+    {
+      "id": "PAY-IMP-bf99a5da3ece",
+      "saleId": "INV-IMP-bf99a5da3ece",
+      "amount": 500.0,
+      "method": "Imported / Unknown",
+      "date": "",
+      "imported": true
+    },
+    {
+      "id": "PAY-IMP-356349d9e69c",
+      "saleId": "INV-IMP-356349d9e69c",
+      "amount": 279.99,
+      "method": "Imported / Unknown",
+      "date": "",
+      "imported": true
+    },
+    {
+      "id": "PAY-IMP-d00c297a5586",
+      "saleId": "INV-IMP-d00c297a5586",
+      "amount": 299.0,
+      "method": "Imported / Unknown",
+      "date": "",
+      "imported": true
+    },
+    {
+      "id": "PAY-IMP-a4ff3a0de6bb",
+      "saleId": "INV-IMP-a4ff3a0de6bb",
+      "amount": 251.99,
+      "method": "Imported / Unknown",
+      "date": "",
+      "imported": true
+    },
+    {
+      "id": "PAY-IMP-4265991ec1e9",
+      "saleId": "INV-IMP-4265991ec1e9",
+      "amount": 249.0,
+      "method": "Imported / Unknown",
+      "date": "",
+      "imported": true
+    },
+    {
+      "id": "PAY-IMP-db57da9fcf1c",
+      "saleId": "INV-IMP-db57da9fcf1c",
+      "amount": 250.0,
+      "method": "Imported / Unknown",
+      "date": "",
+      "imported": true
+    },
+    {
+      "id": "PAY-IMP-6382c93bb938",
+      "saleId": "INV-IMP-6382c93bb938",
+      "amount": 240.0,
+      "method": "Imported / Unknown",
+      "date": "",
+      "imported": true
+    },
+    {
+      "id": "PAY-IMP-9815757b1d1a",
+      "saleId": "INV-IMP-9815757b1d1a",
+      "amount": 250.0,
+      "method": "Imported / Unknown",
+      "date": "",
+      "imported": true
+    },
+    {
+      "id": "PAY-IMP-fe517939dcce",
+      "saleId": "INV-IMP-fe517939dcce",
+      "amount": 299.0,
+      "method": "Imported / Unknown",
+      "date": "",
+      "imported": true
+    },
+    {
+      "id": "PAY-IMP-d967707b5755",
+      "saleId": "INV-IMP-d967707b5755",
+      "amount": 599.98,
+      "method": "Imported / Unknown",
+      "date": "",
+      "imported": true
+    },
+    {
+      "id": "PAY-IMP-5caf292e473a",
+      "saleId": "INV-IMP-5caf292e473a",
+      "amount": 299.99,
+      "method": "Imported / Unknown",
+      "date": "",
+      "imported": true
+    },
+    {
+      "id": "PAY-IMP-f961908ff9aa",
+      "saleId": "INV-IMP-f961908ff9aa",
+      "amount": 948.0,
+      "method": "Imported / Unknown",
+      "date": "",
+      "imported": true
+    },
+    {
+      "id": "PAY-IMP-9a1e7bd7dac4",
+      "saleId": "INV-IMP-9a1e7bd7dac4",
+      "amount": 690.0,
+      "method": "Imported / Unknown",
+      "date": "",
+      "imported": true
+    },
+    {
+      "id": "PAY-IMP-08b238fdd865",
+      "saleId": "INV-IMP-08b238fdd865",
+      "amount": 265.0,
+      "method": "Imported / Unknown",
+      "date": "",
+      "imported": true
+    },
+    {
+      "id": "PAY-IMP-9a177bb601a0",
+      "saleId": "INV-IMP-9a177bb601a0",
+      "amount": 288.0,
+      "method": "Imported / Unknown",
+      "date": "",
+      "imported": true
+    },
+    {
+      "id": "PAY-IMP-c814248a97ed",
+      "saleId": "INV-IMP-c814248a97ed",
+      "amount": 288.0,
+      "method": "Imported / Unknown",
+      "date": "",
+      "imported": true
+    },
+    {
+      "id": "PAY-IMP-e97bed4553f1",
+      "saleId": "INV-IMP-e97bed4553f1",
+      "amount": 288.0,
+      "method": "Imported / Unknown",
+      "date": "",
+      "imported": true
+    },
+    {
+      "id": "PAY-IMP-c6be3efcf836",
+      "saleId": "INV-IMP-c6be3efcf836",
+      "amount": 288.0,
+      "method": "Imported / Unknown",
+      "date": "",
+      "imported": true
+    },
+    {
+      "id": "PAY-IMP-18444baeadb8",
+      "saleId": "INV-IMP-18444baeadb8",
+      "amount": 389.0,
+      "method": "Imported / Unknown",
+      "date": "",
+      "imported": true
+    },
+    {
+      "id": "PAY-IMP-d750c20b5565",
+      "saleId": "INV-IMP-d750c20b5565",
+      "amount": 530.0,
+      "method": "Imported / Unknown",
+      "date": "",
+      "imported": true
+    },
+    {
+      "id": "PAY-IMP-290dcdefb5b8",
+      "saleId": "INV-IMP-290dcdefb5b8",
+      "amount": 530.0,
+      "method": "Imported / Unknown",
+      "date": "",
+      "imported": true
+    },
+    {
+      "id": "PAY-IMP-7522f2c9a001",
+      "saleId": "INV-IMP-7522f2c9a001",
+      "amount": 255.0,
+      "method": "Imported / Unknown",
+      "date": "",
+      "imported": true
+    },
+    {
+      "id": "PAY-IMP-1cf570052156",
+      "saleId": "INV-IMP-1cf570052156",
+      "amount": 250.0,
+      "method": "Imported / Unknown",
+      "date": "",
+      "imported": true
+    },
+    {
+      "id": "PAY-IMP-38d2155e72cf",
+      "saleId": "INV-IMP-38d2155e72cf",
+      "amount": 2400.0,
+      "method": "Imported / Unknown",
+      "date": "",
+      "imported": true
+    },
+    {
+      "id": "PAY-IMP-b7ea8d79a0d1",
+      "saleId": "INV-IMP-b7ea8d79a0d1",
+      "amount": 500.0,
+      "method": "Imported / Unknown",
+      "date": "",
+      "imported": true
+    },
+    {
+      "id": "PAY-IMP-e1572c672c92",
+      "saleId": "INV-IMP-e1572c672c92",
+      "amount": 1325.0,
+      "method": "Imported / Unknown",
+      "date": "",
+      "imported": true
+    },
+    {
+      "id": "PAY-IMP-cb53c589c038",
+      "saleId": "INV-IMP-cb53c589c038",
+      "amount": 3800.0,
+      "method": "Imported / Unknown",
+      "date": "",
+      "imported": true
+    },
+    {
+      "id": "PAY-IMP-17e62c3d6e87",
+      "saleId": "INV-IMP-17e62c3d6e87",
+      "amount": 205.0,
+      "method": "Imported / Unknown",
+      "date": "",
+      "imported": true
+    },
+    {
+      "id": "PAY-IMP-6a7d585d3820",
+      "saleId": "INV-IMP-6a7d585d3820",
+      "amount": 410.0,
+      "method": "Imported / Unknown",
+      "date": "",
+      "imported": true
+    },
+    {
+      "id": "PAY-IMP-2ea56da13f11",
+      "saleId": "INV-IMP-2ea56da13f11",
+      "amount": 480.0,
+      "method": "Imported / Unknown",
+      "date": "",
+      "imported": true
+    },
+    {
+      "id": "PAY-IMP-65edaef427a0",
+      "saleId": "INV-IMP-65edaef427a0",
+      "amount": 520.0,
+      "method": "Imported / Unknown",
+      "date": "",
+      "imported": true
+    },
+    {
+      "id": "PAY-IMP-c84f3e0713b8",
+      "saleId": "INV-IMP-c84f3e0713b8",
+      "amount": 10000.0,
+      "method": "Imported / Unknown",
+      "date": "",
+      "imported": true
+    },
+    {
+      "id": "PAY-IMP-7a0b073787a1",
+      "saleId": "INV-IMP-deb3deb18faa",
+      "amount": 265.0,
+      "method": "Imported / Unknown",
+      "date": "2026-08-31",
+      "imported": true
+    },
+    {
+      "id": "PAY-IMP-16360af2019a",
+      "saleId": "INV-IMP-16360af2019a",
+      "amount": 260.0,
+      "method": "Imported / Unknown",
+      "date": "2026-09-01",
+      "imported": true
+    },
+    {
+      "id": "PAY-IMP-6d6712bf3685",
+      "saleId": "INV-IMP-6d6712bf3685",
+      "amount": 4000.0,
+      "method": "Imported / Unknown",
+      "date": "2026-09-06",
+      "imported": true
+    },
+    {
+      "id": "PAY-IMP-2596932f6e96",
+      "saleId": "INV-IMP-2596932f6e96",
+      "amount": 1480.0,
+      "method": "Imported / Unknown",
+      "date": "2026-09-06",
+      "imported": true
+    },
+    {
+      "id": "PAY-IMP-325f6b6e6893",
+      "saleId": "INV-IMP-325f6b6e6893",
+      "amount": 530.0,
+      "method": "Imported / Unknown",
+      "date": "2026-09-06",
+      "imported": true
+    },
+    {
+      "id": "PAY-IMP-0d62e9987cb7",
+      "saleId": "INV-IMP-0d62e9987cb7",
+      "amount": 450.0,
+      "method": "Imported / Unknown",
+      "date": "2026-09-06",
+      "imported": true
+    },
+    {
+      "id": "PAY-IMP-b077bde6010a",
+      "saleId": "INV-IMP-b077bde6010a",
+      "amount": 275.0,
+      "method": "Imported / Unknown",
+      "date": "2026-09-13",
+      "imported": true
+    },
+    {
+      "id": "PAY-IMP-599d59e178e4",
+      "saleId": "INV-IMP-599d59e178e4",
+      "amount": 265.0,
+      "method": "Imported / Unknown",
+      "date": "2026-09-22",
+      "imported": true
+    }
+  ],
+  "expenses": [
+    {
+      "id": "EXP-IMP-6e535cf9fc74",
+      "vendor": "Shipping to PA - Customer",
+      "category": "Shipping",
+      "taxCategory": "Shipping / Fulfillment",
+      "receiptStatus": "Needs Receipt Check",
+      "amount": 11.35,
+      "date": "2025-09-16",
+      "method": "Imported / Unknown",
+      "notes": "Imported from 2025 expense tab",
+      "imported": true
+    },
+    {
+      "id": "EXP-IMP-226aa4c27172",
+      "vendor": "Shipping to PA - Customer",
+      "category": "Shipping",
+      "taxCategory": "Shipping / Fulfillment",
+      "receiptStatus": "Needs Receipt Check",
+      "amount": 33.55,
+      "date": "2025-10-06",
+      "method": "Imported / Unknown",
+      "notes": "Imported from 2025 expense tab",
+      "imported": true
+    },
+    {
+      "id": "EXP-IMP-99902dd9caee",
+      "vendor": "Shipping supplies",
+      "category": "Shipping",
+      "taxCategory": "Shipping / Fulfillment",
+      "receiptStatus": "Needs Receipt Check",
+      "amount": 25.0,
+      "date": "2025-11-01",
+      "method": "Imported / Unknown",
+      "notes": "Imported from 2025 expense tab",
+      "imported": true
+    },
+    {
+      "id": "EXP-IMP-7be213b646f0",
+      "vendor": "Business Cards - Zazzle",
+      "category": "Marketing Materials",
+      "taxCategory": "Advertising / Marketing Materials",
+      "receiptStatus": "Needs Receipt Check",
+      "amount": 32.79,
+      "date": "2025-11-03",
+      "method": "Imported / Unknown",
+      "notes": "Imported from 2025 expense tab",
+      "imported": true
+    },
+    {
+      "id": "EXP-IMP-52878e5dddb7",
+      "vendor": "Printful: employee t-shirts",
+      "category": "Apparel / Samples",
+      "taxCategory": "Samples / Promotional Items",
+      "receiptStatus": "Needs Receipt Check",
+      "amount": 16.35,
+      "date": "2025-11-04",
+      "method": "Imported / Unknown",
+      "notes": "Imported from 2025 expense tab",
+      "imported": true
+    },
+    {
+      "id": "EXP-IMP-6c5f021a17a9",
+      "vendor": "Printful: employee t-shirts",
+      "category": "Apparel / Samples",
+      "taxCategory": "Samples / Promotional Items",
+      "receiptStatus": "Needs Receipt Check",
+      "amount": 63.59,
+      "date": "2025-11-05",
+      "method": "Imported / Unknown",
+      "notes": "Imported from 2025 expense tab",
+      "imported": true
+    },
+    {
+      "id": "EXP-IMP-a5704f7ef18e",
+      "vendor": "Printful: employee t-shirts",
+      "category": "Apparel / Samples",
+      "taxCategory": "Samples / Promotional Items",
+      "receiptStatus": "Needs Receipt Check",
+      "amount": 35.28,
+      "date": "2025-11-05",
+      "method": "Imported / Unknown",
+      "notes": "Imported from 2025 expense tab",
+      "imported": true
+    },
+    {
+      "id": "EXP-IMP-e9811f49eba0",
+      "vendor": "Website, email, and Domain",
+      "category": "Website / Software",
+      "taxCategory": "Software / Website",
+      "receiptStatus": "Needs Receipt Check",
+      "amount": 75.87,
+      "date": "2025-11-10",
+      "method": "Imported / Unknown",
+      "notes": "Imported from 2025 expense tab",
+      "imported": true
+    },
+    {
+      "id": "EXP-IMP-01279cb7724f",
+      "vendor": "Advertisements: Stickers",
+      "category": "Advertising",
+      "taxCategory": "Advertising",
+      "receiptStatus": "Needs Receipt Check",
+      "amount": 55.66,
+      "date": "2025-11-11",
+      "method": "Imported / Unknown",
+      "notes": "Imported from 2025 expense tab",
+      "imported": true
+    },
+    {
+      "id": "EXP-IMP-eb0b1e2e765e",
+      "vendor": "Registrar for company filings",
+      "category": "Licensing / Filing",
+      "taxCategory": "Business Filing / Licensing",
+      "receiptStatus": "Needs Receipt Check",
+      "amount": 234.0,
+      "date": "2025-11-13",
+      "method": "Imported / Unknown",
+      "notes": "Imported from 2025 expense tab",
+      "imported": true
+    },
+    {
+      "id": "EXP-IMP-3c504f3e8a5b",
+      "vendor": "Shipping to PA - Customer",
+      "category": "Shipping",
+      "taxCategory": "Shipping / Fulfillment",
+      "receiptStatus": "Needs Receipt Check",
+      "amount": 35.55,
+      "date": "2025-11-14",
+      "method": "Imported / Unknown",
+      "notes": "Imported from 2025 expense tab",
+      "imported": true
+    },
+    {
+      "id": "EXP-IMP-ba17e0a093a8",
+      "vendor": "Test Instagram Ad",
+      "category": "Advertising",
+      "taxCategory": "Advertising",
+      "receiptStatus": "Needs Receipt Check",
+      "amount": 28.0,
+      "date": "2025-12-03",
+      "method": "Imported / Unknown",
+      "notes": "Imported from 2025 expense tab",
+      "imported": true
+    },
+    {
+      "id": "EXP-IMP-b47a2736ad82",
+      "vendor": "Shipping to PA - Customer",
+      "category": "Shipping",
+      "taxCategory": "Shipping / Fulfillment",
+      "receiptStatus": "Needs Receipt Check",
+      "amount": 33.55,
+      "date": "2025-12-04",
+      "method": "Imported / Unknown",
+      "notes": "Imported from 2025 expense tab",
+      "imported": true
+    },
+    {
+      "id": "EXP-IMP-73a734f0f490",
+      "vendor": "Jas Biz Cards",
+      "category": "Marketing Materials",
+      "taxCategory": "Advertising / Marketing Materials",
+      "receiptStatus": "Needs Receipt Check",
+      "amount": 35.17,
+      "date": "2025-12-05",
+      "method": "Imported / Unknown",
+      "notes": "Imported from 2025 expense tab",
+      "imported": true
+    },
+    {
+      "id": "EXP-IMP-6eabdd03d0df",
+      "vendor": "Jas email",
+      "category": "Website / Software",
+      "taxCategory": "Software / Website",
+      "receiptStatus": "Needs Receipt Check",
+      "amount": 24.0,
+      "date": "2025-12-05",
+      "method": "Imported / Unknown",
+      "notes": "Imported from 2025 expense tab",
+      "imported": true
+    },
+    {
+      "id": "EXP-IMP-08f3cdaef4c1",
+      "vendor": "PayPal Fee",
+      "category": "Payment Processing",
+      "taxCategory": "Merchant / Payment Fees",
+      "receiptStatus": "Needs Receipt Check",
+      "amount": 28.91,
+      "date": "2025-12-16",
+      "method": "Imported / Unknown",
+      "notes": "Imported from 2025 expense tab",
+      "imported": true
+    },
+    {
+      "id": "EXP-IMP-ef9a310be3cd",
+      "vendor": "Shipping to Sandra Stevens",
+      "category": "Shipping",
+      "taxCategory": "Shipping / Fulfillment",
+      "receiptStatus": "Needs Receipt Check",
+      "amount": 18.2,
+      "date": "2025-12-16",
+      "method": "Imported / Unknown",
+      "notes": "Imported from 2025 expense tab",
+      "imported": true
+    },
+    {
+      "id": "EXP-IMP-3f1e69b862f9",
+      "vendor": "Shipping Supplies from Amazon: Foam packing, tape, boxes, bubble wrap",
+      "category": "Shipping",
+      "taxCategory": "Shipping / Fulfillment",
+      "receiptStatus": "Needs Receipt Check",
+      "amount": 58.8,
+      "date": "2026-12-14",
+      "method": "Imported / Unknown",
+      "notes": "Imported from 2025 expense tab",
+      "imported": true
+    },
+    {
+      "id": "EXP-IMP-8464d39a092a",
+      "vendor": "WP Rocket Subscription -website accel",
+      "category": "Website / Software",
+      "taxCategory": "Software / Website",
+      "receiptStatus": "Needs Receipt Check",
+      "amount": 47.2,
+      "date": "2025-12-16",
+      "method": "Imported / Unknown",
+      "notes": "Imported from 2025 expense tab",
+      "imported": true
+    },
+    {
+      "id": "EXP-IMP-805bd3faf22d",
+      "vendor": "Shipping",
+      "category": "Shipping",
+      "taxCategory": "Shipping / Fulfillment",
+      "receiptStatus": "Needs Receipt Check",
+      "amount": 22.15,
+      "date": "2025-12-19",
+      "method": "Imported / Unknown",
+      "notes": "Imported from 2025 expense tab",
+      "imported": true
+    },
+    {
+      "id": "EXP-IMP-53d785b404e9",
+      "vendor": "PayPal Fee",
+      "category": "Payment Processing",
+      "taxCategory": "Merchant / Payment Fees",
+      "receiptStatus": "Needs Receipt Check",
+      "amount": 10.31,
+      "date": "2025-12-19",
+      "method": "Imported / Unknown",
+      "notes": "Imported from 2025 expense tab",
+      "imported": true
+    },
+    {
+      "id": "EXP-IMP-30aeafb31e5e",
+      "vendor": "Shipping Customer CA",
+      "category": "Shipping",
+      "taxCategory": "Shipping / Fulfillment",
+      "receiptStatus": "Needs Receipt Check",
+      "amount": 22.15,
+      "date": "2025-12-19",
+      "method": "Imported / Unknown",
+      "notes": "Imported from 2025 expense tab",
+      "imported": true
+    },
+    {
+      "id": "EXP-IMP-86e128fe26fa",
+      "vendor": "Stripe Processing Fee",
+      "category": "Payment Processing",
+      "taxCategory": "Merchant / Payment Fees",
+      "receiptStatus": "Needs Receipt Check",
+      "amount": 7.34,
+      "date": "2025-12-19",
+      "method": "Imported / Unknown",
+      "notes": "Imported from 2025 expense tab",
+      "imported": true
+    },
+    {
+      "id": "EXP-IMP-9ad0543b1f63",
+      "vendor": "Google Ads",
+      "category": "Advertising",
+      "taxCategory": "Advertising",
+      "receiptStatus": "Needs Receipt Check",
+      "amount": 50.0,
+      "date": "2025-12-20",
+      "method": "Imported / Unknown",
+      "notes": "Imported from 2025 expense tab",
+      "imported": true
+    },
+    {
+      "id": "EXP-IMP-baa5ba9c0348",
+      "vendor": "International Wire Fee's from USAA",
+      "category": "Payment Processing",
+      "taxCategory": "Merchant / Payment Fees",
+      "receiptStatus": "Needs Receipt Check",
+      "amount": 45.0,
+      "date": "2026-01-02",
+      "method": "Imported / Unknown",
+      "notes": "Imported from 2026 expense tab",
+      "imported": true
+    },
+    {
+      "id": "EXP-IMP-c3ab9f16a398",
+      "vendor": "Shipping Fees to William Murphy TN",
+      "category": "Shipping",
+      "taxCategory": "Shipping / Fulfillment",
+      "receiptStatus": "Needs Receipt Check",
+      "amount": 23.15,
+      "date": "2026-01-01",
+      "method": "Imported / Unknown",
+      "notes": "Imported from 2026 expense tab",
+      "imported": true
+    },
+    {
+      "id": "EXP-IMP-a092776f6169",
+      "vendor": "PayPal Fee for Murphy Order",
+      "category": "Payment Processing",
+      "taxCategory": "Merchant / Payment Fees",
+      "receiptStatus": "Needs Receipt Check",
+      "amount": 19.34,
+      "date": "2026-01-01",
+      "method": "Imported / Unknown",
+      "notes": "Imported from 2026 expense tab",
+      "imported": true
+    },
+    {
+      "id": "EXP-IMP-1b5ce631528f",
+      "vendor": "Google ADs",
+      "category": "Advertising",
+      "taxCategory": "Advertising",
+      "receiptStatus": "Needs Receipt Check",
+      "amount": 201.41,
+      "date": "2026-01-02",
+      "method": "Imported / Unknown",
+      "notes": "Imported from 2026 expense tab",
+      "imported": true
+    },
+    {
+      "id": "EXP-IMP-7a36a0b5aa9e",
+      "vendor": "Colorado Dept of Revenue Tax Lic Renew",
+      "category": "Licensing / Filing",
+      "taxCategory": "Business Filing / Licensing",
+      "receiptStatus": "Needs Receipt Check",
+      "amount": 16.0,
+      "date": "2026-01-02",
+      "method": "Imported / Unknown",
+      "notes": "Imported from 2026 expense tab",
+      "imported": true
+    },
+    {
+      "id": "EXP-IMP-a825988d7702",
+      "vendor": "Paypal Fee for computer build labor sale",
+      "category": "Payment Processing",
+      "taxCategory": "Merchant / Payment Fees",
+      "receiptStatus": "Needs Receipt Check",
+      "amount": 2.46,
+      "date": "2026-01-02",
+      "method": "Imported / Unknown",
+      "notes": "Imported from 2026 expense tab",
+      "imported": true
+    },
+    {
+      "id": "EXP-IMP-e25cc2e680d7",
+      "vendor": "Shipping Fees to Patricia Galvan WI",
+      "category": "Shipping",
+      "taxCategory": "Shipping / Fulfillment",
+      "receiptStatus": "Needs Receipt Check",
+      "amount": 23.15,
+      "date": "2026-01-02",
+      "method": "Imported / Unknown",
+      "notes": "Imported from 2026 expense tab",
+      "imported": true
+    },
+    {
+      "id": "EXP-IMP-49187ce04e7a",
+      "vendor": "Stripe CC Fee",
+      "category": "Payment Processing",
+      "taxCategory": "Merchant / Payment Fees",
+      "receiptStatus": "Needs Receipt Check",
+      "amount": 8.42,
+      "date": "2026-01-02",
+      "method": "Imported / Unknown",
+      "notes": "Imported from 2026 expense tab",
+      "imported": true
+    },
+    {
+      "id": "EXP-IMP-535bcc005755",
+      "vendor": "Shipping Fee to TX (MS Friends)",
+      "category": "Shipping",
+      "taxCategory": "Shipping / Fulfillment",
+      "receiptStatus": "Needs Receipt Check",
+      "amount": 18.2,
+      "date": "2026-01-04",
+      "method": "Imported / Unknown",
+      "notes": "Imported from 2026 expense tab",
+      "imported": true
+    },
+    {
+      "id": "EXP-IMP-4361966ce698",
+      "vendor": "Shipping Fee to NJ",
+      "category": "Shipping",
+      "taxCategory": "Shipping / Fulfillment",
+      "receiptStatus": "Needs Receipt Check",
+      "amount": 22.15,
+      "date": "2026-01-06",
+      "method": "Imported / Unknown",
+      "notes": "Imported from 2026 expense tab",
+      "imported": true
+    },
+    {
+      "id": "EXP-IMP-ba3cbd007b5e",
+      "vendor": "paypal fee for NJ order",
+      "category": "Payment Processing",
+      "taxCategory": "Merchant / Payment Fees",
+      "receiptStatus": "Needs Receipt Check",
+      "amount": 10.26,
+      "date": "2026-01-06",
+      "method": "Imported / Unknown",
+      "notes": "Imported from 2026 expense tab",
+      "imported": true
+    },
+    {
+      "id": "EXP-IMP-de45c433374d",
+      "vendor": "PayPal fee for IA Order",
+      "category": "Payment Processing",
+      "taxCategory": "Merchant / Payment Fees",
+      "receiptStatus": "Needs Receipt Check",
+      "amount": 17.91,
+      "date": "2026-01-07",
+      "method": "Imported / Unknown",
+      "notes": "Imported from 2026 expense tab",
+      "imported": true
+    },
+    {
+      "id": "EXP-IMP-13b20ae3c780",
+      "vendor": "Shipping Fee to IA",
+      "category": "Shipping",
+      "taxCategory": "Shipping / Fulfillment",
+      "receiptStatus": "Needs Receipt Check",
+      "amount": 19.2,
+      "date": "2026-01-07",
+      "method": "Imported / Unknown",
+      "notes": "Imported from 2026 expense tab",
+      "imported": true
+    },
+    {
+      "id": "EXP-IMP-117922c0a1a7",
+      "vendor": "Shipping Fee to IA",
+      "category": "Shipping",
+      "taxCategory": "Shipping / Fulfillment",
+      "receiptStatus": "Needs Receipt Check",
+      "amount": 18.2,
+      "date": "2026-01-09",
+      "method": "Imported / Unknown",
+      "notes": "Imported from 2026 expense tab",
+      "imported": true
+    },
+    {
+      "id": "EXP-IMP-a7e61764f153",
+      "vendor": "PayPal Fee for Schoot Order",
+      "category": "Payment Processing",
+      "taxCategory": "Merchant / Payment Fees",
+      "receiptStatus": "Needs Receipt Check",
+      "amount": 9.28,
+      "date": "2026-01-09",
+      "method": "Imported / Unknown",
+      "notes": "Imported from 2026 expense tab",
+      "imported": true
+    },
+    {
+      "id": "EXP-IMP-7d93f29c48df",
+      "vendor": "Woo Commerce Shipping to TX",
+      "category": "Shipping",
+      "taxCategory": "Shipping / Fulfillment",
+      "receiptStatus": "Needs Receipt Check",
+      "amount": 19.6,
+      "date": "2026-01-18",
+      "method": "Imported / Unknown",
+      "notes": "Imported from 2026 expense tab",
+      "imported": true
+    },
+    {
+      "id": "EXP-IMP-98a127f46704",
+      "vendor": "Shipping to PA",
+      "category": "Shipping",
+      "taxCategory": "Shipping / Fulfillment",
+      "receiptStatus": "Needs Receipt Check",
+      "amount": 35.7,
+      "date": "2029-01-20",
+      "method": "Imported / Unknown",
+      "notes": "Imported from 2026 expense tab",
+      "imported": true
+    },
+    {
+      "id": "EXP-IMP-6a508f8120a7",
+      "vendor": "Shipping to GA for Harris Order",
+      "category": "Shipping",
+      "taxCategory": "Shipping / Fulfillment",
+      "receiptStatus": "Needs Receipt Check",
+      "amount": 22.45,
+      "date": "2026-01-20",
+      "method": "Imported / Unknown",
+      "notes": "Imported from 2026 expense tab",
+      "imported": true
+    },
+    {
+      "id": "EXP-IMP-f3d032e943e5",
+      "vendor": "Fee for Stripe on Harris Order",
+      "category": "Payment Processing",
+      "taxCategory": "Merchant / Payment Fees",
+      "receiptStatus": "Needs Receipt Check",
+      "amount": 9.0,
+      "date": "2026-01-20",
+      "method": "Imported / Unknown",
+      "notes": "Imported from 2026 expense tab",
+      "imported": true
+    },
+    {
+      "id": "EXP-IMP-f7571ac1434f",
+      "vendor": "Fee 1 for paypal 1st Stevens Order",
+      "category": "Payment Processing",
+      "taxCategory": "Merchant / Payment Fees",
+      "receiptStatus": "Needs Receipt Check",
+      "amount": 30.43,
+      "date": "2026-01-23",
+      "method": "Imported / Unknown",
+      "notes": "Imported from 2026 expense tab",
+      "imported": true
+    },
+    {
+      "id": "EXP-IMP-7632e51c8d84",
+      "vendor": "Fee 2 for paypal 2nd Stevens order",
+      "category": "Payment Processing",
+      "taxCategory": "Merchant / Payment Fees",
+      "receiptStatus": "Needs Receipt Check",
+      "amount": 15.46,
+      "date": "2026-01-23",
+      "method": "Imported / Unknown",
+      "notes": "Imported from 2026 expense tab",
+      "imported": true
+    },
+    {
+      "id": "EXP-IMP-515637ba1ec6",
+      "vendor": "Shipping for Stevens order number 1",
+      "category": "Shipping",
+      "taxCategory": "Shipping / Fulfillment",
+      "receiptStatus": "Needs Receipt Check",
+      "amount": 22.45,
+      "date": "2026-01-23",
+      "method": "Imported / Unknown",
+      "notes": "Imported from 2026 expense tab",
+      "imported": true
+    },
+    {
+      "id": "EXP-IMP-9b49a56076d5",
+      "vendor": "Shipping for Stevens order number 2",
+      "category": "Shipping",
+      "taxCategory": "Shipping / Fulfillment",
+      "receiptStatus": "Needs Receipt Check",
+      "amount": 18.5,
+      "date": "2026-01-23",
+      "method": "Imported / Unknown",
+      "notes": "Imported from 2026 expense tab",
+      "imported": true
+    },
+    {
+      "id": "EXP-IMP-74137539c126",
+      "vendor": "Stripe Fee for Witaker order 1",
+      "category": "Payment Processing",
+      "taxCategory": "Merchant / Payment Fees",
+      "receiptStatus": "Needs Receipt Check",
+      "amount": 8.13,
+      "date": "2026-01-26",
+      "method": "Imported / Unknown",
+      "notes": "Imported from 2026 expense tab",
+      "imported": true
+    },
+    {
+      "id": "EXP-IMP-0d5d95adb1f1",
+      "vendor": "Stripe Fee for Witaker order 2",
+      "category": "Payment Processing",
+      "taxCategory": "Merchant / Payment Fees",
+      "receiptStatus": "Needs Receipt Check",
+      "amount": 12.48,
+      "date": "2026-01-26",
+      "method": "Imported / Unknown",
+      "notes": "Imported from 2026 expense tab",
+      "imported": true
+    },
+    {
+      "id": "EXP-IMP-8eb99e68a60e",
+      "vendor": "Shipping for Both 1/26 orders",
+      "category": "Shipping",
+      "taxCategory": "Shipping / Fulfillment",
+      "receiptStatus": "Needs Receipt Check",
+      "amount": 19.6,
+      "date": "2026-01-26",
+      "method": "Imported / Unknown",
+      "notes": "Imported from 2026 expense tab",
+      "imported": true
+    },
+    {
+      "id": "EXP-IMP-1a02a0f6b946",
+      "vendor": "UPS Customs Fees",
+      "category": "Shipping",
+      "taxCategory": "Shipping / Fulfillment",
+      "receiptStatus": "Needs Receipt Check",
+      "amount": 71.0,
+      "date": "2026-01-28",
+      "method": "Imported / Unknown",
+      "notes": "Imported from 2026 expense tab",
+      "imported": true
+    },
+    {
+      "id": "EXP-IMP-3c0ee16095c3",
+      "vendor": "Pirate Shipping to JAS 4 boxes",
+      "category": "Shipping",
+      "taxCategory": "Shipping / Fulfillment",
+      "receiptStatus": "Needs Receipt Check",
+      "amount": 35.7,
+      "date": "2026-03-30",
+      "method": "Imported / Unknown",
+      "notes": "Imported from 2026 expense tab",
+      "imported": true
+    },
+    {
+      "id": "EXP-IMP-2da7996e458e",
+      "vendor": "Zazzle for Biz Cards",
+      "category": "Marketing Materials",
+      "taxCategory": "Advertising / Marketing Materials",
+      "receiptStatus": "Needs Receipt Check",
+      "amount": 43.29,
+      "date": "2026-01-31",
+      "method": "Imported / Unknown",
+      "notes": "Imported from 2026 expense tab",
+      "imported": true
+    },
+    {
+      "id": "EXP-IMP-81d63c4b60e1",
+      "vendor": "Shipping Labels",
+      "category": "Shipping",
+      "taxCategory": "Shipping / Fulfillment",
+      "receiptStatus": "Needs Receipt Check",
+      "amount": 24.79,
+      "date": "2026-01-31",
+      "method": "Imported / Unknown",
+      "notes": "Imported from 2026 expense tab",
+      "imported": true
+    },
+    {
+      "id": "EXP-IMP-4a3f26a3d4a2",
+      "vendor": "Shipping to JAS - 5 boxes",
+      "category": "Shipping",
+      "taxCategory": "Shipping / Fulfillment",
+      "receiptStatus": "Needs Receipt Check",
+      "amount": 35.7,
+      "date": "2026-01-31",
+      "method": "Imported / Unknown",
+      "notes": "Imported from 2026 expense tab",
+      "imported": true
+    },
+    {
+      "id": "EXP-IMP-5eedf7ed4190",
+      "vendor": "Shipping to Ryan",
+      "category": "Shipping",
+      "taxCategory": "Shipping / Fulfillment",
+      "receiptStatus": "Needs Receipt Check",
+      "amount": 18.5,
+      "date": "2026-01-31",
+      "method": "Imported / Unknown",
+      "notes": "Imported from 2026 expense tab",
+      "imported": true
+    },
+    {
+      "id": "EXP-IMP-6229e3ba9b4e",
+      "vendor": "Shipping to JAS",
+      "category": "Shipping",
+      "taxCategory": "Shipping / Fulfillment",
+      "receiptStatus": "Needs Receipt Check",
+      "amount": 18.5,
+      "date": "2026-01-31",
+      "method": "Imported / Unknown",
+      "notes": "Imported from 2026 expense tab",
+      "imported": true
+    },
+    {
+      "id": "EXP-IMP-94a5c488254e",
+      "vendor": "Packing supplies for shipping / Amazon",
+      "category": "Shipping",
+      "taxCategory": "Shipping / Fulfillment",
+      "receiptStatus": "Needs Receipt Check",
+      "amount": 34.56,
+      "date": "2026-01-31",
+      "method": "Imported / Unknown",
+      "notes": "Imported from 2026 expense tab",
+      "imported": true
+    },
+    {
+      "id": "EXP-IMP-19f13cc72819",
+      "vendor": "Stripe Fee for Reagan Order",
+      "category": "Payment Processing",
+      "taxCategory": "Merchant / Payment Fees",
+      "receiptStatus": "Needs Receipt Check",
+      "amount": 8.65,
+      "date": "2026-02-04",
+      "method": "Imported / Unknown",
+      "notes": "Imported from 2026 expense tab",
+      "imported": true
+    },
+    {
+      "id": "EXP-IMP-9ee4f21ef7a5",
+      "vendor": "Shipping for Reagan Order",
+      "category": "Shipping",
+      "taxCategory": "Shipping / Fulfillment",
+      "receiptStatus": "Needs Receipt Check",
+      "amount": 19.6,
+      "date": "2026-02-04",
+      "method": "Imported / Unknown",
+      "notes": "Imported from 2026 expense tab",
+      "imported": true
+    },
+    {
+      "id": "EXP-IMP-d6677f9e78a1",
+      "vendor": "Shipping for Turner Order",
+      "category": "Shipping",
+      "taxCategory": "Shipping / Fulfillment",
+      "receiptStatus": "Needs Receipt Check",
+      "amount": 18.5,
+      "date": "2026-02-14",
+      "method": "Imported / Unknown",
+      "notes": "Imported from 2026 expense tab",
+      "imported": true
+    },
+    {
+      "id": "EXP-IMP-17719893b371",
+      "vendor": "Stripe Fee for Turner Order",
+      "category": "Payment Processing",
+      "taxCategory": "Merchant / Payment Fees",
+      "receiptStatus": "Needs Receipt Check",
+      "amount": 8.65,
+      "date": "2026-02-14",
+      "method": "Imported / Unknown",
+      "notes": "Imported from 2026 expense tab",
+      "imported": true
+    },
+    {
+      "id": "EXP-IMP-6229bb1ec866",
+      "vendor": "Shipping for Turner Order",
+      "category": "Shipping",
+      "taxCategory": "Shipping / Fulfillment",
+      "receiptStatus": "Needs Receipt Check",
+      "amount": 18.5,
+      "date": "2026-02-15",
+      "method": "Imported / Unknown",
+      "notes": "Imported from 2026 expense tab",
+      "imported": true
+    },
+    {
+      "id": "EXP-IMP-d6aecabd4dda",
+      "vendor": "Stripe Fee for Turner Order",
+      "category": "Payment Processing",
+      "taxCategory": "Merchant / Payment Fees",
+      "receiptStatus": "Needs Receipt Check",
+      "amount": 8.65,
+      "date": "2026-02-15",
+      "method": "Imported / Unknown",
+      "notes": "Imported from 2026 expense tab",
+      "imported": true
+    },
+    {
+      "id": "EXP-IMP-127f71218a9c",
+      "vendor": "Paypal fee for Collins Order",
+      "category": "Payment Processing",
+      "taxCategory": "Merchant / Payment Fees",
+      "receiptStatus": "Needs Receipt Check",
+      "amount": 10.54,
+      "date": "2026-02-24",
+      "method": "Imported / Unknown",
+      "notes": "Imported from 2026 expense tab",
+      "imported": true
+    },
+    {
+      "id": "EXP-IMP-4a53d0277178",
+      "vendor": "Shipping for Collins Order",
+      "category": "Shipping",
+      "taxCategory": "Shipping / Fulfillment",
+      "receiptStatus": "Needs Receipt Check",
+      "amount": 18.5,
+      "date": "2026-02-24",
+      "method": "Imported / Unknown",
+      "notes": "Imported from 2026 expense tab",
+      "imported": true
+    },
+    {
+      "id": "EXP-IMP-5c60fa5468f1",
+      "vendor": "Shipping for replacement remote to WADE",
+      "category": "Shipping",
+      "taxCategory": "Shipping / Fulfillment",
+      "receiptStatus": "Needs Receipt Check",
+      "amount": 11.2,
+      "date": "2026-03-31",
+      "method": "Imported / Unknown",
+      "notes": "Imported from 2026 expense tab",
+      "imported": true
+    },
+    {
+      "id": "EXP-IMP-e458cff95f7d",
+      "vendor": "Shipping for Montgomery order",
+      "category": "Shipping",
+      "taxCategory": "Shipping / Fulfillment",
+      "receiptStatus": "Needs Receipt Check",
+      "amount": 18.5,
+      "date": "2026-03-13",
+      "method": "Imported / Unknown",
+      "notes": "Imported from 2026 expense tab",
+      "imported": true
+    },
+    {
+      "id": "EXP-IMP-68e14289cb23",
+      "vendor": "Stripe Fee for Montgomery Order",
+      "category": "Payment Processing",
+      "taxCategory": "Merchant / Payment Fees",
+      "receiptStatus": "Needs Receipt Check",
+      "amount": 11.58,
+      "date": "2026-03-13",
+      "method": "Imported / Unknown",
+      "notes": "Imported from 2026 expense tab",
+      "imported": true
+    },
+    {
+      "id": "EXP-IMP-997622a5b32f",
+      "vendor": "Shippijng for Hodorovich Order",
+      "category": "Other",
+      "taxCategory": "Other",
+      "receiptStatus": "Needs Receipt Check",
+      "amount": 18.5,
+      "date": "2026-04-12",
+      "method": "Imported / Unknown",
+      "notes": "Imported from 2026 expense tab",
+      "imported": true
+    },
+    {
+      "id": "EXP-IMP-4fdd29f0964c",
+      "vendor": "Shippijng for Hodorovich Order",
+      "category": "Other",
+      "taxCategory": "Other",
+      "receiptStatus": "Needs Receipt Check",
+      "amount": 18.5,
+      "date": "2026-04-13",
+      "method": "Imported / Unknown",
+      "notes": "Imported from 2026 expense tab",
+      "imported": true
+    },
+    {
+      "id": "EXP-IMP-ccceb3ec4d8a",
+      "vendor": "Shippijng for Hodorovich Order",
+      "category": "Other",
+      "taxCategory": "Other",
+      "receiptStatus": "Needs Receipt Check",
+      "amount": 37.76,
+      "date": "2026-06-15",
+      "method": "Imported / Unknown",
+      "notes": "Imported from 2026 expense tab",
+      "imported": true
+    },
+    {
+      "id": "EXP-IMP-0242c0b742ed",
+      "vendor": "Shippijng for Hodorovich Order",
+      "category": "Other",
+      "taxCategory": "Other",
+      "receiptStatus": "Needs Receipt Check",
+      "amount": 19.98,
+      "date": "2026-06-19",
+      "method": "Imported / Unknown",
+      "notes": "Imported from 2026 expense tab",
+      "imported": true
+    },
+    {
+      "id": "EXP-IMP-e5f24ca52ce7",
+      "vendor": "accessories shipping to lloyd Schot",
+      "category": "Shipping",
+      "taxCategory": "Shipping / Fulfillment",
+      "receiptStatus": "",
+      "amount": 9.85,
+      "date": "2026-07-15",
+      "method": "Imported / Unknown",
+      "notes": "",
+      "imported": true
+    },
+    {
+      "id": "EXP-IMP-735abcc1ccd0",
+      "vendor": "Shipping for Boxes to Jas",
+      "category": "Shipping",
+      "taxCategory": "Shipping / Fulfillment",
+      "receiptStatus": "",
+      "amount": 23.98,
+      "date": "2026-07-21",
+      "method": "Imported / Unknown",
+      "notes": "",
+      "imported": true
+    },
+    {
+      "id": "EXP-IMP-0ef54f164988",
+      "vendor": "shipping boxes to JAS",
+      "category": "Shipping",
+      "taxCategory": "Shipping / Fulfillment",
+      "receiptStatus": "",
+      "amount": 34.76,
+      "date": "2026-08-10",
+      "method": "Imported / Unknown",
+      "notes": "",
+      "imported": true
+    },
+    {
+      "id": "EXP-IMP-b875a0c6635c",
+      "vendor": "shipping to Dave Lewis",
+      "category": "Shipping",
+      "taxCategory": "Shipping / Fulfillment",
+      "receiptStatus": "",
+      "amount": 24.98,
+      "date": "2026-08-10",
+      "method": "Imported / Unknown",
+      "notes": "",
+      "imported": true
+    },
+    {
+      "id": "EXP-IMP-db2caf4994d0",
+      "vendor": "Shipping to Mandy Hausse",
+      "category": "Shipping",
+      "taxCategory": "Shipping / Fulfillment",
+      "receiptStatus": "",
+      "amount": 21.98,
+      "date": "2026-08-24",
+      "method": "Imported / Unknown",
+      "notes": "",
+      "imported": true
+    },
+    {
+      "id": "EXP-IMP-2ef6e3719f42",
+      "vendor": "Shipping to Abel Bennett",
+      "category": "Shipping",
+      "taxCategory": "Shipping / Fulfillment",
+      "receiptStatus": "",
+      "amount": 23.98,
+      "date": "2026-08-31",
+      "method": "Imported / Unknown",
+      "notes": "",
+      "imported": true
+    },
+    {
+      "id": "EXP-IMP-5ce7a595ddfb",
+      "vendor": "Warranty shipping",
+      "category": "Shipping",
+      "taxCategory": "Other",
+      "receiptStatus": "",
+      "amount": 19.98,
+      "date": "2026-09-07",
+      "method": "Imported / Unknown",
+      "notes": "Shipping back to Manufacture for warranty",
+      "imported": true
+    },
+    {
+      "id": "EXP-IMP-334ae023208f",
+      "vendor": "Shipping to Nate Renze",
+      "category": "Shipping",
+      "taxCategory": "Shipping / Fulfillment",
+      "receiptStatus": "",
+      "amount": 19.98,
+      "date": "2026-09-14",
+      "method": "Imported / Unknown",
+      "notes": "",
+      "imported": true
+    },
+    {
+      "id": "EXP-IMP-0b795f2105df",
+      "vendor": "Shipping to Gary Sandavol",
+      "category": "Shipping",
+      "taxCategory": "Shipping / Fulfillment",
+      "receiptStatus": "",
+      "amount": 21.17,
+      "date": "2026-09-21",
+      "method": "Imported / Unknown",
+      "notes": "",
+      "imported": true
+    },
+    {
+      "id": "EXP-IMP-3563a6b2c08f",
+      "vendor": "Robert Ramirez",
+      "category": "Shipping",
+      "taxCategory": "Shipping / Fulfillment",
+      "receiptStatus": "",
+      "amount": 22.28,
+      "date": "2026-09-22",
+      "method": "Imported / Unknown",
+      "notes": "",
+      "imported": true
+    },
+    {
+      "id": "EXP-IMP-855dbb85af9a",
+      "vendor": "Robert Ramirez",
+      "category": "Shipping",
+      "taxCategory": "Shipping / Fulfillment",
+      "receiptStatus": "",
+      "amount": 20.28,
+      "date": "2026-09-22",
+      "method": "Imported / Unknown",
+      "notes": "",
+      "imported": true
+    }
+  ],
+  "claims": [
+    {
+      "id": "WR-IMP-b52a53c290d1",
+      "customer": "lindsay Bayou Vista",
+      "productId": "p1",
+      "qty": 1,
+      "replacementCost": 200,
+      "shipping": 0,
+      "approvedCredit": 0,
+      "appliedCredit": 0,
+      "status": "Needs Review",
+      "replacementSent": false,
+      "date": "2006-09-01",
+      "issue": "wont power on",
+      "imported": true
+    }
+  ],
+  "adjustments": [
+    {
+      "id": "ADJ-IMP-09d3b91a305d",
+      "productId": "p1",
+      "qty": -1,
+      "reason": "Demo",
+      "date": "",
+      "imported": true,
+      "notes": "Imported from original customer section"
+    },
+    {
+      "id": "ADJ-IMP-2798c36067f8",
+      "productId": "p1",
+      "qty": -1,
+      "reason": "Demo",
+      "date": "",
+      "imported": true,
+      "notes": "Imported from original customer section"
+    },
+    {
+      "id": "ADJ-IMP-c1174ea53e45",
+      "productId": "p1",
+      "qty": -1,
+      "reason": "Demo",
+      "date": "",
+      "imported": true,
+      "notes": "Imported from original customer section"
+    },
+    {
+      "id": "ADJ-IMP-87fb6449dba1",
+      "productId": "p1",
+      "qty": -1,
+      "reason": "Demo",
+      "date": "",
+      "imported": true,
+      "notes": "Imported from original customer section"
+    },
+    {
+      "id": "ADJ-IMP-3d78b25db5b4",
+      "productId": "p1",
+      "qty": -1,
+      "reason": "Demo",
+      "date": "",
+      "imported": true,
+      "notes": "Imported from original customer section"
+    },
+    {
+      "id": "ADJ-IMP-7debac1dea5c",
+      "productId": "p1",
+      "qty": -1,
+      "reason": "Demo",
+      "date": "",
+      "imported": true,
+      "notes": "Imported from original customer section"
+    },
+    {
+      "id": "ADJ-IMP-05c11cb08fba",
+      "productId": "p1",
+      "qty": -1,
+      "reason": "Inventory Adjustment",
+      "date": "",
+      "imported": true,
+      "notes": "Moved out of customer receivables; treated as inventory reconciliation/loss."
+    },
+    {
+      "id": "ADJ-IMP-1c07b5e92978",
+      "productId": "p1",
+      "qty": -1,
+      "reason": "Demo",
+      "date": "",
+      "imported": true,
+      "notes": "Imported from original customer section"
+    },
+    {
+      "id": "ADJ-IMP-78e1f789d9d3",
+      "productId": "p3",
+      "qty": -1,
+      "reason": "Demo",
+      "date": "",
+      "imported": true,
+      "notes": "Imported from original customer section"
+    },
+    {
+      "id": "ADJ2-IMP-6732a9e88941",
+      "productId": "p1",
+      "qty": 1,
+      "reason": "Reconciliation adjustment",
+      "date": "",
+      "notes": "Physical count confirmed at 1 vSeeBox; workbook had expected -1. Review sales/purchases later if needed.",
+      "imported": true
+    },
+    {
+      "id": "ADJ2-IMP-3d5e1fd4169b",
+      "productId": "p1",
+      "qty": 1,
+      "reason": "Broken Unit",
+      "date": "2026-09-07",
+      "notes": "Shipped back to manufacture",
+      "imported": true
+    }
+  ],
+  "reviewQueue": [
+    {
+      "type": "inventory",
+      "row": 14,
+      "issue": "Missing purchase date"
+    },
+    {
+      "type": "sale",
+      "row": 2,
+      "issue": "Missing sale date",
+      "customer": "Jason Lohr"
+    },
+    {
+      "type": "sale",
+      "row": 3,
+      "issue": "Missing sale date",
+      "customer": "Bob Algeo"
+    },
+    {
+      "type": "sale",
+      "row": 4,
+      "issue": "Missing sale date",
+      "customer": "Bob Algeo"
+    },
+    {
+      "type": "sale",
+      "row": 5,
+      "issue": "Missing sale date",
+      "customer": "Jason Lohr"
+    },
+    {
+      "type": "sale",
+      "row": 6,
+      "issue": "Missing sale date",
+      "customer": "Bob Algeo"
+    },
+    {
+      "type": "sale",
+      "row": 7,
+      "issue": "Missing sale date",
+      "customer": "Jason Lohr"
+    },
+    {
+      "type": "sale",
+      "row": 8,
+      "issue": "Missing sale date",
+      "customer": "Bob Algeo"
+    },
+    {
+      "type": "sale",
+      "row": 9,
+      "issue": "Missing sale date",
+      "customer": "Jason Lohr"
+    },
+    {
+      "type": "sale",
+      "row": 10,
+      "issue": "Missing sale date",
+      "customer": "Bob Algeo"
+    },
+    {
+      "type": "sale",
+      "row": 11,
+      "issue": "Missing sale date",
+      "customer": "Jason Lohr"
+    },
+    {
+      "type": "sale",
+      "row": 12,
+      "issue": "Missing sale date",
+      "customer": "Bob Algeo"
+    },
+    {
+      "type": "sale",
+      "row": 13,
+      "issue": "Missing sale date",
+      "customer": "Jason Lohr"
+    },
+    {
+      "type": "sale",
+      "row": 14,
+      "issue": "Missing sale date",
+      "customer": "Bob Algeo"
+    },
+    {
+      "type": "sale",
+      "row": 15,
+      "issue": "Missing sale date",
+      "customer": "Jason Lohr"
+    },
+    {
+      "type": "sale",
+      "row": 16,
+      "issue": "Missing sale date",
+      "customer": "Bob Algeo"
+    },
+    {
+      "type": "sale",
+      "row": 17,
+      "issue": "Missing sale date",
+      "customer": "Jason Lohr"
+    },
+    {
+      "type": "sale",
+      "row": 18,
+      "issue": "Missing sale date",
+      "customer": "Bob Algeo"
+    },
+    {
+      "type": "sale",
+      "row": 19,
+      "issue": "Missing sale date",
+      "customer": "Dave Lewis"
+    },
+    {
+      "type": "sale",
+      "row": 20,
+      "issue": "Missing sale date",
+      "customer": "Abel Bennett"
+    },
+    {
+      "type": "sale",
+      "row": 21,
+      "issue": "Missing sale date",
+      "customer": "Fred Sanchez"
+    },
+    {
+      "type": "sale",
+      "row": 22,
+      "issue": "Missing sale date",
+      "customer": "Angela Schulz"
+    },
+    {
+      "type": "sale",
+      "row": 26,
+      "issue": "Missing sale date",
+      "customer": "Michelle Smith"
+    },
+    {
+      "type": "sale",
+      "row": 27,
+      "issue": "Missing sale date",
+      "customer": "Mateo Salinas"
+    },
+    {
+      "type": "sale",
+      "row": 28,
+      "issue": "Missing sale date",
+      "customer": "Mathew Sanchez"
+    },
+    {
+      "type": "sale",
+      "row": 29,
+      "issue": "Missing sale date",
+      "customer": "Michael Sanchez"
+    },
+    {
+      "type": "sale",
+      "row": 30,
+      "issue": "Missing sale date",
+      "customer": "Bob Algeo"
+    },
+    {
+      "type": "sale",
+      "row": 31,
+      "issue": "Missing sale date",
+      "customer": "Sandra Stevens"
+    },
+    {
+      "type": "sale",
+      "row": 32,
+      "issue": "Missing sale date",
+      "customer": "Sandra Stevens"
+    },
+    {
+      "type": "sale",
+      "row": 33,
+      "issue": "Zero or negative units",
+      "customer": "Thien Nguyen"
+    },
+    {
+      "type": "sale",
+      "row": 37,
+      "issue": "Missing sale date",
+      "customer": "WIlliam Murphy"
+    },
+    {
+      "type": "sale",
+      "row": 38,
+      "issue": "Missing sale date",
+      "customer": "Bob Algeo"
+    },
+    {
+      "type": "sale",
+      "row": 39,
+      "issue": "Missing sale date",
+      "customer": "Esmeralda Ayala"
+    },
+    {
+      "type": "sale",
+      "row": 41,
+      "issue": "Missing sale date",
+      "customer": "Patricia Galvan"
+    },
+    {
+      "type": "sale",
+      "row": 42,
+      "issue": "Missing sale date",
+      "customer": "Michelle Smith 2 Friends"
+    },
+    {
+      "type": "sale",
+      "row": 43,
+      "issue": "Missing sale date",
+      "customer": "Nancy Paulick"
+    },
+    {
+      "type": "sale",
+      "row": 44,
+      "issue": "Missing sale date",
+      "customer": "Wade Witaker"
+    },
+    {
+      "type": "sale",
+      "row": 45,
+      "issue": "Missing sale date",
+      "customer": "Lloyd Schott"
+    },
+    {
+      "type": "sale",
+      "row": 46,
+      "issue": "Missing sale date",
+      "customer": "Chris Grahm"
+    },
+    {
+      "type": "sale",
+      "row": 47,
+      "issue": "Missing sale date",
+      "customer": "Kirk Moga"
+    },
+    {
+      "type": "sale",
+      "row": 48,
+      "issue": "Missing sale date",
+      "customer": "Kendra Fuller"
+    },
+    {
+      "type": "sale",
+      "row": 49,
+      "issue": "Missing sale date",
+      "customer": "Gary Anderson"
+    },
+    {
+      "type": "sale",
+      "row": 50,
+      "issue": "Missing sale date",
+      "customer": "Barbara Harris"
+    },
+    {
+      "type": "sale",
+      "row": 51,
+      "issue": "Missing sale date",
+      "customer": "Sandra Stevens"
+    },
+    {
+      "type": "sale",
+      "row": 52,
+      "issue": "Missing sale date",
+      "customer": "Sandra Stevens"
+    },
+    {
+      "type": "sale",
+      "row": 53,
+      "issue": "Missing sale date",
+      "customer": "Ryan Hordorovitch"
+    },
+    {
+      "type": "sale",
+      "row": 54,
+      "issue": "Missing sale date",
+      "customer": "Wade Witaker"
+    },
+    {
+      "type": "sale",
+      "row": 55,
+      "issue": "Missing sale date",
+      "customer": "Bobby Bennet"
+    },
+    {
+      "type": "sale",
+      "row": 57,
+      "issue": "Missing sale date",
+      "customer": "Patrick Reagan"
+    },
+    {
+      "type": "sale",
+      "row": 58,
+      "issue": "Missing sale date",
+      "customer": "Jesse Turner"
+    },
+    {
+      "type": "sale",
+      "row": 59,
+      "issue": "Missing sale date",
+      "customer": "Michael Gallagher"
+    },
+    {
+      "type": "sale",
+      "row": 60,
+      "issue": "Missing sale date",
+      "customer": "Brent Collins"
+    },
+    {
+      "type": "sale",
+      "row": 61,
+      "issue": "Missing sale date",
+      "customer": "Even Montgomery"
+    },
+    {
+      "type": "sale",
+      "row": 62,
+      "issue": "Missing sale date",
+      "customer": "Ryan Hordorovitch"
+    },
+    {
+      "type": "sale",
+      "row": 63,
+      "issue": "Missing sale date",
+      "customer": "Ryan Hordorovitch"
+    },
+    {
+      "type": "sale",
+      "row": 64,
+      "issue": "Missing sale date",
+      "customer": "Kwon"
+    },
+    {
+      "type": "sale",
+      "row": 65,
+      "issue": "Missing sale date",
+      "customer": "Avionics Kid"
+    },
+    {
+      "type": "sale",
+      "row": 66,
+      "issue": "Missing sale date",
+      "customer": "Bob Algeo"
+    },
+    {
+      "type": "sale",
+      "row": 67,
+      "issue": "Missing sale date",
+      "customer": "Billy"
+    },
+    {
+      "type": "sale",
+      "row": 68,
+      "issue": "Missing sale date",
+      "customer": "Ryan Hodorovitch"
+    },
+    {
+      "type": "sale",
+      "row": 70,
+      "issue": "Missing sale date",
+      "customer": "Bob Algeo"
+    },
+    {
+      "type": "sale",
+      "row": 71,
+      "issue": "Missing sale date",
+      "customer": "Jason Lohr"
+    },
+    {
+      "type": "sale",
+      "row": 72,
+      "issue": "Missing sale date",
+      "customer": "Jason Lohr"
+    },
+    {
+      "type": "sale",
+      "row": 73,
+      "issue": "Missing sale date",
+      "customer": "Jason Lohr"
+    },
+    {
+      "type": "sale",
+      "row": 74,
+      "issue": "Missing sale date",
+      "customer": "Dave Lewis"
+    },
+    {
+      "type": "sale",
+      "row": 75,
+      "issue": "Missing sale date",
+      "customer": "Bob Algeo"
+    },
+    {
+      "type": "sale",
+      "row": 85,
+      "issue": "Missing sale date",
+      "customer": "Gary Sandoval"
+    },
+    {
+      "type": "warranty",
+      "row": 2,
+      "issue": "Warranty date needs confirmation",
+      "customer": "lindsay Bayou Vista"
+    }
+  ],
+  "history": [],
+  "migrationSummary": {
+    "orders": 15,
+    "sales": 74,
+    "payments": 72,
+    "expenses": 84,
+    "claims": 1,
+    "adjustments": 11,
+    "reviewItems": 68,
+    "purchasedUnits": 403,
+    "expenseTotal": 2445.57
+  }
+}
