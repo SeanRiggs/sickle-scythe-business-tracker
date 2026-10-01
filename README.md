@@ -1,2 +1,2 @@
-# Sickle & Scythe Tracker v4.9.1
-Fixes Data Health review actions and help-icon alignment. This is the recommended stabilization release.
+# Sickle & Scythe Tracker v5.0
+Adds customer-credit management, refunds, credit application, future-credit holds, justified inventory adjustments, lost/stolen and warranty deductions, and an approved one-time Jason Lohr correction.
