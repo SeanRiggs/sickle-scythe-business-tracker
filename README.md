@@ -9,3 +9,6 @@ Integrated OneDrive cloud build. Upload all files to the GitHub repository root,
 4. Changes save locally immediately and auto-sync to OneDrive after one second.
 
 Keep the Azure SPA redirect URI exactly: https://seanriggs.github.io/sickle-scythe-business-tracker/
+
+## v4.2
+Adds edit/correction workflows and customer name type-ahead suggestions.
