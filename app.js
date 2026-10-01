@@ -8,7 +8,7 @@ const client=new msal.PublicClientApplication(config);
 const status=document.querySelector('#status'), message=document.querySelector('#message'), preview=document.querySelector('#preview');
 let account=null;
 function show(m){message.textContent=m} function state(){status.textContent=account?`Signed in: ${account.username}`:"Not signed in"}
-async function init(){await client.initialize();const result=await client.handleRedirectPromise();account=result?.account||client.getAllAccounts()[0]||null;if(account)client.setActiveAccount(account);state()}
+async function init(){const result=await client.handleRedirectPromise();account=result?.account||client.getAllAccounts()[0]||null;if(account)client.setActiveAccount(account);state()}
 async function login(){const r=await client.loginPopup({scopes:SCOPES,prompt:"select_account"});account=r.account;client.setActiveAccount(account);state();show("Microsoft sign-in succeeded. You can now test OneDrive load/save.")}
 async function token(){if(!account)throw new Error("Sign in first.");try{return (await client.acquireTokenSilent({scopes:SCOPES,account})).accessToken}catch{return (await client.acquireTokenPopup({scopes:SCOPES,account})).accessToken}}
 async function graph(path,opts={}){const t=await token();const r=await fetch(GRAPH+path,{...opts,headers:{Authorization:`Bearer ${t}`,...(opts.headers||{})}});if(!r.ok){const txt=await r.text();throw new Error(`${r.status}: ${txt}`)}return r}
