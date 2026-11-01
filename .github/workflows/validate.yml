@@ -1,0 +1,37 @@
+name: Validate tracker release candidate
+on:
+  push:
+    branches: ['release/v5.3']
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v7.0.1
+      - uses: actions/setup-node@v7.1.0
+        with:
+          node-version: '24'
+      - name: JavaScript syntax and fictional-data regression tests
+        run: |
+          node --check tracker-v53.js
+          node --check service-worker.js
+          node --test tests/*.test.cjs
+      - name: Install browser test tools
+        run: |
+          npm install --no-save --package-lock=false playwright@1.62.1
+          npx playwright install --with-deps chromium
+      - name: Desktop and phone browser tests
+        run: node tests/browser.cjs
+      - name: Package and inspect code-only release
+        run: python3 scripts/package_release.py
+      - uses: actions/upload-artifact@v7.0.2
+        if: always()
+        with:
+          name: v5.3-validation
+          path: |
+            test-results/
+            dist/
