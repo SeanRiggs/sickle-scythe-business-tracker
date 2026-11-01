@@ -1,12 +1,12 @@
 from pathlib import Path
 import csv, hashlib, json, subprocess, zipfile
 ROOT=Path(__file__).resolve().parents[1]
-FILES=['DEPLOYMENT-MARKER.txt','LICENSE','README.md','index.html','logo-placeholder.svg','manifest.webmanifest','partner-sales-template.csv','service-worker.js','styles.css','tracker-v531.js']
-for name in ['tracker-v531.js','service-worker.js']:subprocess.run(['node','--check',str(ROOT/name)],check=True)
+FILES=['DEPLOYMENT-MARKER.txt','LICENSE','README.md','index.html','logo-placeholder.svg','manifest.webmanifest','partner-sales-template.csv','service-worker.js','styles.css','tracker-v531-2.js']
+for name in ['tracker-v531-2.js','service-worker.js']:subprocess.run(['node','--check',str(ROOT/name)],check=True)
 assert len(list(csv.reader((ROOT/'partner-sales-template.csv').open())))==1,'Template must be blank/header-only'
-assert 'tracker-v531.js' in (ROOT/'index.html').read_text()
-assert 'ss-v531' in (ROOT/'service-worker.js').read_text()
-assert 'repairProductionData' not in (ROOT/'tracker-v531.js').read_text()
+assert 'tracker-v531-2.js' in (ROOT/'index.html').read_text()
+assert 'ss-v531-2' in (ROOT/'service-worker.js').read_text()
+assert 'repairProductionData' not in (ROOT/'tracker-v531-2.js').read_text()
 assert not (ROOT/'tracker-v52.js').exists()
 assert not (ROOT/'tracker-v53.js').exists()
 out=ROOT/'dist';out.mkdir(exist_ok=True)
