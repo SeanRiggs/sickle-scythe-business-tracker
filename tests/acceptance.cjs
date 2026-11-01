@@ -30,6 +30,7 @@ const fixture={schemaVersion:4,updatedAt:null,orders:[],sales:[{id:'INV-EXAMPLE'
  const context=await browser.newContext({serviceWorkers:'allow'});
  let remote=structuredClone(fixture),etag='example-v1',puts=0,fail=0;
  const requests=[],errors=[];
+ await context.route('**/*',r=>new URL(r.request().url()).hostname==='127.0.0.1'?r.continue():r.abort());
  await context.route('https://graph.microsoft.com/**',async route=>{
   const req=route.request();requests.push({method:req.method(),url:req.url()});
   if(fail)return route.fulfill({status:fail,body:'Synthetic provider failure'});
