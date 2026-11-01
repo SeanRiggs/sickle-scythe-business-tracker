@@ -56,10 +56,11 @@ const fixture={schemaVersion:4,updatedAt:null,orders:[],sales:[{id:'INV-EXAMPLE'
   await page.evaluate(data=>localStorage.setItem('ss-v4-db',JSON.stringify(data)),fixture);
   legacy=false;
   await page.goto('http://127.0.0.1:8766/?v=53');
-  await page.waitForFunction(async()=>typeof BUILD!=='undefined'&&BUILD==='5.3'&&(await caches.keys()).includes('ss-v53')&&!(await caches.keys()).includes('ss-v52'));
+  await page.waitForFunction(async()=>typeof BUILD!=='undefined'&&BUILD==='5.3'&&navigator.serviceWorker.controller?.scriptURL.endsWith('?v=53')&&(await caches.keys()).includes('ss-v53')&&!(await caches.keys()).includes('ss-v52'));
   assert.deepEqual(await page.evaluate(()=>JSON.parse(localStorage.getItem(LOCAL))),fixture);
   await page.evaluate(()=>localStorage.setItem('ss_tokens',JSON.stringify({access_token:'fictional-token',expires_at:Date.now()+3600000})));
   await page.reload();await page.waitForFunction(()=>cloudHealthy&&syncState==='Cloud current');assert.equal(puts,0);
+  fs.writeFileSync(`${results}/before-offline.json`,JSON.stringify(await page.evaluate(async()=>({controller:navigator.serviceWorker.controller?.scriptURL,cacheKeys:(await(await caches.open('ss-v53')).keys()).map(r=>r.url),worker:(await navigator.serviceWorker.ready).active?.state})),null,2));
   await context.setOffline(true);
   await page.waitForFunction(()=>navigator.onLine===false);
   await page.getByText('ONEDRIVE IS NOT CONFIRMED CONNECTED',{exact:true}).waitFor();
