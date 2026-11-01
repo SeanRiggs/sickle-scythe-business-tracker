@@ -6,13 +6,22 @@ const path=require('node:path');
 const engine=process.env.BROWSER_ENGINE||'chromium';
 const results=`test-results/${engine}`;
 fs.mkdirSync(results,{recursive:true});
-let legacy=true;
+let legacy=true,remote,etag='example-v1',puts=0,fail=0;const requests=[];
 // Actual v5.2 worker, with a fictional shell in place of the historical application.
 // This verifies cached-shell replacement, not historical data migrations.
 const legacyHTML='<html><body>Example legacy shell<script src="tracker-v52.js"></script><script>navigator.serviceWorker.register("service-worker.js?v=52")</script></body></html>';
 const server=http.createServer((req,res)=>{
  const name=new URL(req.url,'http://localhost').pathname;
  res.setHeader('Cache-Control','no-store');
+ if(name.startsWith('/__mock-graph/')){
+  requests.push({method:req.method,url:req.url});res.setHeader('Content-Type','application/json');
+  if(fail){res.writeHead(fail);return res.end('Synthetic provider failure');}
+  if(req.method==='PUT'){
+   if(req.headers['if-match']!==etag){res.writeHead(412);return res.end('Synthetic conflict');}
+   let body='';req.on('data',chunk=>body+=chunk);req.on('end',()=>{remote=JSON.parse(body);etag='example-v'+(++puts+1);res.end(JSON.stringify({id:'example-file',eTag:etag}));});return;
+  }
+  return res.end(JSON.stringify(name.endsWith('/content')?remote:{id:'example-file',eTag:etag}));
+ }
  if(name==='/service-worker.js'){
   res.setHeader('Content-Type','application/javascript');
   return res.end(fs.readFileSync(legacy?'tests/legacy-worker.fixture.js':'service-worker.js'));
@@ -28,20 +37,18 @@ const fixture={schemaVersion:4,updatedAt:null,orders:[],sales:[{id:'INV-EXAMPLE'
  await new Promise(r=>server.listen(8766,'127.0.0.1',r));
  const browser=await ({chromium,webkit}[engine]).launch({headless:true});
  const context=await browser.newContext({serviceWorkers:'allow'});
- let remote=structuredClone(fixture),etag='example-v1',puts=0,fail=0;
- const requests=[],errors=[];
- await context.route('**/*',r=>new URL(r.request().url()).hostname==='127.0.0.1'?r.continue():r.abort());
- await context.route('https://graph.microsoft.com/**',async route=>{
-  const req=route.request();requests.push({method:req.method(),url:req.url()});
-  if(fail)return route.fulfill({status:fail,body:'Synthetic provider failure'});
-  if(req.method()==='PUT'){
-   if(req.headers()['if-match']!==etag)return route.fulfill({status:412,body:'Synthetic conflict'});
-   remote=JSON.parse(req.postData());etag='example-v'+(++puts+1);
-   return route.fulfill({json:{id:'example-file',eTag:etag}});
-  }
-  return route.fulfill({json:req.url().includes('/content')?remote:{id:'example-file',eTag:etag}});
+ remote=structuredClone(fixture);const errors=[];
+ // WebKit service-worker requests can bypass Playwright routing. Rewrite Graph at
+ // the page fetch boundary to this local server before any app code executes.
+ await context.addInitScript(()=>{
+  const nativeFetch=window.fetch.bind(window);
+  window.fetch=(input,options)=>{
+   const url=new URL(typeof input==='string'?input:input.url,location.href);
+   if(url.origin==='https://graph.microsoft.com')return nativeFetch(location.origin+'/__mock-graph'+url.pathname+url.search,options);
+   if(url.origin!==location.origin)throw Error('External requests forbidden in isolated acceptance tests');
+   return nativeFetch(input,options);
+  };
  });
- await context.route('https://login.microsoftonline.com/**',r=>r.abort());
  const page=await context.newPage();page.on('pageerror',e=>errors.push(e.message));page.on('dialog',d=>d.type()==='confirm'?d.accept():d.dismiss());
  try{
   await page.goto('http://127.0.0.1:8766/');
