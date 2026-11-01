@@ -1,2 +1,2 @@
-# Sickle & Scythe Tracker v4.4 Production Migration
-Upload all eight files to the repository root. In Settings, select Run Production Migration once. The process backs up the test database before replacing it.
+# Sickle & Scythe Tracker v4.5
+Adds Receivables Workspace, aging filters, customer profiles, prioritized invoice sorting, and actionable Needs Review workflows. Upload all files to repository root.
