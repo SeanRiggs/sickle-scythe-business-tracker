@@ -59,12 +59,12 @@ const fixture={schemaVersion:4,updatedAt:null,orders:[],sales:[{id:'INV-EXAMPLE'
   await page.waitForFunction(async()=>!!navigator.serviceWorker.controller&&(await caches.keys()).includes('ss-v52'));
   await page.evaluate(data=>localStorage.setItem('ss-v4-db',JSON.stringify(data)),fixture);
   legacy=false;
-  await page.goto('http://127.0.0.1:8766/?v=53');
-  await page.waitForFunction(async()=>typeof BUILD!=='undefined'&&BUILD==='5.3'&&navigator.serviceWorker.controller?.scriptURL.endsWith('?v=53')&&(await caches.keys()).includes('ss-v53')&&!(await caches.keys()).includes('ss-v52'));
+  await page.goto('http://127.0.0.1:8766/?v=531');
+  await page.waitForFunction(async()=>typeof BUILD!=='undefined'&&BUILD==='5.3.1'&&navigator.serviceWorker.controller?.scriptURL.endsWith('?v=531')&&(await caches.keys()).includes('ss-v531')&&!(await caches.keys()).includes('ss-v52'));
   assert.deepEqual(await page.evaluate(()=>JSON.parse(localStorage.getItem(LOCAL))),fixture);
   await page.evaluate(()=>localStorage.setItem('ss_tokens',JSON.stringify({access_token:'fictional-token',expires_at:Date.now()+3600000})));
   await page.reload();await page.waitForFunction(()=>cloudHealthy&&syncState==='Cloud current');assert.equal(puts,0);
-  fs.writeFileSync(`${results}/before-offline.json`,JSON.stringify(await page.evaluate(async()=>({controller:navigator.serviceWorker.controller?.scriptURL,cacheKeys:(await(await caches.open('ss-v53')).keys()).map(r=>r.url),worker:(await navigator.serviceWorker.ready).active?.state})),null,2));
+  fs.writeFileSync(`${results}/before-offline.json`,JSON.stringify(await page.evaluate(async()=>({controller:navigator.serviceWorker.controller?.scriptURL,cacheKeys:(await(await caches.open('ss-v531')).keys()).map(r=>r.url),worker:(await navigator.serviceWorker.ready).active?.state})),null,2));
   if(offlineMode==='server'){networkDown=true;await page.evaluate(()=>{localStorage.setItem('__testOffline','1');window.dispatchEvent(new Event('offline'));});}else await context.setOffline(true);
   await page.waitForFunction(()=>navigator.onLine===false);
   await page.getByText('ONEDRIVE IS NOT CONFIRMED CONNECTED',{exact:true}).waitFor();
@@ -73,7 +73,7 @@ const fixture={schemaVersion:4,updatedAt:null,orders:[],sales:[{id:'INV-EXAMPLE'
   await page.getByRole('dialog').getByLabel('Amount',{exact:true}).fill('500');
   await page.getByRole('button',{name:'Save Payment',exact:true}).click();
   assert.equal(await page.evaluate(()=>db.payments[0].amount),500);assert.equal(puts,0);
-  await page.reload();await page.waitForFunction(()=>typeof BUILD!=='undefined'&&BUILD==='5.3');
+  await page.reload();await page.waitForFunction(()=>typeof BUILD!=='undefined'&&BUILD==='5.3.1');
   assert.equal(await page.evaluate(()=>db.payments[0].amount),500);
   assert.equal(await page.evaluate(()=>customerCredit('Example Customer')),210);
   assert.equal(await page.evaluate(()=>db.settings.businessNote),'Example setting');
@@ -85,7 +85,7 @@ const fixture={schemaVersion:4,updatedAt:null,orders:[],sales:[{id:'INV-EXAMPLE'
   fail=429;assert.equal(await page.evaluate(()=>cloudSave(true)),false);
   assert.equal(await page.evaluate(()=>cloudHealthy),false);assert.equal(puts,1);
   fail=0;assert.equal(await page.evaluate(()=>cloudSave(true)),true);assert.equal(puts,1);
-  const keys=await page.evaluate(async()=>{const c=await caches.open('ss-v53');return (await c.keys()).map(r=>r.url);});
+  const keys=await page.evaluate(async()=>{const c=await caches.open('ss-v531');return (await c.keys()).map(r=>r.url);});
   assert(keys.every(k=>new URL(k).hostname==='127.0.0.1'&&!/business-data|graph.microsoft|tracker-v52/.test(k)));
   await page.screenshot({path:`${results}/upgrade-recovery.png`,fullPage:true});
   assert.deepEqual(errors,[]);
