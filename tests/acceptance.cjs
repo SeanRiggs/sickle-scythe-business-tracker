@@ -4,14 +4,17 @@ const fs=require('node:fs');
 const http=require('node:http');
 const path=require('node:path');
 const engine=process.env.BROWSER_ENGINE||'chromium';
+const offlineMode=process.env.NETWORK_MODE||'driver';
 const results=`test-results/${engine}`;
 fs.mkdirSync(results,{recursive:true});
+let networkDown=false;
 let legacy=true,remote,etag='example-v1',puts=0,fail=0;const requests=[];
 // Actual v5.2 worker, with a fictional shell in place of the historical application.
 // This verifies cached-shell replacement, not historical data migrations.
 const legacyHTML='<html><body>Example legacy shell<script src="tracker-v52.js"></script><script>navigator.serviceWorker.register("service-worker.js?v=52")</script></body></html>';
 const server=http.createServer((req,res)=>{
  const name=new URL(req.url,'http://localhost').pathname;
+ if(networkDown){req.socket.destroy();return;}
  res.setHeader('Cache-Control','no-store');
  if(name.startsWith('/__mock-graph/')){
   requests.push({method:req.method,url:req.url});res.setHeader('Content-Type','application/json');
@@ -40,7 +43,8 @@ const fixture={schemaVersion:4,updatedAt:null,orders:[],sales:[{id:'INV-EXAMPLE'
  remote=structuredClone(fixture);const errors=[];
  // WebKit service-worker requests can bypass Playwright routing. Rewrite Graph at
  // the page fetch boundary to this local server before any app code executes.
- await context.addInitScript(()=>{
+ await context.addInitScript(mode=>{
+  if(mode==='server')Object.defineProperty(navigator,'onLine',{get:()=>!localStorage.getItem('__testOffline')});
   const nativeFetch=window.fetch.bind(window);
   window.fetch=(input,options)=>{
    const url=new URL(typeof input==='string'?input:input.url,location.href);
@@ -48,7 +52,7 @@ const fixture={schemaVersion:4,updatedAt:null,orders:[],sales:[{id:'INV-EXAMPLE'
    if(url.origin!==location.origin)throw Error('External requests forbidden in isolated acceptance tests');
    return nativeFetch(input,options);
   };
- });
+ },offlineMode);
  const page=await context.newPage();page.on('pageerror',e=>errors.push(e.message));page.on('dialog',d=>d.type()==='confirm'?d.accept():d.dismiss());
  try{
   await page.goto('http://127.0.0.1:8766/');
@@ -61,7 +65,7 @@ const fixture={schemaVersion:4,updatedAt:null,orders:[],sales:[{id:'INV-EXAMPLE'
   await page.evaluate(()=>localStorage.setItem('ss_tokens',JSON.stringify({access_token:'fictional-token',expires_at:Date.now()+3600000})));
   await page.reload();await page.waitForFunction(()=>cloudHealthy&&syncState==='Cloud current');assert.equal(puts,0);
   fs.writeFileSync(`${results}/before-offline.json`,JSON.stringify(await page.evaluate(async()=>({controller:navigator.serviceWorker.controller?.scriptURL,cacheKeys:(await(await caches.open('ss-v53')).keys()).map(r=>r.url),worker:(await navigator.serviceWorker.ready).active?.state})),null,2));
-  await context.setOffline(true);
+  if(offlineMode==='server'){networkDown=true;await page.evaluate(()=>{localStorage.setItem('__testOffline','1');window.dispatchEvent(new Event('offline'));});}else await context.setOffline(true);
   await page.waitForFunction(()=>navigator.onLine===false);
   await page.getByText('ONEDRIVE IS NOT CONFIRMED CONNECTED',{exact:true}).waitFor();
   await page.getByRole('button',{name:'Sales & Payments',exact:true}).click();
@@ -74,7 +78,7 @@ const fixture={schemaVersion:4,updatedAt:null,orders:[],sales:[{id:'INV-EXAMPLE'
   assert.equal(await page.evaluate(()=>customerCredit('Example Customer')),210);
   assert.equal(await page.evaluate(()=>db.settings.businessNote),'Example setting');
   assert.equal(await page.evaluate(()=>db.futureField.preserve),true);
-  await context.setOffline(false);await page.waitForFunction(()=>navigator.onLine);
+  if(offlineMode==='server'){networkDown=false;await page.evaluate(()=>{localStorage.removeItem('__testOffline');window.dispatchEvent(new Event('online'));});}else await context.setOffline(false);await page.waitForFunction(()=>navigator.onLine);
   await page.getByRole('button',{name:'Retry Sync',exact:true}).click();
   await page.waitForFunction(()=>cloudHealthy&&syncState==='Cloud saved');
   assert.equal(remote.payments[0].amount,500);assert.equal(puts,1);
@@ -85,7 +89,7 @@ const fixture={schemaVersion:4,updatedAt:null,orders:[],sales:[{id:'INV-EXAMPLE'
   assert(keys.every(k=>new URL(k).hostname==='127.0.0.1'&&!/business-data|graph.microsoft|tracker-v52/.test(k)));
   await page.screenshot({path:`${results}/upgrade-recovery.png`,fullPage:true});
   assert.deepEqual(errors,[]);
-  fs.writeFileSync(`${results}/acceptance-report.json`,JSON.stringify({passed:true,engine,syntheticOnly:true,liveMicrosoftRequests:0,legacyWorkerBaseline:'fd65f76ccff9cf5637ebccae5823d6783037b3bd',legacyShell:'fictional',cacheUpgrade:true,oldCacheRemoved:true,unchangedDataOnUpgrade:true,offlinePaymentEdit:true,offlineReload:true,settingsRetention:true,unknownFieldsRetained:true,reconnectUpload:true,rateLimitRecovery:true,conditionalPuts:puts,browserErrors:errors,cacheKeys:keys,mockedRequests:requests.length},null,2));
+  fs.writeFileSync(`${results}/acceptance-report.json`,JSON.stringify({passed:true,engine,offlineMode,physicalDeviceVerified:false,syntheticOnly:true,liveMicrosoftRequests:0,legacyWorkerBaseline:'fd65f76ccff9cf5637ebccae5823d6783037b3bd',legacyShell:'fictional',cacheUpgrade:true,oldCacheRemoved:true,unchangedDataOnUpgrade:true,offlinePaymentEdit:true,offlineReload:true,settingsRetention:true,unknownFieldsRetained:true,reconnectUpload:true,rateLimitRecovery:true,conditionalPuts:puts,browserErrors:errors,cacheKeys:keys,mockedRequests:requests.length},null,2));
  }catch(e){await page.screenshot({path:`${results}/acceptance-failure.png`,fullPage:true}).catch(()=>{});fs.writeFileSync(`${results}/acceptance-failure.txt`,String(e)+'\n'+await page.locator('body').innerText());throw e;}
  finally{await browser.close();server.close();}
 })().catch(e=>{console.error(e);server.close();process.exitCode=1;});

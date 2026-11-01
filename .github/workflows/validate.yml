@@ -34,10 +34,11 @@ jobs:
       - name: Chromium cached upgrade and offline recovery
         if: ${{ !cancelled() }}
         run: node tests/acceptance.cjs
-      - name: WebKit cached upgrade and offline recovery
+      - name: WebKit cached upgrade and simulated connection-loss recovery
         if: ${{ !cancelled() }}
         env:
           BROWSER_ENGINE: webkit
+          NETWORK_MODE: server
           PW_TEST_SCREENSHOT_NO_FONTS_READY: '1'
         run: node tests/acceptance.cjs
       - name: Package and inspect code-only release
