@@ -53,17 +53,22 @@ const fixture={schemaVersion:4,updatedAt:null,orders:[],sales:[{id:'INV-EXAMPLE'
    return nativeFetch(input,options);
   };
  },offlineMode);
- const page=await context.newPage();page.on('pageerror',e=>errors.push(e.message));page.on('dialog',d=>d.type()==='confirm'?d.accept():d.dismiss());
+ let stage='initial navigation';const checkpoint=name=>{stage=name;console.log('Acceptance checkpoint: '+name);};const page=await context.newPage();page.on('pageerror',e=>errors.push(e.message));page.on('dialog',d=>d.type()==='confirm'?d.accept():d.dismiss());
  try{
   await page.goto('http://127.0.0.1:8766/');
   await page.waitForFunction(async()=>!!navigator.serviceWorker.controller&&(await caches.keys()).includes('ss-v52'));
   await page.evaluate(data=>localStorage.setItem('ss-v4-db',JSON.stringify(data)),fixture);
-  legacy=false;
+  legacy=false;checkpoint('load current shell');
   await page.goto('http://127.0.0.1:8766/?v=54');
   await page.waitForFunction(async()=>typeof BUILD!=='undefined'&&BUILD==='5.4'&&navigator.serviceWorker.controller?.scriptURL.endsWith('?v=54')&&(await caches.keys()).includes('ss-v54')&&!(await caches.keys()).includes('ss-v52'));
   assert.deepEqual(await page.evaluate(()=>JSON.parse(localStorage.getItem(LOCAL))),fixture);
   await page.evaluate(()=>localStorage.setItem('ss_tokens',JSON.stringify({access_token:'fictional-token',expires_at:Date.now()+3600000})));
-  await page.reload();await page.waitForFunction(()=>cloudHealthy&&syncState==='Cloud current');assert.equal(puts,0);
+  checkpoint('reload authenticated shell');await page.reload();await page.waitForFunction(()=>cloudHealthy&&syncState==='Cloud current');assert.equal(puts,0);
+  // Reload may race a browser update of the previous worker URL. Verify the actual
+  // controlling registration again before simulating loss of connectivity.
+  await page.evaluate(()=>navigator.serviceWorker.register('service-worker.js?v=54',{updateViaCache:'none'}));
+  await page.waitForFunction(async()=>navigator.serviceWorker.controller?.scriptURL.endsWith('?v=54')&&(await navigator.serviceWorker.ready).active?.scriptURL.endsWith('?v=54'));
+  checkpoint('verified current worker; go offline');
   fs.writeFileSync(`${results}/before-offline.json`,JSON.stringify(await page.evaluate(async()=>({controller:navigator.serviceWorker.controller?.scriptURL,cacheKeys:(await(await caches.open('ss-v54')).keys()).map(r=>r.url),worker:(await navigator.serviceWorker.ready).active?.state})),null,2));
   if(offlineMode==='server'){networkDown=true;await page.evaluate(()=>{localStorage.setItem('__testOffline','1');window.dispatchEvent(new Event('offline'));});}else await context.setOffline(true);
   await page.waitForFunction(()=>navigator.onLine===false);
@@ -73,7 +78,7 @@ const fixture={schemaVersion:4,updatedAt:null,orders:[],sales:[{id:'INV-EXAMPLE'
   await page.getByRole('dialog').getByLabel('Amount',{exact:true}).fill('500');
   await page.getByRole('button',{name:'Save Payment',exact:true}).click();
   assert.equal(await page.evaluate(()=>db.payments[0].amount),500);assert.equal(puts,0);
-  await page.reload();await page.waitForFunction(()=>typeof BUILD!=='undefined'&&BUILD==='5.4');
+  checkpoint('offline reload');await page.reload();await page.waitForFunction(()=>typeof BUILD!=='undefined'&&BUILD==='5.4');
   assert.equal(await page.evaluate(()=>db.payments[0].amount),500);
   assert.equal(await page.evaluate(()=>customerCredit('Example Customer')),210);
   assert.equal(await page.evaluate(()=>db.settings.businessNote),'Example setting');
@@ -82,7 +87,7 @@ const fixture={schemaVersion:4,updatedAt:null,orders:[],sales:[{id:'INV-EXAMPLE'
   await page.getByRole('button',{name:'Retry Sync',exact:true}).click();
   await page.waitForFunction(()=>cloudHealthy&&syncState==='Cloud saved');
   assert.equal(remote.payments[0].amount,500);assert.equal(puts,1);
-  fail=429;assert.equal(await page.evaluate(()=>cloudSave(true)),false);
+  checkpoint('rate-limit recovery');fail=429;assert.equal(await page.evaluate(()=>cloudSave(true)),false);
   assert.equal(await page.evaluate(()=>cloudHealthy),false);assert.equal(puts,1);
   fail=0;assert.equal(await page.evaluate(()=>cloudSave(true)),true);assert.equal(puts,1);
   const keys=await page.evaluate(async()=>{const c=await caches.open('ss-v54');return (await c.keys()).map(r=>r.url);});
@@ -90,6 +95,6 @@ const fixture={schemaVersion:4,updatedAt:null,orders:[],sales:[{id:'INV-EXAMPLE'
   await page.screenshot({path:`${results}/upgrade-recovery.png`,fullPage:true});
   assert.deepEqual(errors,[]);
   fs.writeFileSync(`${results}/acceptance-report.json`,JSON.stringify({passed:true,engine,offlineMode,physicalDeviceVerified:false,syntheticOnly:true,liveMicrosoftRequests:0,legacyWorkerBaseline:'fd65f76ccff9cf5637ebccae5823d6783037b3bd',legacyShell:'fictional',cacheUpgrade:true,oldCacheRemoved:true,unchangedDataOnUpgrade:true,offlinePaymentEdit:true,offlineReload:true,settingsRetention:true,unknownFieldsRetained:true,reconnectUpload:true,rateLimitRecovery:true,conditionalPuts:puts,browserErrors:errors,cacheKeys:keys,mockedRequests:requests.length},null,2));
- }catch(e){await page.screenshot({path:`${results}/acceptance-failure.png`,fullPage:true}).catch(()=>{});fs.writeFileSync(`${results}/acceptance-failure.txt`,String(e)+'\n'+await page.locator('body').innerText());throw e;}
+ }catch(e){console.error('Acceptance failed at '+stage,e);fs.writeFileSync(results+'/acceptance-failure.txt','Stage: '+stage+'\n'+String(e));const state=await page.evaluate(async()=>({url:location.href,controller:navigator.serviceWorker.controller?.scriptURL,cacheKeys:await caches.keys()})).catch(()=>({unavailable:true}));fs.writeFileSync(results+'/acceptance-state.json',JSON.stringify({stage,state,requests,errors},null,2));await page.screenshot({path:results+'/acceptance-failure.png',fullPage:true,timeout:5000}).catch(()=>{});throw e;}
  finally{await browser.close();server.close();}
 })().catch(e=>{console.error(e);server.close();process.exitCode=1;});
