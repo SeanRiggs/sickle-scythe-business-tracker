@@ -1,0 +1,18 @@
+# Private operational files must never enter this public app repository.
+business-data*.json
+workbook-import*.json
+manual-backup-*.json
+*.xlsx
+*.xls
+*.pdf
+*.csv
+!partner-sales-template.csv
+.env
+.env.*
+_private/
+backups/
+attachments/
+exports/
+dist/
+test-results/
+node_modules/
