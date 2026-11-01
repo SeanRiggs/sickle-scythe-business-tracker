@@ -1,2 +1,2 @@
-Sickle & Scythe Business Tracker v5.3 release candidate
-Base: fd65f76ccff9cf5637ebccae5823d6783037b3bd
+Sickle & Scythe Business Tracker v5.3.1
+Customer receipts and payment navigation
