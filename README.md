@@ -1,10 +1,16 @@
-# Sickle & Scythe Business Tracker — v5.3 release candidate
+# Sickle & Scythe Business Tracker — v5.3.1
 
 A small-business inventory, sales, payment, receivables, warranty, and expense tracker. The static vanilla JavaScript PWA is hosted on GitHub Pages. Microsoft sign-in uses the existing OAuth Authorization Code + PKCE flow; the private OneDrive App Folder holds `business-data.json`. There is no client secret and no required application build framework.
 
-**This candidate needs owner acceptance before replacing production.** Tests use fictional records and mocked cloud responses. They do not access the production database or prove live Microsoft account behavior.
+**Production data remains private.** Tests use fictional records and mocked cloud responses. They do not access the production database or prove live Microsoft account behavior.
 
-## What changes in v5.3
+## Receipts and navigation in v5.3.1
+
+Sales & Payments has a sticky shortcut bar for Record Sale, Invoices, and Payments & Receipts. Use View Payments on an invoice to find its receipts directly, or search payment history by customer, invoice, amount, or reference. Partner imports are collapsed until needed.
+
+Customer receipts use a phone-friendly layout, omit internal payment notes and empty reference fields, and omit unavailable payment methods. Missing payment dates say Not recorded. Current invoice balances are labeled with an as-of timestamp; stored accounting snapshots remain unchanged. No historical dates, payment methods, or balances are reconstructed.
+
+## Payment controls introduced in v5.3
 
 - Full payment entry/editing for amount, date, method, reference, and notes; edits retain record IDs, unknown fields, and before/after audit details.
 - Payments retain the full amount received. Excess remains invoice-backed customer credit. Credit transfers are paired and excluded from cash collected; refunds reduce net cash collected.
@@ -29,6 +35,11 @@ Weighted landed cost remains an operational estimate, not FIFO. Cash collected i
 
 ## Privacy
 
+This project is primarily a privately operated business tool with a reusable public app shell. Visitors can read the source and load the interface; doing so does not grant access to the owner's OneDrive. Microsoft authorization grants access to the signed-in account's permitted OneDrive files. Business records and uploaded branding are loaded from private storage, not bundled into the site.
+
+The browser's local cache also contains business information: use trusted devices and profiles. Anyone adapting the app must configure their own Microsoft app registration and redirect URI. Never add a client secret to this browser application.
+
+
 Public GitHub contains source, assets, documentation, and fictional test code only. Never upload business databases, backups, completed partner CSVs, customer attachments, receipts, invoices, or accountant exports. The partner template is header-only.
 
 Removing sensitive files or repair code from a new release does not remove their contents from Git history or previously downloaded releases. Any historical exposure requires a separate owner-approved review and cleanup. Do not paste production data into issues or test reports.
@@ -44,7 +55,7 @@ Open http://localhost:8000/ using an isolated browser profile. Do not sign into 
 ## Validation
 
 ```sh
-node --check tracker-v53.js
+node --check tracker-v531.js
 node --check service-worker.js
 node --test tests/*.test.cjs
 npm install --no-save --package-lock=false playwright@1.62.1
@@ -53,6 +64,6 @@ node tests/browser.cjs
 python3 scripts/package_release.py
 ```
 
-The workflow tests fictional data and desktop/phone browser layouts. It has no deployment step or access to repository secrets. See [release acceptance and deployment instructions](docs/V5.3-ACCEPTANCE.md).
+The workflow tests fictional data and desktop/phone browser layouts. It has no deployment step or access to repository secrets. See [release acceptance and deployment instructions](docs/V5.3.1-ACCEPTANCE.md).
 
 The existing [LICENSE](LICENSE) is unchanged.
