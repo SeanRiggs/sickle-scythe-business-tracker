@@ -194,7 +194,7 @@ function commitFinancial(action,mutate){
      const old=new Map((before[type]||[]).map(x=>[x.id,x]));const retained=new Set((db[type]||[]).map(x=>x.id));for(const record of before[type]||[])if(!retained.has(record.id))changes.push({type,id:record.id,before:structuredClone(record),after:null});
      for(const record of (db[type]||[]))if(JSON.stringify(old.get(record.id))!==JSON.stringify(record))changes.push({type,id:record.id,before:old.get(record.id)||null,after:structuredClone(record)});
    }
-   if(JSON.stringify(before.settings)!==JSON.stringify(db.settings))changes.push({type:'settings',before:before.settings,after:structuredClone(db.settings)});
+   for(const key of new Set([...Object.keys(before.settings||{}),...Object.keys(db.settings||{})]))if(JSON.stringify(before.settings?.[key])!==JSON.stringify(db.settings?.[key]))changes.push({type:'settings',id:key,before:structuredClone(before.settings?.[key]??null),after:structuredClone(db.settings?.[key]??null)});
    audit(action,changes.map(c=>c.id).join(', '));db.history[0].changes=changes;
    if(!saveLocal())throw Error('The change was not saved.');
    return true;
