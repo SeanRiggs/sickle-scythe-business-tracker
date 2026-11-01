@@ -1,7 +1,5 @@
 name: Validate tracker release candidate
 on:
-  push:
-    branches: ['release/v5.3']
   pull_request:
   workflow_dispatch:
 permissions:
@@ -23,9 +21,13 @@ jobs:
       - name: Install browser test tools
         run: |
           npm install --no-save --package-lock=false playwright@1.62.1
-          npx playwright install --with-deps chromium
+          npx playwright install --with-deps chromium webkit
       - name: Desktop and phone browser tests
-        run: node tests/browser.cjs
+        run: |
+          node tests/browser.cjs
+          BROWSER_ENGINE=webkit node tests/browser.cjs
+          node tests/acceptance.cjs
+          BROWSER_ENGINE=webkit node tests/acceptance.cjs
       - name: Package and inspect code-only release
         run: python3 scripts/package_release.py
       - uses: actions/upload-artifact@v7.0.2
