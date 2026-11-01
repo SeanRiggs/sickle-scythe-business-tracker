@@ -15,7 +15,7 @@ jobs:
           node-version: '24'
       - name: JavaScript syntax and fictional-data regression tests
         run: |
-          node --check tracker-v531.js
+          node --check tracker-v531-2.js
           node --check service-worker.js
           node --test tests/*.test.cjs
       - name: Install browser test tools

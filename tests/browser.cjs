@@ -7,6 +7,7 @@ try{for(const [name,viewport] of [['desktop',{width:1440,height:1000}],['phone',
  const context=await browser.newContext({viewport,serviceWorkers:'block'});await context.route('**/*',route=>new URL(route.request().url()).origin==='http://127.0.0.1:8765'?route.continue():route.abort());
  await context.addInitScript(data=>{if(!localStorage.getItem('ss-v4-db'))localStorage.setItem('ss-v4-db',JSON.stringify(data));},fixture);
  const requests=[];context.on('requestfailed',r=>requests.push({url:r.url(),failure:r.failure()}));context.on('response',r=>requests.push({url:r.url(),status:r.status()}));context.on('console',m=>requests.push({console:m.text()}));const page=await context.newPage(),errors=[];activePage=page;page.on('pageerror',e=>errors.push(e.message));page.on('dialog',d=>d.type()==='confirm'?d.accept():d.dismiss());await page.goto('http://127.0.0.1:8765/');
+ await page.getByText('Business Tracker v5.3.1',{exact:true}).waitFor();
  await page.getByText('ONEDRIVE IS NOT CONFIRMED CONNECTED',{exact:true}).waitFor();
  await page.getByRole('button',{name:'Sales & Payments',exact:true}).click();await page.getByRole('button',{name:'Payment',exact:true}).click();
  await page.getByRole('dialog').getByLabel('Amount',{exact:true}).fill('500');await page.getByRole('dialog').getByLabel('Reference',{exact:true}).fill('EXAMPLE-REF');await page.getByRole('dialog').getByLabel('Notes',{exact:true}).fill('Fictional test payment');await page.getByRole('button',{name:'Save Payment',exact:true}).click();

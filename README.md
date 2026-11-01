@@ -55,7 +55,7 @@ Open http://localhost:8000/ using an isolated browser profile. Do not sign into 
 ## Validation
 
 ```sh
-node --check tracker-v531.js
+node --check tracker-v531-2.js
 node --check service-worker.js
 node --test tests/*.test.cjs
 npm install --no-save --package-lock=false playwright@1.62.1
