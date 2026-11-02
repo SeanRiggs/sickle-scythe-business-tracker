@@ -8,7 +8,7 @@ ALLOWED = {
     '.gitignore', '.github/workflows/validate.yml', '.github/workflows/privacy.yml',
     'DEPLOYMENT-MARKER.txt', 'LICENSE', 'README.md', 'index.html',
     'logo-placeholder.svg', 'manifest.webmanifest', 'partner-sales-template.csv',
-    'service-worker.js', 'styles.css', 'tracker-v541.js', 'app-config.js',
+    'service-worker.js', 'styles.css', 'tracker-v542.js', 'app-config.js',
     'docs/SETUP.md', 'docs/RECOVERY.md', 'docs/V5.4-ACCEPTANCE.md', 'tests/usability.test.cjs',
     'docs/V5.3-ACCEPTANCE.md', 'docs/V5.3.1-ACCEPTANCE.md',
     'scripts/package_release.py', 'scripts/check_public_files.py',
