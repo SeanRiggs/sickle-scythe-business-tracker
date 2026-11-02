@@ -448,12 +448,16 @@ function editReview(i){const x=db.reviewQueue?.[i];if(!x)return;const r=reviewRe
 function reasonDialog(title,onSave){openEditor(title,field('Reason','reason'),f=>onSave(requiredText(f.reason,'Reason')),{},title);}
 function ignoreReview(i){reasonDialog('Ignore review item',why=>commitFinancial('Review item ignored',()=>Object.assign(db.reviewQueue[i],{ignored:true,resolution:why,resolvedAt:new Date().toISOString()})));}
 function voidPayment(id){const p=db.payments.find(x=>x.id===id);if(!p||p.voided)return;reasonDialog(isTransfer(p)?'Reverse Credit Transfer':'Void Payment',why=>commitFinancial('Payment reversed / voided',()=>voidPaymentRecord(id,why)));}
-function returnSaleRecord(id,fields){
- const sale=activeSale(id),reason=requiredText(fields.reason,'Reason');
+function returnSaleInput(fields){
+ const reason=requiredText(fields.reason,'Reason');
  if(!['returned-resellable','never-delivered'].includes(fields.stock))throw Error('Confirm that every unit is back in resellable stock or was never delivered.');
+ return {reason,stock:fields.stock};
+}
+function returnSaleRecord(id,fields){
+ const sale=activeSale(id),{reason,stock}=returnSaleInput(fields);
  if(db.payments.some(p=>!p.voided&&p.saleId===id))throw Error('This invoice has payment or credit activity. Review the money received and any refund before cancelling the sale.');
  const qty=whole(sale.qty);knownProduct(sale.productId);
- Object.assign(sale,{voided:true,voidReason:reason,voidedAt:new Date().toISOString(),cancellation:{stock:fields.stock,qty,reason}});
+ Object.assign(sale,{voided:true,voidReason:reason,voidedAt:new Date().toISOString(),cancellation:{stock,qty,reason}});
  // Inventory already excludes voided sales. An extra adjustment would double-restock.
 }
 function voidSale(id){
@@ -461,7 +465,7 @@ function voidSale(id){
  if(db.payments.some(p=>!p.voided&&p.saleId===id)){
    return openEditor('Review payment before return',`<p>${html(sale.customer)} · ${html(id)}</p><p>This invoice has payments or credit movements. A return must also account for the money received. Nothing has been changed.</p><p>Review the payment history before deciding on a refund or credit. Do not void a real payment just to cancel the sale.</p>`,()=>{showPayments(id);}, {},'View payments');
  }
- return openEditor('Return / cancel sale',`<p><strong>${html(sale.customer)}</strong><br>${html(id)}<br>${html(pname(sale.productId))} × ${html(sale.qty)}</p><p>Balance removed: <strong>${money(invoice.balance)}</strong><br>Inventory restored: <strong>${html(sale.qty)} unit(s)</strong><br>No payment or refund will be recorded. The original sale stays in History and the invoice list as voided.</p>${select('Where are all the units?','stock',[['','Choose before confirming'],['returned-resellable','Returned — all units are resellable'],['never-delivered','Never delivered — all units are still in stock']])}${field('Reason','reason')}<p>For a partial return, damaged item, or missing unit, cancel this form and review the inventory separately.</p>`,f=>commitFinancial('Sale returned / cancelled',()=>returnSaleRecord(id,f)),{},'Confirm return / cancellation');
+ return openEditor('Return / cancel sale',`<p><strong>${html(sale.customer)}</strong><br>${html(id)}<br>${html(pname(sale.productId))} × ${html(sale.qty)}</p><p>Balance removed: <strong>${money(invoice.balance)}</strong><br>Inventory restored: <strong>${html(sale.qty)} unit(s)</strong><br>No payment or refund will be recorded. The original sale stays in History and the invoice list as voided.</p>${select('Where are all the units?','stock',[['','Choose before confirming'],['returned-resellable','Returned — all units are resellable'],['never-delivered','Never delivered — all units are still in stock']])}${field('Reason','reason')}<p>For a partial return, damaged item, or missing unit, cancel this form and review the inventory separately.</p>`,f=>{const values=returnSaleInput(f);return commitFinancial('Sale returned / cancelled',()=>returnSaleRecord(id,values));},{},'Confirm return / cancellation');
 }
 function voidExpense(id){reasonDialog('Void expense',why=>commitFinancial('Expense voided',()=>Object.assign(db.expenses.find(x=>x.id===id),{voided:true,voidReason:why})));}
 function voidClaim(id){const c=db.claims.find(x=>x.id===id);if(Number(c?.appliedCredit)>0)return alert('This claim has manufacturer credit applied to a purchase order. Review that allocation before voiding.');reasonDialog('Void warranty claim',why=>commitFinancial('Warranty claim voided',()=>Object.assign(c,{voided:true,voidReason:why})));}

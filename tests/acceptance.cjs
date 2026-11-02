@@ -40,7 +40,7 @@ const fixture={schemaVersion:4,updatedAt:null,orders:[],sales:[{id:'INV-EXAMPLE'
  await new Promise(r=>server.listen(8766,'127.0.0.1',r));
  const browser=await ({chromium,webkit}[engine]).launch({headless:true});
  const context=await browser.newContext({serviceWorkers:'allow'});
- remote=structuredClone(fixture);const errors=[];
+ context.setDefaultTimeout(30000);context.setDefaultNavigationTimeout(30000);remote=structuredClone(fixture);const errors=[];
  // WebKit service-worker requests can bypass Playwright routing. Rewrite Graph at
  // the page fetch boundary to this local server before any app code executes.
  await context.addInitScript(mode=>{
