@@ -48,3 +48,7 @@ dialog.return-dialog .fields{grid-template-columns:repeat(2,minmax(0,1fr))}dialo
 .notice .actions, .notice button { margin-top: .5rem; }
 
 dialog .fields > .order-preview { grid-column: 1 / -1; }
+
+dialog.replacement-dialog .fields { grid-template-columns: repeat(2,minmax(0,1fr)); }
+dialog.replacement-dialog .fields > label { grid-column: 1 / -1; }
+dialog.replacement-dialog .fields > label.replacement-pair { grid-column: auto; }

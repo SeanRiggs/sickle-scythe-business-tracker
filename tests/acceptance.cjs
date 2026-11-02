@@ -67,7 +67,21 @@ const fixture={schemaVersion:4,updatedAt:null,orders:[],sales:[{id:'INV-EXAMPLE'
   // Reload may race a browser update of the previous worker URL. Verify the actual
   // controlling registration again before simulating loss of connectivity.
   await page.evaluate(()=>navigator.serviceWorker.register('service-worker.js?v=55',{updateViaCache:'none'}));
-  await page.waitForFunction(async()=>navigator.serviceWorker.controller?.scriptURL.endsWith('?v=55')&&(await navigator.serviceWorker.ready).active?.scriptURL.endsWith('?v=55'));
+  // A prior run observed a late legacy registration takeover after a momentary
+  // controller match. Require one fully activated, quiet registration before
+  // disconnecting; otherwise report a harness setup failure, not an app pass.
+  await page.evaluate(async()=>{
+   const expected=new URL('service-worker.js?v=55',location.href).href;
+   const delay=ms=>new Promise(resolve=>setTimeout(resolve,ms));
+   const ready=reg=>reg?.active?.scriptURL===expected&&reg.active.state==='activated'&&!reg.installing&&!reg.waiting&&navigator.serviceWorker.controller===reg.active;
+   for(let attempt=0;attempt<40;attempt++){
+    let reg=await navigator.serviceWorker.getRegistration();
+    if(!reg?.installing&&!reg?.waiting&&reg?.active?.scriptURL!==expected)reg=await navigator.serviceWorker.register(expected,{updateViaCache:'none'});
+    if(ready(reg)){const active=reg.active;await delay(500);if(ready(reg)&&reg.active===active)return;}
+    await delay(100);
+   }
+   throw Error('Harness setup: current service worker did not settle before offline test');
+  });
   checkpoint('verified current worker; go offline');
   fs.writeFileSync(`${results}/before-offline.json`,JSON.stringify(await page.evaluate(async()=>({controller:navigator.serviceWorker.controller?.scriptURL,cacheKeys:(await(await caches.open('ss-v55')).keys()).map(r=>r.url),worker:(await navigator.serviceWorker.ready).active?.state})),null,2));
   if(offlineMode==='server'){networkDown=true;await page.evaluate(()=>{localStorage.setItem('__testOffline','1');window.dispatchEvent(new Event('offline'));});}else await context.setOffline(true);
@@ -95,7 +109,7 @@ const fixture={schemaVersion:4,updatedAt:null,orders:[],sales:[{id:'INV-EXAMPLE'
   assert(keys.every(k=>new URL(k).hostname==='127.0.0.1'&&!/business-data|graph.microsoft|tracker-v52/.test(k)));
   await page.screenshot({path:`${results}/upgrade-recovery.png`,fullPage:true});
   assert.deepEqual(errors,[]);
-  fs.writeFileSync(`${results}/acceptance-report.json`,JSON.stringify({passed:true,engine,offlineMode,physicalDeviceVerified:false,syntheticOnly:true,liveMicrosoftRequests:0,legacyWorkerBaseline:'fd65f76ccff9cf5637ebccae5823d6783037b3bd',legacyShell:'fictional',cacheUpgrade:true,oldCacheRemoved:true,unchangedDataOnUpgrade:true,offlinePaymentEdit:true,offlineReturnRetention:true,offlineReplacementRetention:true,offlineReload:true,settingsRetention:true,unknownFieldsRetained:true,reconnectUpload:true,rateLimitRecovery:true,conditionalPuts:puts,browserErrors:errors,cacheKeys:keys,mockedRequests:requests.length},null,2));
+  fs.writeFileSync(`${results}/acceptance-report.json`,JSON.stringify({passed:true,engine,offlineMode,physicalDeviceVerified:false,syntheticOnly:true,liveMicrosoftRequests:0,legacyWorkerBaseline:'fd65f76ccff9cf5637ebccae5823d6783037b3bd',legacyShell:'fictional',cacheUpgrade:true,settledWorkerBeforeOffline:true,oldCacheRemoved:true,unchangedDataOnUpgrade:true,offlinePaymentEdit:true,offlineReturnRetention:true,offlineReplacementRetention:true,offlineReload:true,settingsRetention:true,unknownFieldsRetained:true,reconnectUpload:true,rateLimitRecovery:true,conditionalPuts:puts,browserErrors:errors,cacheKeys:keys,mockedRequests:requests.length},null,2));
  }catch(e){console.error('Acceptance failed at '+stage,e);fs.writeFileSync(results+'/acceptance-failure.txt','Stage: '+stage+'\n'+String(e));const state=await page.evaluate(async()=>({url:location.href,controller:navigator.serviceWorker.controller?.scriptURL,cacheKeys:await caches.keys()})).catch(()=>({unavailable:true}));fs.writeFileSync(results+'/acceptance-state.json',JSON.stringify({stage,state,requests,errors},null,2));await page.screenshot({path:results+'/acceptance-failure.png',fullPage:true,timeout:5000}).catch(()=>{});throw e;}
  finally{await browser.close();server.close();}
 })().catch(e=>{console.error(e);server.close();process.exitCode=1;});
