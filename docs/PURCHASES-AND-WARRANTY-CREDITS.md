@@ -1,6 +1,6 @@
 # Receive inventory bought with warranty credit
 
-For the v5.4.3 candidate. Check the version displayed in the app before using the new claim/order links and cancellation controls.
+Available since v5.4.3; retained in v5.5. Check the version displayed in the app before using the new claim/order links and cancellation controls.
 
 ## Enter the purchase once
 
@@ -36,3 +36,5 @@ Do not enter a warranty credit as revenue, a customer payment or a separate inve
 Orders with received stock require a supplier-return review. Older credited orders without allocation links cannot safely release credit automatically; back up and reconcile the records first. The update does not reconstruct historical links.
 
 An order's **Net order cost** is not proof of payment. Supplier cash payments and supplier accounts payable are not tracked by this application.
+
+Record the actual stock-arrival date when receiving. Manufacturer approval and replacement shipments are separate; see [Inventory and costs](INVENTORY-AND-COSTS.md).

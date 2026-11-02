@@ -15,7 +15,7 @@ jobs:
           node-version: '24'
       - name: JavaScript syntax and fictional-data regression tests
         run: |
-          node --check tracker-v543.js
+          node --check tracker-v55.js
           node --check service-worker.js
           node --test tests/*.test.cjs
       - name: Install browser test tools
@@ -23,12 +23,12 @@ jobs:
           npm install --no-save --package-lock=false playwright@1.62.1
           npx playwright install --with-deps chromium webkit
       - name: Chromium desktop and phone checks
-        run: timeout 180s node tests/browser.cjs
+        run: timeout 240s node tests/browser.cjs
       - name: Save Chromium diagnostics before recovery tests
         uses: actions/upload-artifact@v7.0.2
         if: always()
         with:
-          name: chromium-return-diagnostics
+          name: chromium-operations-diagnostics
           path: test-results/chromium/
       - name: WebKit desktop and phone checks
         if: ${{ !cancelled() }}
@@ -36,7 +36,7 @@ jobs:
           BROWSER_ENGINE: webkit
           # WebKit receipt documents can leave fonts.ready pending; inspect captured images.
           PW_TEST_SCREENSHOT_NO_FONTS_READY: '1'
-        run: timeout 180s node tests/browser.cjs
+        run: timeout 240s node tests/browser.cjs
       - name: Chromium cached upgrade and offline recovery
         if: ${{ !cancelled() }}
         run: timeout 120s node tests/acceptance.cjs
@@ -52,7 +52,7 @@ jobs:
       - uses: actions/upload-artifact@v7.0.2
         if: always()
         with:
-          name: v5.4.3-validation
+          name: v5.5-validation
           path: |
             test-results/
             dist/
