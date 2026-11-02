@@ -46,3 +46,5 @@ dialog.return-dialog .fields{grid-template-columns:repeat(2,minmax(0,1fr))}dialo
 .movement-row p { margin: .4rem 0; }
 .movement-row button { margin: .3rem .3rem .3rem 0; }
 .notice .actions, .notice button { margin-top: .5rem; }
+
+dialog .fields > .order-preview { grid-column: 1 / -1; }
