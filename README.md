@@ -2,7 +2,7 @@
 
 A browser-based tracker for inventory, purchase orders, sales, payments, customer credits, expenses and warranties. Built for everyday work on a phone or computer, with a public application shell and private business records.
 
-**v5.4.3 candidate:** clearer purchase orders, traceable warranty-credit allocations, direct actions in customer profiles, and decimal payment entry. v5.4.2 supplies partial returns and direct search actions.
+**v5.5:** connected inventory history, exact-record review warnings, replacements tracked separately from manufacturer approval, and clearer profit estimates that include confirmed warranty and stock-loss costs. Earlier unclear costs require review; no historical records are rewritten automatically.
 
 ## What it does
 
@@ -16,12 +16,13 @@ A browser-based tracker for inventory, purchase orders, sales, payments, custome
 
 ## Get started
 
+- **[Inventory history, replacements and cost review](docs/INVENTORY-AND-COSTS.md)**
 - **[Receive inventory bought with warranty credit](docs/PURCHASES-AND-WARRANTY-CREDITS.md)**
 - **[Workflow review and improvement roadmap](docs/WORKFLOW-REVIEW.md)**
 
 - **[Set up your own local or OneDrive installation](docs/SETUP.md)**
 - **[Back up, restore and switch devices safely](docs/RECOVERY.md)**
-- **[Test the v5.4 candidate](docs/V5.4-ACCEPTANCE.md)**
+- **[Test the v5.5 candidate](docs/V5.5-ACCEPTANCE.md)**
 
 On a phone, use the bottom navigation for Dashboard, Sales & Payments and Customers; **More** opens other sections. In landscape, navigation moves beside the workspace.
 
@@ -41,7 +42,7 @@ Local-only mode provides explicit setup and manual backups, with no automatic cr
 
 ## Scope and limitations
 
-- Weighted landed-cost estimates, not FIFO or complete accounting software.
+- Weighted landed-cost estimates, not FIFO or complete accounting software. Earlier unclear warranty/loss costs keep profit provisional until reviewed; costs already in Expenses need explicit links to prevent double-counting.
 - One editing device at a time; no roles or automatic conflict merging.
 - Unknown dates remain unknown. Units sold sum quantities; transactions count invoices.
 - Restoring replaces records deliberately; cloud upload is a separate guarded action.

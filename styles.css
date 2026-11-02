@@ -39,3 +39,16 @@ dialog.return-dialog .fields{grid-template-columns:repeat(2,minmax(0,1fr))}dialo
 .order-preview{background:#14271d;border:1px solid #38704c;padding:14px;border-radius:12px;margin:14px 0}.order-breakdown{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px}.order-breakdown strong{text-align:right}.order-preview p{margin:8px 0}.po-line{padding:14px 0;border-bottom:1px solid #334155}
 /* Pair short purchase inputs without squeezing product names or references. */
 #po>.fields,#po .po-line{grid-template-columns:repeat(2,minmax(0,1fr))}#po>.fields>label{grid-column:1/-1}#po>.fields>label:has([name=shipping]),#po>.fields>label:has([name=fees]){grid-column:auto}#po .po-line>label:first-child,#po .po-line>.actions{grid-column:1/-1}
+
+/* Inventory and cost history stays readable in narrow dialogs. */
+.movement-row { padding: 1rem 0; border-bottom: 1px solid var(--line, #334155); overflow-wrap: anywhere; }
+.movement-row > div { display: flex; flex-wrap: wrap; align-items: center; gap: .65rem; }
+.movement-row p { margin: .4rem 0; }
+.movement-row button { margin: .3rem .3rem .3rem 0; }
+.notice .actions, .notice button { margin-top: .5rem; }
+
+dialog .fields > .order-preview { grid-column: 1 / -1; }
+
+dialog.replacement-dialog .fields { grid-template-columns: repeat(2,minmax(0,1fr)); }
+dialog.replacement-dialog .fields > label { grid-column: 1 / -1; }
+dialog.replacement-dialog .fields > label.replacement-pair { grid-column: auto; }

@@ -1,6 +1,15 @@
 # Business workflow review — November 2026
 
-Reviewed the current v5.4.2 source at `981446c298dded214dcc7ea13732855aadeeb16b`. v5.4.2 is deployed; the improvements identified below as **candidate** belong to v5.4.3 and require a separate deployment. This review uses public code, fictional records, automated checks and a signed-out live UI. It does not inspect or reconcile anyone's private OneDrive database.
+The initial review used v5.4.2 at `981446c298dded214dcc7ea13732855aadeeb16b`. Purchasing improvements shipped in v5.4.3. The v5.5 candidate starts from deployed commit `c2b5a0ea446f9c0252e13303da77f8b656a1104b`. The original table below records the findings at that time; the update immediately below supersedes its completed roadmap items. This review uses public code, fictional records, automated checks and a signed-out live UI. It does not inspect or reconcile anyone's private OneDrive database.
+
+## v5.5 candidate update
+
+- Inventory history now connects received purchases, original sales, returns, replacements and adjustments, with exact source actions and audited adjustment/replacement reversals. Older receipt and shipment dates stay unknown.
+- Data Health warnings open their exact record. Needs Review requires a unique verified match or explicit operator selection; quantity correction no longer uses a date editor. Purchase date remains separate from ETA.
+- Manufacturer approval is independent of explicit dated replacement shipments. Supplier-direct shipments do not deduct local stock; existing legacy flags are preserved.
+- Reports subtract confirmed warranty costs and inventory deductions, link to existing expenses to avoid double-counting, and mark the estimate provisional while older costs need review. This remains weighted operational accounting, not FIFO or a complete general ledger.
+
+See [employee workflow instructions](INVENTORY-AND-COSTS.md) and [candidate verification](V5.5-ACCEPTANCE.md). Remaining work includes broader list filters, customer activity timelines, friendly audit summaries, fuller expense metadata and supplier-payment tracking. Hosting changes remain separate.
 
 ## Main conclusion
 
