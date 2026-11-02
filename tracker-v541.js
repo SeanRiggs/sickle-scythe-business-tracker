@@ -376,7 +376,7 @@ function businessName(){return db.settings?.businessName||'Sickle & Scythe';}
 function brandingLogo(){const logo=db.settings?.brandLogo;return typeof logo==='string'&&/^data:image\/(png|jpeg|webp|svg\+xml);base64,[a-z0-9+/=\s]+$/i.test(logo)?logo:new URL('logo-placeholder.svg',INSTALL_ROOT).href;}
 function offlineCorrectionOK(){return localOnly()||cloudHealthy&&navigator.onLine!==false||confirm('OneDrive is not confirmed connected. Save this correction on this device until syncing succeeds?');}
 function field(l,n,t='text',v=''){const whole=/^(qty|lineQty|received|threshold)$/.test(n);return `<label class="field"><span>${html(l)}${help(l)}</span><input name="${html(n)}" type="${t}" ${t==='number'?`step="${whole?'1':'0.01'}" inputmode="${whole?'numeric':'decimal'}"`:''} value="${html(v)}"></label>`;}
-function select(l,n,opts){return `<label class="field"><span>${html(l)}${help(l)}</span><select name="${html(n)}">${opts.map(x=>`<option value="${html(x[0])}">${html(x[1])}</option>`).join('')}</select></label>`;}
+function select(l,n,opts){return `<label class="field"><span>${html(l)}${help(l)}</span><select name="${html(n)}" aria-label="${html(l)}">${opts.map(x=>`<option value="${html(x[0])}">${html(x[1])}</option>`).join('')}</select></label>`;}
 function customerMeta(name){const all=db.settings?.customers;return all&&Object.hasOwn(all,name)?all[name]:{notes:'',tags:[],collections:[]};}
 function setCustomerMeta(name,value){db.settings.customers||={};Object.defineProperty(db.settings.customers,name,{value,writable:true,enumerable:true,configurable:true});}
 let menuOpen=false,renderedPage='',drafts=new Map();
