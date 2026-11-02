@@ -2,7 +2,7 @@
 
 A browser-based tracker for inventory, purchase orders, sales, payments, customer credits, expenses and warranties. Built for everyday work on a phone or computer, with a public application shell and private business records.
 
-**v5.4.1 candidate:** direct unpaid returns and cancellations from Receivables, customer invoices, and Sales. The v5.4 mobile workspace, private OneDrive connection, and guarded backup recovery are retained.
+**v5.4.2 candidate:** partial returns that preserve original invoices and valid payments, plus actions directly in search results.
 
 ## What it does
 
@@ -58,12 +58,18 @@ Run the acceptance checks before opening a pull request. Explain changed behavio
 
 See [LICENSE](LICENSE).
 
-## Unpaid returns and cancelled sales
+## Returns and direct search actions
 
-Open **Receivables**, find the invoice, and choose **Return / cancel sale**. The same action is available on customer invoices and in Sales & Payments.
+Search by customer, invoice, payment reference, product, purchase order, expense, or warranty. Matching records offer their own actions: edit, record payment, return items, view payments, invoice/PDF, or receipt as appropriate. Voided records stay visible without active edit/return actions. Search shows up to 30 results; add an invoice ID or more detail to narrow a broad query.
 
-The confirmation shows the balance being removed and the quantity restored to inventory. Confirm that **all units** are back in resellable stock (for example, an unopened return), or were never delivered, and enter a reason. Confirm once, then wait for **Saved with OneDrive** before switching devices.
+For a full or partial return, select **Return items** on the invoice. Enter the quantity returned and the **agreed invoice reduction**; do not assume all units had the same effective price. Confirm the units are resellable (or never delivered), enter the actual return date and reason, review the balance and inventory preview, and confirm. Wait for **Saved with OneDrive** before switching devices.
 
-The original sale is retained as voided with a dated reason and a before/after audit entry. It no longer contributes to receivables, revenue, or units sold. Inventory restores automatically; **do not also add an inventory adjustment** for the same return.
+Original sale quantity, price, date, invoice ID, and valid payments remain unchanged. Dated return records reduce the net invoice and net units sold and restore only the selected quantity to stock. Do not create an additional inventory adjustment for the same units. Previously voided sales remain voided; historical migrations and repairs are never rerun.
 
-This shortcut handles full, unpaid returns only. An invoice with any active payment or credit movement opens a payment-review explanation instead; no money or inventory changes. Do not void a genuine payment simply to force a return through. Partial returns, refunds on paid sales, damaged returns, and missing stock require separate review and are not automated by this shortcut.
+A return that exceeds the unpaid balance releases the excess payment as customer credit. The operator must explicitly choose **Hold credit for this customer**. No cash payment or refund is created. Existing Manage Credit actions can apply that credit or record a refund separately when appropriate.
+
+**Return history** shows each return and can reverse an incorrect entry with a reason. Reversal deducts that quantity from stock and restores the amount to the invoice. If the resulting credit has already been applied or refunded, reverse the affected credit movement first. Original invoices with return history cannot be edited or wholly voided through the older correction path.
+
+Reports apply reductions on the actual return date. All-Time totals include undated original sales; no historical dates are invented. Net units/revenue in a period can be negative when returns relate to older sales. Invoice counts remain separate from net units. Sales CSV shows original and net figures; Returns CSV supplies the individual dated entries. Cost estimates retain the existing weighted-cost model, not FIFO.
+
+This workflow handles resellable returns and undelivered units. Damaged/missing stock needs separate review. A correction already made by editing an invoice must not also be entered as a new return. The release does not alter any production record automatically.

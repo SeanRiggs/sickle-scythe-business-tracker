@@ -59,17 +59,17 @@ const fixture={schemaVersion:4,updatedAt:null,orders:[],sales:[{id:'INV-EXAMPLE'
   await page.waitForFunction(async()=>!!navigator.serviceWorker.controller&&(await caches.keys()).includes('ss-v52'));
   await page.evaluate(data=>localStorage.setItem('ss-v4-db',JSON.stringify(data)),fixture);
   legacy=false;checkpoint('load current shell');
-  await page.goto('http://127.0.0.1:8766/?v=541');
-  await page.waitForFunction(async()=>typeof BUILD!=='undefined'&&BUILD==='5.4.1'&&navigator.serviceWorker.controller?.scriptURL.endsWith('?v=541')&&(await caches.keys()).includes('ss-v541')&&!(await caches.keys()).includes('ss-v52'));
+  await page.goto('http://127.0.0.1:8766/?v=542');
+  await page.waitForFunction(async()=>typeof BUILD!=='undefined'&&BUILD==='5.4.2'&&navigator.serviceWorker.controller?.scriptURL.endsWith('?v=542')&&(await caches.keys()).includes('ss-v542')&&!(await caches.keys()).includes('ss-v52'));
   assert.deepEqual(await page.evaluate(()=>JSON.parse(localStorage.getItem(LOCAL))),fixture);
   await page.evaluate(()=>localStorage.setItem('ss_tokens',JSON.stringify({access_token:'fictional-token',expires_at:Date.now()+3600000})));
   checkpoint('reload authenticated shell');await page.reload();await page.waitForFunction(()=>cloudHealthy&&syncState==='Cloud current');assert.equal(puts,0);
   // Reload may race a browser update of the previous worker URL. Verify the actual
   // controlling registration again before simulating loss of connectivity.
-  await page.evaluate(()=>navigator.serviceWorker.register('service-worker.js?v=541',{updateViaCache:'none'}));
-  await page.waitForFunction(async()=>navigator.serviceWorker.controller?.scriptURL.endsWith('?v=541')&&(await navigator.serviceWorker.ready).active?.scriptURL.endsWith('?v=541'));
+  await page.evaluate(()=>navigator.serviceWorker.register('service-worker.js?v=542',{updateViaCache:'none'}));
+  await page.waitForFunction(async()=>navigator.serviceWorker.controller?.scriptURL.endsWith('?v=542')&&(await navigator.serviceWorker.ready).active?.scriptURL.endsWith('?v=542'));
   checkpoint('verified current worker; go offline');
-  fs.writeFileSync(`${results}/before-offline.json`,JSON.stringify(await page.evaluate(async()=>({controller:navigator.serviceWorker.controller?.scriptURL,cacheKeys:(await(await caches.open('ss-v541')).keys()).map(r=>r.url),worker:(await navigator.serviceWorker.ready).active?.state})),null,2));
+  fs.writeFileSync(`${results}/before-offline.json`,JSON.stringify(await page.evaluate(async()=>({controller:navigator.serviceWorker.controller?.scriptURL,cacheKeys:(await(await caches.open('ss-v542')).keys()).map(r=>r.url),worker:(await navigator.serviceWorker.ready).active?.state})),null,2));
   if(offlineMode==='server'){networkDown=true;await page.evaluate(()=>{localStorage.setItem('__testOffline','1');window.dispatchEvent(new Event('offline'));});}else await context.setOffline(true);
   await page.waitForFunction(()=>navigator.onLine===false);
   await page.locator('#sync-banner.disconnected').waitFor();
@@ -77,24 +77,24 @@ const fixture={schemaVersion:4,updatedAt:null,orders:[],sales:[{id:'INV-EXAMPLE'
   await page.getByRole('button',{name:'Edit Payment',exact:true}).click();
   await page.getByRole('dialog').getByLabel('Amount',{exact:true}).fill('500');
   await page.getByRole('button',{name:'Save Payment',exact:true}).click();
-  assert.equal(await page.evaluate(()=>db.payments[0].amount),500);assert.equal(puts,0);
-  checkpoint('offline reload');await page.reload();await page.waitForFunction(()=>typeof BUILD!=='undefined'&&BUILD==='5.4.1');
+  assert.equal(await page.evaluate(()=>db.payments[0].amount),500);assert.equal(puts,0);await page.evaluate(()=>commitFinancial('Offline return',()=>recordSaleReturn('INV-EXAMPLE',{qty:1,amount:290,date:today(),reason:'Example return',stock:'returned-resellable',creditChoice:'hold'})));
+  checkpoint('offline reload');await page.reload();await page.waitForFunction(()=>typeof BUILD!=='undefined'&&BUILD==='5.4.2');
   assert.equal(await page.evaluate(()=>db.payments[0].amount),500);
-  assert.equal(await page.evaluate(()=>customerCredit('Example Customer')),210);
+  assert.equal(await page.evaluate(()=>customerCredit('Example Customer')),500);
   assert.equal(await page.evaluate(()=>db.settings.businessNote),'Example setting');
   assert.equal(await page.evaluate(()=>db.futureField.preserve),true);
   if(offlineMode==='server'){networkDown=false;await page.evaluate(()=>{localStorage.removeItem('__testOffline');window.dispatchEvent(new Event('online'));});}else await context.setOffline(false);await page.waitForFunction(()=>navigator.onLine);
   await page.getByRole('button',{name:'Retry Sync',exact:true}).click();
   await page.waitForFunction(()=>cloudHealthy&&syncState==='Cloud saved');
-  assert.equal(remote.payments[0].amount,500);assert.equal(puts,1);
+  assert.equal(remote.payments[0].amount,500);assert.equal(remote.sales[0].returns[0].amount,290);assert.equal(puts,1);
   checkpoint('rate-limit recovery');fail=429;assert.equal(await page.evaluate(()=>cloudSave(true)),false);
   assert.equal(await page.evaluate(()=>cloudHealthy),false);assert.equal(puts,1);
   fail=0;assert.equal(await page.evaluate(()=>cloudSave(true)),true);assert.equal(puts,1);
-  const keys=await page.evaluate(async()=>{const c=await caches.open('ss-v541');return (await c.keys()).map(r=>r.url);});
+  const keys=await page.evaluate(async()=>{const c=await caches.open('ss-v542');return (await c.keys()).map(r=>r.url);});
   assert(keys.every(k=>new URL(k).hostname==='127.0.0.1'&&!/business-data|graph.microsoft|tracker-v52/.test(k)));
   await page.screenshot({path:`${results}/upgrade-recovery.png`,fullPage:true});
   assert.deepEqual(errors,[]);
-  fs.writeFileSync(`${results}/acceptance-report.json`,JSON.stringify({passed:true,engine,offlineMode,physicalDeviceVerified:false,syntheticOnly:true,liveMicrosoftRequests:0,legacyWorkerBaseline:'fd65f76ccff9cf5637ebccae5823d6783037b3bd',legacyShell:'fictional',cacheUpgrade:true,oldCacheRemoved:true,unchangedDataOnUpgrade:true,offlinePaymentEdit:true,offlineReload:true,settingsRetention:true,unknownFieldsRetained:true,reconnectUpload:true,rateLimitRecovery:true,conditionalPuts:puts,browserErrors:errors,cacheKeys:keys,mockedRequests:requests.length},null,2));
+  fs.writeFileSync(`${results}/acceptance-report.json`,JSON.stringify({passed:true,engine,offlineMode,physicalDeviceVerified:false,syntheticOnly:true,liveMicrosoftRequests:0,legacyWorkerBaseline:'fd65f76ccff9cf5637ebccae5823d6783037b3bd',legacyShell:'fictional',cacheUpgrade:true,oldCacheRemoved:true,unchangedDataOnUpgrade:true,offlinePaymentEdit:true,offlineReturnRetention:true,offlineReload:true,settingsRetention:true,unknownFieldsRetained:true,reconnectUpload:true,rateLimitRecovery:true,conditionalPuts:puts,browserErrors:errors,cacheKeys:keys,mockedRequests:requests.length},null,2));
  }catch(e){console.error('Acceptance failed at '+stage,e);fs.writeFileSync(results+'/acceptance-failure.txt','Stage: '+stage+'\n'+String(e));const state=await page.evaluate(async()=>({url:location.href,controller:navigator.serviceWorker.controller?.scriptURL,cacheKeys:await caches.keys()})).catch(()=>({unavailable:true}));fs.writeFileSync(results+'/acceptance-state.json',JSON.stringify({stage,state,requests,errors},null,2));await page.screenshot({path:results+'/acceptance-failure.png',fullPage:true,timeout:5000}).catch(()=>{});throw e;}
  finally{await browser.close();server.close();}
 })().catch(e=>{console.error(e);server.close();process.exitCode=1;});
