@@ -8,12 +8,12 @@ ALLOWED = {
     '.gitignore', '.github/workflows/validate.yml', '.github/workflows/privacy.yml',
     'DEPLOYMENT-MARKER.txt', 'LICENSE', 'README.md', 'index.html',
     'logo-placeholder.svg', 'manifest.webmanifest', 'partner-sales-template.csv',
-    'service-worker.js', 'styles.css', 'tracker-v542.js', 'app-config.js',
+    'service-worker.js', 'styles.css', 'tracker-v543.js', 'app-config.js',
     'docs/SETUP.md', 'docs/RECOVERY.md', 'docs/V5.4-ACCEPTANCE.md', 'tests/usability.test.cjs',
     'docs/V5.3-ACCEPTANCE.md', 'docs/V5.3.1-ACCEPTANCE.md',
     'scripts/package_release.py', 'scripts/check_public_files.py',
     'tests/acceptance.cjs', 'tests/browser.cjs', 'tests/finance.test.cjs',
-    'tests/harness.cjs', 'tests/legacy-worker.fixture.js', 'tests/sync.test.cjs',
+    'docs/WORKFLOW-REVIEW.md', 'docs/PURCHASES-AND-WARRANTY-CREDITS.md', 'tests/purchasing.test.cjs', 'tests/harness.cjs', 'tests/legacy-worker.fixture.js', 'tests/sync.test.cjs',
 }
 tracked = set(subprocess.check_output(
     ['git', 'ls-files', '-z'], cwd=ROOT).decode().split('\0')) - {''}
