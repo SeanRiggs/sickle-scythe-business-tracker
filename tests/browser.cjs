@@ -8,7 +8,7 @@ try{for(const [name,viewport] of [['desktop',{width:1440,height:1000}],['phone',
  const context=await browser.newContext({viewport,serviceWorkers:'block'});await context.route('**/*',route=>new URL(route.request().url()).origin==='http://127.0.0.1:8765'?route.continue():route.abort());
  await context.addInitScript(data=>{if(!localStorage.getItem('ss-v4-db'))localStorage.setItem('ss-v4-db',JSON.stringify(data));},fixture);
  const requests=[];context.on('requestfailed',r=>requests.push({url:r.url(),failure:r.failure()}));context.on('response',r=>requests.push({url:r.url(),status:r.status()}));context.on('console',m=>requests.push({console:m.text()}));const page=await context.newPage(),errors=[];activePage=page;page.on('pageerror',e=>errors.push(e.message));page.on('dialog',d=>d.type()==='confirm'?d.accept():d.dismiss());await page.goto('http://127.0.0.1:8765/');
- await page.waitForFunction(()=>BUILD==='5.4');
+ await page.waitForFunction(()=>BUILD==='5.4.1');
  await page.getByText('Connect OneDrive',{exact:true}).waitFor();
  await page.getByRole('button',{name:'Sales & Payments',exact:true}).click();await page.getByRole('button',{name:'Payment',exact:true}).click();
  await page.getByRole('dialog').getByLabel('Amount',{exact:true}).fill('500');await page.getByRole('dialog').getByLabel('Reference',{exact:true}).fill('EXAMPLE-REF');await page.getByRole('dialog').getByLabel('Notes',{exact:true}).fill('Fictional test payment');await page.getByRole('button',{name:'Save Payment',exact:true}).click();
@@ -36,8 +36,25 @@ try{for(const [name,viewport] of [['desktop',{width:1440,height:1000}],['phone',
  await page.getByRole('button',{name:'Add product',exact:true}).click();await page.getByRole('dialog').getByLabel('Product name',{exact:true}).fill('Example Widget');await page.getByRole('dialog').getByLabel('Manufacturer',{exact:true}).fill('Example Maker');await page.getByRole('dialog').getByLabel('Typical sale price',{exact:true}).fill('12.50');await page.getByRole('dialog').getByRole('button',{name:'Save changes',exact:true}).click();assert.equal(await page.evaluate(()=>products().find(p=>p.name==='Example Widget').typical),12.5);
  await page.evaluate(()=>openCustomer('Example Customer'));const statementPromise=page.waitForEvent('popup');await page.getByRole('button',{name:'Customer statement / PDF',exact:true}).click();const statement=await statementPromise;await statement.getByRole('heading',{name:'Customer statement',exact:true}).waitFor();assert.doesNotMatch(await statement.locator('body').innerText(),/Corrected fictional payment/);await statement.close();
  await page.setViewportSize({width:390,height:350});await page.evaluate(()=>pay('INV-EXAMPLE'));await page.getByRole('dialog').getByLabel('Amount',{exact:true}).fill('1');await page.getByRole('dialog').getByRole('button',{name:'Cancel',exact:true}).click();await page.setViewportSize(viewport);
+ // Full unpaid returns must be reachable directly from Receivables on every screen size.
+ await page.evaluate(()=>{db.sales.push({id:'INV-RETURN-EXAMPLE',customer:'Return Example',productId:'p1',qty:1,unitPrice:255,date:'2026-10-01'});saveLocal();});
+ await navigate(page,'Receivables');
+ const returnRow=page.locator('.row').filter({hasText:'INV-RETURN-EXAMPLE'});
+ const returnBefore=await page.evaluate(()=>({json:JSON.stringify(db),stock:inventory().find(x=>x.id==='p1').onHand,ar:totals().ar}));
+ await returnRow.getByRole('button',{name:'Return / cancel sale',exact:true}).click();
+ await page.getByRole('dialog').getByRole('button',{name:'Cancel',exact:true}).click();assert.equal(await page.evaluate(()=>JSON.stringify(db)),returnBefore.json);
+ await returnRow.getByRole('button',{name:'Return / cancel sale',exact:true}).click();
+ let returnDialog=page.getByRole('dialog');assert.match(await returnDialog.innerText(),/Balance removed:.*\$255\.00/s);
+ await returnDialog.getByRole('button',{name:'Confirm return / cancellation',exact:true}).click();assert.equal(await page.evaluate(()=>JSON.stringify(db)),returnBefore.json);
+ await returnDialog.getByLabel('Where are all the units?',{exact:true}).selectOption('returned-resellable');await returnDialog.getByLabel('Reason',{exact:true}).fill('Unopened full return');
+ await page.screenshot({path:`${results}/${name}-return-confirmation.png`,fullPage:false});
+ await returnDialog.getByRole('button',{name:'Confirm return / cancellation',exact:true}).click();
+ assert.equal(await returnRow.count(),0);assert.equal(await page.evaluate(()=>totals().ar),returnBefore.ar-255);assert.equal(await page.evaluate(()=>inventory().find(x=>x.id==='p1').onHand),returnBefore.stock+1);
+ await page.reload();assert.equal(await page.evaluate(()=>db.sales.find(s=>s.id==='INV-RETURN-EXAMPLE').voided),true);
+ await navigate(page,'Receivables');await page.locator('.row').filter({hasText:'INV-EXAMPLE'}).getByRole('button',{name:'Return / cancel sale',exact:true}).click();
+ assert.match(await page.getByRole('dialog').innerText(),/Do not void a real payment/);await page.getByRole('dialog').getByRole('button',{name:'View payments',exact:true}).click();assert.equal(await page.getByLabel('Find a payment or receipt').inputValue(),'INV-EXAMPLE');
  assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true);
- await page.evaluate(()=>document.documentElement.style.fontSize='200%');assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true);await page.evaluate(()=>document.documentElement.style.fontSize='');assert.deepEqual(errors,[]);checks.push({viewport:name,saleDraftRotation:true,atomicSalePayment:true,catalogEditing:true,statement:true,reducedHeightDialog:true,largeText:true,paymentEdit:true,overpayment:true,receipt:true,receiptLogo:true,uploadedLogo:true,restartRetention:true,searchFocus:true,reviewDisclosure:true,backToTop:true,browserErrors:errors});await context.close();
+ await page.evaluate(()=>document.documentElement.style.fontSize='200%');assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true);await page.evaluate(()=>document.documentElement.style.fontSize='');assert.deepEqual(errors,[]);checks.push({viewport:name,unpaidReturn:true,returnCancellationNoMutation:true,paidReturnBlocked:true,saleDraftRotation:true,atomicSalePayment:true,catalogEditing:true,statement:true,reducedHeightDialog:true,largeText:true,paymentEdit:true,overpayment:true,receipt:true,receiptLogo:true,uploadedLogo:true,restartRetention:true,searchFocus:true,reviewDisclosure:true,backToTop:true,browserErrors:errors});await context.close();
 }fs.writeFileSync(`${results}/browser-report.json`,JSON.stringify({passed:true,engine,syntheticOnly:true,liveMicrosoftRequests:0,checks},null,2));}
 catch(e){fs.writeFileSync(`${results}/failure.txt`,String(e));if(activePage&&!activePage.isClosed())await activePage.screenshot({path:`${results}/failure.png`,fullPage:true,timeout:5000}).catch(()=>{});throw e;}
 finally{await browser.close();server.close();}})().catch(e=>{console.error(e);server.close();process.exitCode=1;});
