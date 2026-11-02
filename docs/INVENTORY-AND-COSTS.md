@@ -4,7 +4,7 @@ These workflows are available in v5.5. Check the app version before following th
 
 ## See where stock went
 
-Choose **Products → Inventory history**, or search for the product and choose **Inventory history**. The history combines:
+Choose **Inventory → Inventory history**, or search for the product and choose **Inventory history**. The history combines:
 
 - Stock received against purchase orders.
 - Original sales and individual customer returns.
@@ -48,13 +48,13 @@ A cost linked to an expense is counted only through that expense. Several cost c
 
 Earlier replacement costs can be ambiguous: a stored amount may have been per unit, total, estimated, or already included in Expenses. Earlier stock deductions may have no cost at all. The app does not guess. Profit stays **provisional** while these entries await review, and unreviewed amounts are not yet deducted.
 
-Choose **Reports → Review costs** or open the warning in **Data Health**. Confirm the actual total, date if known, cost treatment and explanation. Enter zero only when no additional cost was incurred, or another confirmed movement already counts it; explain your decision. A saved cost review can be revised with an audit trail. This does not change inventory quantities or overwrite the original legacy cost fields.
+Choose **Reports → Review costs** or open the warning in **Record checks**. Confirm the actual total, date if known, cost treatment and explanation. Enter zero only when no additional cost was incurred, or another confirmed movement already counts it; explain your decision. A saved cost review can be revised with an audit trail. This does not change inventory quantities or overwrite the original legacy cost fields.
 
 All Time includes confirmed costs with unknown dates. Month/year reports exclude undated separately recorded costs. Linked costs follow their expense's date. Do not substitute a claim date, expected arrival or today's date for an unknown historical cost date. PO shipping already included in landed cost should not also be entered as an unrelated expense.
 
 ## Open the exact warning
 
-Data Health opens the identified invoice, payment, purchase order, product history or adjustment. Customer overpayments remain normal credit balances, not data errors.
+Record checks opens the identified invoice, payment, purchase order, product history or adjustment. Customer overpayments remain normal credit balances, not data errors.
 
 Needs Review uses a saved record ID or one unique source-row match. If an older warning has no unique link, **Choose the record to review** requires an explicit record selection and reason. Saving that link does not change money, quantity or dates. Reopen **Edit & Resolve** to make the actual correction. Quantity warnings edit quantity; purchase-date warnings edit actual purchase date, never ETA. Date-only corrections are available from invoice details even on paid invoices.
 

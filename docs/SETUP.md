@@ -14,7 +14,7 @@ This static application runs HTML, CSS and JavaScript in your browser. There is 
 3. From the source folder, run the local server command below.
 4. Open http://localhost:8080/ and keep that exact host and port for future visits.
 5. Choose **Use on this device only**. This explicitly creates an empty business and product catalog.
-6. Add products in **More → Products** and set the business name/logo in **Settings**.
+6. Add products in **More → Inventory** and set the business name/logo in **Settings**.
 7. Download regular JSON backups and keep them outside the source folder.
 
 ~~~sh

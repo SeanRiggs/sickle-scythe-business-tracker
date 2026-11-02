@@ -59,19 +59,19 @@ const fixture={schemaVersion:4,updatedAt:null,orders:[],sales:[{id:'INV-EXAMPLE'
   await page.waitForFunction(async()=>!!navigator.serviceWorker.controller&&(await caches.keys()).includes('ss-v52'));
   await page.evaluate(data=>localStorage.setItem('ss-v4-db',JSON.stringify(data)),fixture);
   legacy=false;checkpoint('load current shell');
-  await page.goto('http://127.0.0.1:8766/?v=55');
-  await page.waitForFunction(async()=>typeof BUILD!=='undefined'&&BUILD==='5.5'&&navigator.serviceWorker.controller?.scriptURL.endsWith('?v=55')&&(await caches.keys()).includes('ss-v55')&&!(await caches.keys()).includes('ss-v52'));
+  await page.goto('http://127.0.0.1:8766/?v=56');
+  await page.waitForFunction(async()=>typeof BUILD!=='undefined'&&BUILD==='5.6'&&navigator.serviceWorker.controller?.scriptURL.endsWith('?v=56')&&(await caches.keys()).includes('ss-v56')&&!(await caches.keys()).includes('ss-v52'));
   assert.deepEqual(await page.evaluate(()=>JSON.parse(localStorage.getItem(LOCAL))),fixture);
   await page.evaluate(()=>localStorage.setItem('ss_tokens',JSON.stringify({access_token:'fictional-token',expires_at:Date.now()+3600000})));
   checkpoint('reload authenticated shell');await page.reload();await page.waitForFunction(()=>cloudHealthy&&syncState==='Cloud current');assert.equal(puts,0);
   // Reload may race a browser update of the previous worker URL. Verify the actual
   // controlling registration again before simulating loss of connectivity.
-  await page.evaluate(()=>navigator.serviceWorker.register('service-worker.js?v=55',{updateViaCache:'none'}));
+  await page.evaluate(()=>navigator.serviceWorker.register('service-worker.js?v=56',{updateViaCache:'none'}));
   // A prior run observed a late legacy registration takeover after a momentary
   // controller match. Require one fully activated, quiet registration before
   // disconnecting; otherwise report a harness setup failure, not an app pass.
   await page.evaluate(async()=>{
-   const expected=new URL('service-worker.js?v=55',location.href).href;
+   const expected=new URL('service-worker.js?v=56',location.href).href;
    const delay=ms=>new Promise(resolve=>setTimeout(resolve,ms));
    const ready=reg=>reg?.active?.scriptURL===expected&&reg.active.state==='activated'&&!reg.installing&&!reg.waiting&&navigator.serviceWorker.controller===reg.active;
    for(let attempt=0;attempt<40;attempt++){
@@ -83,7 +83,7 @@ const fixture={schemaVersion:4,updatedAt:null,orders:[],sales:[{id:'INV-EXAMPLE'
    throw Error('Harness setup: current service worker did not settle before offline test');
   });
   checkpoint('verified current worker; go offline');
-  fs.writeFileSync(`${results}/before-offline.json`,JSON.stringify(await page.evaluate(async()=>({controller:navigator.serviceWorker.controller?.scriptURL,cacheKeys:(await(await caches.open('ss-v55')).keys()).map(r=>r.url),worker:(await navigator.serviceWorker.ready).active?.state})),null,2));
+  fs.writeFileSync(`${results}/before-offline.json`,JSON.stringify(await page.evaluate(async()=>({controller:navigator.serviceWorker.controller?.scriptURL,cacheKeys:(await(await caches.open('ss-v56')).keys()).map(r=>r.url),worker:(await navigator.serviceWorker.ready).active?.state})),null,2));
   if(offlineMode==='server'){networkDown=true;await page.evaluate(()=>{localStorage.setItem('__testOffline','1');window.dispatchEvent(new Event('offline'));});}else await context.setOffline(true);
   await page.waitForFunction(()=>navigator.onLine===false);
   await page.locator('#sync-banner.disconnected').waitFor();
@@ -93,7 +93,7 @@ const fixture={schemaVersion:4,updatedAt:null,orders:[],sales:[{id:'INV-EXAMPLE'
   await page.getByRole('button',{name:'Save Payment',exact:true}).click();
   assert.equal(await page.evaluate(()=>db.payments[0].amount),500);assert.equal(puts,0);await page.evaluate(()=>commitFinancial('Offline return',()=>recordSaleReturn('INV-EXAMPLE',{qty:1,amount:290,date:today(),reason:'Example return',stock:'returned-resellable',creditChoice:'hold'})));
   await page.evaluate(()=>commitFinancial('Offline replacement',()=>recordReplacement('WR-OFFLINE',{qty:1,date:today(),source:'supplier-direct',unitCost:0,shipping:0,notes:'Example supplier replacement'})));
-  checkpoint('offline reload');await page.reload();await page.waitForFunction(()=>typeof BUILD!=='undefined'&&BUILD==='5.5');
+  checkpoint('offline reload');await page.reload();await page.waitForFunction(()=>typeof BUILD!=='undefined'&&BUILD==='5.6');
   assert.equal(await page.evaluate(()=>db.payments[0].amount),500);
   assert.equal(await page.evaluate(()=>customerCredit('Example Customer')),500);
   assert.equal(await page.evaluate(()=>db.settings.businessNote),'Example setting');
@@ -105,7 +105,7 @@ const fixture={schemaVersion:4,updatedAt:null,orders:[],sales:[{id:'INV-EXAMPLE'
   checkpoint('rate-limit recovery');fail=429;assert.equal(await page.evaluate(()=>cloudSave(true)),false);
   assert.equal(await page.evaluate(()=>cloudHealthy),false);assert.equal(puts,1);
   fail=0;assert.equal(await page.evaluate(()=>cloudSave(true)),true);assert.equal(puts,1);
-  const keys=await page.evaluate(async()=>{const c=await caches.open('ss-v55');return (await c.keys()).map(r=>r.url);});
+  const keys=await page.evaluate(async()=>{const c=await caches.open('ss-v56');return (await c.keys()).map(r=>r.url);});
   assert(keys.every(k=>new URL(k).hostname==='127.0.0.1'&&!/business-data|graph.microsoft|tracker-v52/.test(k)));
   await page.screenshot({path:`${results}/upgrade-recovery.png`,fullPage:true});
   assert.deepEqual(errors,[]);

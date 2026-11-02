@@ -1,22 +1,23 @@
 from pathlib import Path
 import csv, hashlib, json, subprocess, zipfile
 ROOT=Path(__file__).resolve().parents[1]
-FILES=['DEPLOYMENT-MARKER.txt','LICENSE','README.md','app-config.js','index.html','logo-placeholder.svg','manifest.webmanifest','partner-sales-template.csv','service-worker.js','styles.css','tracker-v55.js','docs/SETUP.md','docs/RECOVERY.md','docs/V5.4-ACCEPTANCE.md','docs/WORKFLOW-REVIEW.md','docs/PURCHASES-AND-WARRANTY-CREDITS.md','docs/INVENTORY-AND-COSTS.md','docs/V5.5-ACCEPTANCE.md']
-for name in ['app-config.js','tracker-v55.js','service-worker.js']:subprocess.run(['node','--check',str(ROOT/name)],check=True)
+FILES=['DEPLOYMENT-MARKER.txt','LICENSE','README.md','app-config.js','index.html','logo-placeholder.svg','manifest.webmanifest','partner-sales-template.csv','service-worker.js','styles.css','tracker-v56.js','docs/SETUP.md','docs/RECOVERY.md','docs/V5.4-ACCEPTANCE.md','docs/WORKFLOW-REVIEW.md','docs/PURCHASES-AND-WARRANTY-CREDITS.md','docs/INVENTORY-AND-COSTS.md','docs/V5.5-ACCEPTANCE.md','docs/V5.6-ACCEPTANCE.md']
+for name in ['app-config.js','tracker-v56.js','service-worker.js']:subprocess.run(['node','--check',str(ROOT/name)],check=True)
 assert len(list(csv.reader((ROOT/'partner-sales-template.csv').open())))==1,'Template must be blank/header-only'
-assert 'tracker-v55.js' in (ROOT/'index.html').read_text()
-assert 'ss-v55' in (ROOT/'service-worker.js').read_text()
-assert 'repairProductionData' not in (ROOT/'tracker-v55.js').read_text()
+assert 'tracker-v56.js' in (ROOT/'index.html').read_text()
+assert 'ss-v56' in (ROOT/'service-worker.js').read_text()
+assert 'repairProductionData' not in (ROOT/'tracker-v56.js').read_text()
 assert not (ROOT/'tracker-v52.js').exists()
 assert not (ROOT/'tracker-v53.js').exists()
 assert not (ROOT/'tracker-v543.js').exists()
+assert not (ROOT/'tracker-v55.js').exists()
 out=ROOT/'dist';out.mkdir(exist_ok=True)
-archive=out/'sickle-scythe-tracker-v5.5-candidate.zip'
+archive=out/'sickle-scythe-tracker-v5.6-candidate.zip'
 with zipfile.ZipFile(archive,'w',zipfile.ZIP_DEFLATED) as z:
  for name in FILES:z.write(ROOT/name,name)
 with zipfile.ZipFile(archive) as z:
  assert z.namelist()==FILES
  assert z.testzip() is None
-report={'files':FILES,'sha256':hashlib.sha256(archive.read_bytes()).hexdigest(),'integrity':'passed','privateDataFilesIncluded':False,'sourceBaseline':'c2b5a0ea446f9c0252e13303da77f8b656a1104b'}
+report={'files':FILES,'sha256':hashlib.sha256(archive.read_bytes()).hexdigest(),'integrity':'passed','privateDataFilesIncluded':False,'sourceBaseline':'974a86b3b0b542203b3614466aefc62560c66e37'}
 (out/'release-manifest.json').write_text(json.dumps(report,indent=2)+'\n')
 print(json.dumps(report,indent=2))
