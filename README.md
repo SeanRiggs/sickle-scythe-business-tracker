@@ -2,7 +2,7 @@
 
 A browser-based tracker for inventory, purchase orders, sales, payments, customer credits, expenses and warranties. Built for everyday work on a phone or computer, with a public application shell and private business records.
 
-**v5.4.2 candidate:** partial returns that preserve original invoices and valid payments, plus actions directly in search results.
+**v5.4.3 candidate:** clearer purchase orders, traceable warranty-credit allocations, direct actions in customer profiles, and decimal payment entry. v5.4.2 supplies partial returns and direct search actions.
 
 ## What it does
 
@@ -15,6 +15,9 @@ A browser-based tracker for inventory, purchase orders, sales, payments, custome
 - Export accountant-friendly CSVs and download private backups.
 
 ## Get started
+
+- **[Receive inventory bought with warranty credit](docs/PURCHASES-AND-WARRANTY-CREDITS.md)**
+- **[Workflow review and improvement roadmap](docs/WORKFLOW-REVIEW.md)**
 
 - **[Set up your own local or OneDrive installation](docs/SETUP.md)**
 - **[Back up, restore and switch devices safely](docs/RECOVERY.md)**

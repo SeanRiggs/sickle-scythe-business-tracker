@@ -1,3 +1,3 @@
-Sickle & Scythe Business Tracker v5.4.2 candidate
-Baseline: 90ae1ff00a016a12b53c4ceb2ec4fa6f49702477
-Partial returns and direct search actions.
+Sickle & Scythe Business Tracker v5.4.3 candidate
+Baseline: 981446c298dded214dcc7ea13732855aadeeb16b
+Purchase credit controls and connected record actions.
