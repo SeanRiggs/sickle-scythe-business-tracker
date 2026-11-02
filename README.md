@@ -2,7 +2,7 @@
 
 A browser-based tracker for inventory, purchase orders, sales, payments, customer credits, expenses and warranties. Built for everyday work on a phone or computer, with a public application shell and private business records.
 
-**v5.4 candidate:** compact phone navigation, landscape layout, sale-and-payment entry, editable products, customer statements and guarded backup recovery. Keep the deployed version until candidate checks and acceptance review are complete.
+**v5.4.1 candidate:** direct unpaid returns and cancellations from Receivables, customer invoices, and Sales. The v5.4 mobile workspace, private OneDrive connection, and guarded backup recovery are retained.
 
 ## What it does
 
@@ -57,3 +57,13 @@ Accessibility, responsive layouts, clearer business language and validation impr
 Run the acceptance checks before opening a pull request. Explain changed behavior and remaining limitations.
 
 See [LICENSE](LICENSE).
+
+## Unpaid returns and cancelled sales
+
+Open **Receivables**, find the invoice, and choose **Return / cancel sale**. The same action is available on customer invoices and in Sales & Payments.
+
+The confirmation shows the balance being removed and the quantity restored to inventory. Confirm that **all units** are back in resellable stock (for example, an unopened return), or were never delivered, and enter a reason. Confirm once, then wait for **Saved with OneDrive** before switching devices.
+
+The original sale is retained as voided with a dated reason and a before/after audit entry. It no longer contributes to receivables, revenue, or units sold. Inventory restores automatically; **do not also add an inventory adjustment** for the same return.
+
+This shortcut handles full, unpaid returns only. An invoice with any active payment or credit movement opens a payment-review explanation instead; no money or inventory changes. Do not void a genuine payment simply to force a return through. Partial returns, refunds on paid sales, damaged returns, and missing stock require separate review and are not automated by this shortcut.
