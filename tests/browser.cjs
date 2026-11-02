@@ -76,7 +76,7 @@ try{for(const [name,viewport] of [['desktop',{width:1440,height:1000}],['phone',
  await page.getByRole('button',{name:'Claim details',exact:true}).click();await page.getByRole('dialog').getByRole('button',{name:'Use warranty credit',exact:true}).click();
  const po=page.locator('#po');await po.locator('[name=lineQty]').fill('20');await po.locator('[name=lineCost]').fill('200');await po.locator('[name=shipping]').fill('200');await po.locator('[name=fees]').fill('25');await po.locator('[name=credit]').fill('150');await po.locator('[name=supplierReference]').fill('SUPPLIER-EXAMPLE');
  assert.match(await po.locator('#po-preview').innerText(),/\$4,075\.00/);assert.match(await po.locator('#po-preview').innerText(),/\$110\.00/);
- await page.screenshot({path:`${results}/${name}-purchase-preview.png`,fullPage:true});
+ const costInput=await po.locator('[name=lineCost]').boundingBox(),qtyInput=await po.locator('[name=lineQty]').boundingBox();assert.ok(Math.abs(costInput.y-qtyInput.y)<=1,'Paired purchase inputs must align despite wrapped labels');await page.screenshot({path:`${results}/${name}-purchase-preview.png`,fullPage:true});
  await po.getByRole('button',{name:'Save purchase order',exact:true}).click();
  const orderId=await page.evaluate(()=>db.orders.find(o=>o.supplierReference==='SUPPLIER-EXAMPLE').id);
  assert.equal(await page.evaluate(()=>poTotal(db.orders.find(o=>o.supplierReference==='SUPPLIER-EXAMPLE'))),4075);
