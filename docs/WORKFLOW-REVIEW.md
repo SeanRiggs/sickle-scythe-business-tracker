@@ -55,3 +55,9 @@ No automated suite certifies real iPhone keyboard behavior, actual Microsoft acc
 4. Profit/report scope refinements and fuller expense capture after agreeing on the intended accounting treatment.
 
 Hosting changes, roles, FIFO, multi-line sales and a supplier-payments ledger are separate projects; they should not be slipped into a UI cleanup.
+
+## Browser privacy boundary for later hosting work
+
+The cloud file remains private to its Microsoft account, but the local cache and sign-in tokens are accessible to scripts running on the same browser origin. Different project paths under one GitHub Pages hostname do not create separate storage boundaries. For a later hosting move, use a dedicated app origin, preserve the existing OneDrive database and register its exact OAuth redirect. Changing storage key names alone is not isolation. This is a design constraint, not a finding that a production record was exposed. No hosting or account change is included in this candidate.
+
+Reference: [MDN Web Storage API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API), which defines localStorage as shared by documents on the same origin.
