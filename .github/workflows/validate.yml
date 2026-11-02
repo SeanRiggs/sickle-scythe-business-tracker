@@ -23,24 +23,30 @@ jobs:
           npm install --no-save --package-lock=false playwright@1.62.1
           npx playwright install --with-deps chromium webkit
       - name: Chromium desktop and phone checks
-        run: node tests/browser.cjs
+        run: timeout 180s node tests/browser.cjs
+      - name: Save Chromium diagnostics before recovery tests
+        uses: actions/upload-artifact@v7.0.2
+        if: always()
+        with:
+          name: chromium-return-diagnostics
+          path: test-results/chromium/
       - name: WebKit desktop and phone checks
         if: ${{ !cancelled() }}
         env:
           BROWSER_ENGINE: webkit
           # WebKit receipt documents can leave fonts.ready pending; inspect captured images.
           PW_TEST_SCREENSHOT_NO_FONTS_READY: '1'
-        run: node tests/browser.cjs
+        run: timeout 180s node tests/browser.cjs
       - name: Chromium cached upgrade and offline recovery
         if: ${{ !cancelled() }}
-        run: node tests/acceptance.cjs
+        run: timeout 120s node tests/acceptance.cjs
       - name: WebKit cached upgrade and simulated connection-loss recovery
         if: ${{ !cancelled() }}
         env:
           BROWSER_ENGINE: webkit
           NETWORK_MODE: server
           PW_TEST_SCREENSHOT_NO_FONTS_READY: '1'
-        run: node tests/acceptance.cjs
+        run: timeout 120s node tests/acceptance.cjs
       - name: Package and inspect code-only release
         run: python3 scripts/package_release.py
       - uses: actions/upload-artifact@v7.0.2
