@@ -2,7 +2,7 @@
 
 A browser-based tracker for inventory, purchase orders, sales, payments, customer credits, expenses and warranties. Built for everyday work on a phone or computer, with a public application shell and private business records.
 
-**v5.5:** connected inventory history, exact-record review warnings, replacements tracked separately from manufacturer approval, and clearer profit estimates that include confirmed warranty and stock-loss costs. Earlier unclear costs require review; no historical records are rewritten automatically.
+**v5.6:** a task-first workspace with grouped navigation, high-contrast search, direct invoice lookup for payments, and clearer sales/purchase forms. Inventory history, replacement tracking, cost review and existing financial controls are retained.
 
 ## What it does
 
@@ -22,11 +22,13 @@ A browser-based tracker for inventory, purchase orders, sales, payments, custome
 
 - **[Set up your own local or OneDrive installation](docs/SETUP.md)**
 - **[Back up, restore and switch devices safely](docs/RECOVERY.md)**
-- **[Test the v5.5 candidate](docs/V5.5-ACCEPTANCE.md)**
+- **[Check the v5.6 workspace](docs/V5.6-ACCEPTANCE.md)**
 
-On a phone, use the bottom navigation for Dashboard, Sales & Payments and Customers; **More** opens other sections. In landscape, navigation moves beside the workspace.
+On desktop, the sidebar groups daily work, stock/suppliers and business tools. On phones and tablets, the bottom navigation keeps Dashboard, Sales & Payments and Customers within reach; **More** opens the other sections. It stays in the same place when you rotate the phone.
 
-Start with products and business identity. For a sale, choose the customer/product, enter quantity and price, then optionally record payment. The preview shows the balance and credit before saving. For an existing receipt, choose **Sales & Payments → Payments & Receipts** and search by customer, invoice or reference.
+Start from the dashboard’s **New sale**, **Record payment** or **New purchase order** cards. **Quick actions** in the header opens those same shortcuts from any section. Record payment lets you search by customer or invoice, then choose the exact invoice before entering money received. It defaults to invoices with a balance; enable **Include paid invoices and credits** when needed. Searching and opening a form do not save financial records.
+
+For a new installation, start with Inventory and business identity. For a sale, choose the customer/product, enter quantity and price, then optionally record payment. The preview shows the balance and credit before saving. For an existing receipt, choose **Find payment / receipt** on the dashboard, or **Sales & Payments → Payments & receipts** and search by customer, invoice or reference.
 
 Drafts remain while rotating or navigating within the tab. Save deliberately; closing/reloading the tab loses unsaved drafts.
 

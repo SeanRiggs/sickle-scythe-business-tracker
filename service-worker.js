@@ -1,5 +1,5 @@
-const CACHE='ss-v55';
-const ASSETS=['./','index.html','styles.css','app-config.js','tracker-v55.js','manifest.webmanifest','logo-placeholder.svg','partner-sales-template.csv'];
+const CACHE='ss-v56';
+const ASSETS=['./','index.html','styles.css','app-config.js','tracker-v56.js','manifest.webmanifest','logo-placeholder.svg','partner-sales-template.csv'];
 const ROOT=new URL('./',self.location.href);
 const ALLOWED=new Set(ASSETS.map(p=>new URL(p,ROOT).pathname));
 self.addEventListener('install',event=>{event.waitUntil(caches.open(CACHE).then(c=>c.addAll(ASSETS)).then(()=>self.skipWaiting()));});
