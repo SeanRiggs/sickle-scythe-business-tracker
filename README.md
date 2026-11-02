@@ -2,7 +2,7 @@
 
 A browser-based tracker for inventory, purchase orders, sales, payments, customer credits, expenses and warranties. Built for everyday work on a phone or computer, with a public application shell and private business records.
 
-**v5.5 candidate:** connected inventory history, exact-record review warnings, replacements tracked separately from manufacturer approval, and clearer profit estimates that include confirmed warranty and stock-loss costs. Earlier unclear costs require review; no historical records are rewritten automatically.
+**v5.5:** connected inventory history, exact-record review warnings, replacements tracked separately from manufacturer approval, and clearer profit estimates that include confirmed warranty and stock-loss costs. Earlier unclear costs require review; no historical records are rewritten automatically.
 
 ## What it does
 

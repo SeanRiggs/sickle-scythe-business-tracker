@@ -1,3 +1,5 @@
-Sickle & Scythe Business Tracker v5.5 candidate
+Sickle & Scythe Business Tracker v5.5
 Baseline: c2b5a0ea446f9c0252e13303da77f8b656a1104b
 Inventory history, exact record review, independent warranty shipments and operating cost estimates.
+Validation corrections preserve editable forms and explicit unknown purchase dates.
+Saved records remain consistent if the display cannot refresh.

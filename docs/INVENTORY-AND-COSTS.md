@@ -1,6 +1,6 @@
 # Follow stock and its costs
 
-These workflows are part of the v5.5 candidate. Check the app version before following them. They use existing records; opening the app does not rewrite old inventory, warranty or financial entries.
+These workflows are available in v5.5. Check the app version before following them. They use existing records; opening the app does not rewrite old inventory, warranty or financial entries.
 
 ## See where stock went
 
